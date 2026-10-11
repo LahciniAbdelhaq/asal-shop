@@ -19,6 +19,7 @@ export default function Composer({ items, formats, sizes, boxPrice, labels }: {
   const [size, setSize] = useState(sizes[0] || 3);
   const [picks, setPicks] = useState<Record<number, number>>({});
   const [message, setMessage] = useState('');
+  const [adding, setAdding] = useState(false);
 
   const total = useMemo(() => Object.values(picks).reduce((a, b) => a + b, 0), [picks]);
   const price = useMemo(
@@ -35,6 +36,11 @@ export default function Composer({ items, formats, sizes, boxPrice, labels }: {
     });
 
   const submit = () => {
+    if (adding) return;
+    setAdding(true);
+    setTimeout(() => { setAdding(false); doAdd(); }, 450);
+  };
+  const doAdd = () => {
     const chosen = items.filter((i) => picks[i.productId]);
     add({
       variantId: 0,
@@ -112,7 +118,7 @@ export default function Composer({ items, formats, sizes, boxPrice, labels }: {
             <div className="asal-composer-prog">{total}/{size} pots · {format}</div>
             <div className="asal-composer-total">{fmt(price)}</div>
           </div>
-          <button type="button" className="asal-composer-cta" disabled={total !== size} onClick={submit}>{labels.cta}</button>
+          <button type="button" className={`asal-composer-cta${adding ? ' is-loading' : ''}`} disabled={total !== size} onClick={submit}>{labels.cta}</button>
         </div>
       </div>
     </div>

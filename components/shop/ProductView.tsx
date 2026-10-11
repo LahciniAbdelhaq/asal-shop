@@ -14,6 +14,7 @@ export default function ProductView({ p, labels, defaultVariant, children }: { p
   const first = p.variants.find((x) => ok(x) && x.title === defaultVariant) || p.variants.find(ok) || p.variants[0];
   const [vid, setVid] = useState(first?.id);
   const [qty, setQty] = useState(1);
+  const [adding, setAdding] = useState(false);
   const v = p.variants.find((x) => x.id === vid) || first;
 
   const images = useMemo(() => {
@@ -86,11 +87,13 @@ export default function ProductView({ p, labels, defaultVariant, children }: { p
             <button type="button" aria-label="Augmenter la quantité" disabled={qty >= maxQty} onClick={() => setQty(qty + 1)}><Icon name="plus" size={16} /></button>
           </div>
           <button
-            className="add-to-cart"
+            className={`add-to-cart${adding ? ' is-loading' : ''}`}
             disabled={!v || !ok(v)}
-            onClick={() =>
-              v &&
-              add({
+            onClick={() => {
+              if (!v || adding) return;
+              setAdding(true);
+              // court délai : retour visuel avant l'ouverture du panier
+              setTimeout(() => { setAdding(false); add({
                 variantId: v.id,
                 productId: p.id,
                 slug: p.slug,
@@ -99,8 +102,8 @@ export default function ProductView({ p, labels, defaultVariant, children }: { p
                 image: v.image || p.images[0]?.url || '',
                 price: v.price,
                 qty,
-              })
-            }
+              }); }, 450);
+            }}
           >
             <Icon name="cartplus" size={20} />
             {v && ok(v) ? labels.add : labels.soldOut}

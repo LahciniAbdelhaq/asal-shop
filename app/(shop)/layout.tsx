@@ -5,6 +5,7 @@ import { CartProvider } from '@/components/shop/CartProvider';
 import CartDrawer from '@/components/shop/CartDrawer';
 import Header from '@/components/shop/Header';
 import Footer from '@/components/shop/Footer';
+import NavProgress from '@/components/NavProgress';
 
 export const dynamic = 'force-dynamic';
 
@@ -32,6 +33,7 @@ export default async function ShopLayout({ children }: { children: React.ReactNo
       </head>
       <body>
         <CartProvider shop={{ currency: s.shop.currency, currencyPosition: s.shop.currencyPosition, freeShippingThreshold: s.shop.freeShippingThreshold, shippingFee: s.shop.shippingFee }}>
+          <NavProgress />
           <a className="skip-link" href="#main">Ignorer et passer au contenu</a>
           <div className="site-frame">
             {a.enabled && track.length > 0 && (

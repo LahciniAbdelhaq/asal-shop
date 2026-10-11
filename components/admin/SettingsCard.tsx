@@ -4,7 +4,7 @@ import { useActionState, useState } from 'react';
 import type { Field } from '@/lib/sections';
 import { resetSettings, saveSettings } from '@/app/admin/actions';
 import SchemaFields from './SchemaFields';
-import { SaveBar, type LinkOption, type PickProduct } from './ui';
+import { ConfirmButton, SaveBar, type LinkOption, type PickProduct } from './ui';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /** Carte de réglages générique : un réglage (clé) + ses champs décrits par un schéma. */
@@ -20,9 +20,9 @@ export default function SettingsCard({ k, title, description, initial, fields, l
     <div className="card" id={k}>
       <div className="card-head">
         <div><h2>{title}</h2>{description && <div className="muted" style={{ fontSize: 12.5 }}>{description}</div>}</div>
-        <form action={reset} onSubmit={(e) => { if (!confirm('Restaurer les valeurs par défaut de cette rubrique ?')) e.preventDefault(); }}>
+        <form action={reset}>
           <input type="hidden" name="key" value={k} />
-          <button className="btn btn-ghost btn-sm" title="Valeurs par défaut">Réinitialiser</button>
+          <ConfirmButton className="btn btn-ghost btn-sm" title="Valeurs par défaut" message="Restaurer les valeurs par défaut de cette rubrique ?">Réinitialiser</ConfirmButton>
         </form>
       </div>
       <form action={action}>

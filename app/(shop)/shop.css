@@ -652,3 +652,14 @@ a.asal-ma-blog-card:hover { transform: translateY(-4px); }
 .order-table th { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--c-muted); font-weight: 600; }
 .status-pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 99px; background: var(--c-cream); }
 .toast { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); background: var(--c-dark); color: var(--c-cream); padding: 12px 20px; border-radius: 999px; z-index: 80; font-size: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, .25); }
+
+/* chargement d'une page : trois alvéoles de miel qui pulsent */
+.shop-loading { min-height: 55vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; animation: shopFade .3s ease .15s both; }
+.shop-loading p { color: var(--c-muted); font-size: 14px; letter-spacing: .04em; margin: 0; }
+.honey-loader { display: flex; gap: 10px; }
+.honey-loader span { width: 18px; height: 20px; background: var(--c-primary); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); animation: honeyPulse 1s ease-in-out infinite; }
+.honey-loader span:nth-child(2) { animation-delay: .15s; }
+.honey-loader span:nth-child(3) { animation-delay: .3s; }
+@keyframes honeyPulse { 0%, 100% { transform: translateY(0) scale(.85); opacity: .45; } 50% { transform: translateY(-8px) scale(1); opacity: 1; } }
+@keyframes shopFade { from { opacity: 0; } to { opacity: 1; } }
+.add-to-cart.is-loading, .btn.is-loading, .asal-composer-cta.is-loading { color: transparent !important; }

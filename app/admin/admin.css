@@ -291,3 +291,9 @@ table.tbl { width: 100%; border-collapse: collapse; }
 
 /* les cartes côte à côte dans une grille ne doivent pas hériter de la marge des cartes empilées */
 .kpis > .card + .card, .stat-row > .card + .card, .grid-2 > .card + .card { margin-top: 0; }
+
+/* squelettes de chargement */
+.sk { background: linear-gradient(90deg, #EEE8DF 0%, #F7F3EC 40%, #EEE8DF 80%); background-size: 200% 100%; border-radius: 6px; animation: skShine 1.2s ease-in-out infinite; }
+@keyframes skShine { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+.skeleton-page { animation: skFade .25s ease both; }
+@keyframes skFade { from { opacity: 0; } to { opacity: 1; } }
