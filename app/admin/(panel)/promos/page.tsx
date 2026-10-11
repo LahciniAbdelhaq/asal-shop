@@ -43,7 +43,7 @@ export default async function PromosPage() {
                   <td>{p.usedCount}{p.maxUses != null ? ` / ${p.maxUses}` : ''}</td>
                   <td>{u ? <>{money(u._sum.total || 0, s.shop)} <span className="muted">(−{money(u._sum.discount || 0, s.shop)})</span></> : <span className="muted">—</span>}</td>
                   <td>{state(p)}</td>
-                  <td><RowActions id={p.id} edit={`/admin/promos/${p.id}`} remove={deletePromo} confirm={`Supprimer le code ${p.code} ?`} /></td>
+                  <td><RowActions id={p.id} view={`/admin/promos/${p.id}/view`} edit={`/admin/promos/${p.id}`} remove={deletePromo} confirm={`Supprimer le code ${p.code} ?`} /></td>
                 </tr>
               );
             })}

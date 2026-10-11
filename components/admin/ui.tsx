@@ -22,9 +22,9 @@ export function SaveBar({ state, label = 'Enregistrer', children }: { state?: Re
 }
 
 /** Bouton d'action destructive avec confirmation. */
-export function ConfirmButton({ message, children, className = 'btn btn-danger btn-sm' }: { message: string; children: React.ReactNode; className?: string }) {
+export function ConfirmButton({ message, children, className = 'btn btn-danger btn-sm', title }: { message: string; children: React.ReactNode; className?: string; title?: string }) {
   return (
-    <button className={className} onClick={(e) => { if (!window.confirm(message)) e.preventDefault(); }}>
+    <button className={className} title={title} aria-label={title} onClick={(e) => { if (!window.confirm(message)) e.preventDefault(); }}>
       {children}
     </button>
   );

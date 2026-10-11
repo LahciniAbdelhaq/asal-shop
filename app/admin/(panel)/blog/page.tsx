@@ -25,7 +25,7 @@ export default async function BlogAdmin() {
                 <td><Link className="row-link" href={`/admin/blog/${p.id}`}>{p.title}</Link><div className="muted" style={{ fontSize: 12, maxWidth: 520, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.excerpt}</div></td>
                 <td className="muted">{frDate(p.publishedAt)}</td>
                 <td>{p.isPublished ? <span className="pill green">Publié</span> : <span className="pill gray">Brouillon</span>}</td>
-                <td><RowActions id={p.id} view={`/blogs/le-miel-un-art-de-vivre/${p.slug}`} viewExternal edit={`/admin/blog/${p.id}`} remove={deletePost} confirm={`Supprimer l’article « ${p.title} » ?`} /></td>
+                <td><RowActions id={p.id} view={`/admin/blog/${p.id}/view`} edit={`/admin/blog/${p.id}`} remove={deletePost} confirm={`Supprimer l’article « ${p.title} » ?`} /></td>
               </tr>
             ))}
           </tbody>

@@ -265,9 +265,29 @@ table.tbl { width: 100%; border-collapse: collapse; }
   body { background: #fff; }
 }
 
-/* boutons de gestion des lignes */
-.row-actions { display: flex; gap: 6px; justify-content: flex-end; align-items: center; flex-wrap: nowrap; }
-.row-actions form { margin: 0; }
-.row-actions .btn { white-space: nowrap; }
-.tbl th.actions-col { text-align: right; }
-@media (max-width: 1200px) { .row-actions .btn { font-size: 0; gap: 0; padding: 7px; } .row-actions .btn svg { width: 16px; height: 16px; } }
+/* boutons de gestion des lignes (icônes) */
+.row-actions { display: flex; gap: 4px; justify-content: flex-end; align-items: center; }
+.row-actions form { margin: 0; display: flex; }
+.tbl th.actions-col { text-align: right; width: 1%; white-space: nowrap; }
+.icon-btn { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9px;
+  border: 1px solid var(--a-border); background: #fff; color: var(--a-text); text-decoration: none; padding: 0; transition: background .15s, color .15s, border-color .15s; }
+.icon-btn:hover { background: #F4EFE7; color: var(--a-ink); border-color: var(--a-border-strong); }
+.icon-btn--edit:hover { background: var(--a-primary-soft); color: #975A16; border-color: #EBCB94; }
+.icon-btn--delete { color: #B44141; }
+.icon-btn--delete:hover { background: #FDECEC; color: var(--a-danger); border-color: #F0C9C9; }
+
+/* pages de détails */
+.detail-media { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+.detail-media img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; border: 1px solid var(--a-border); }
+.detail-hero { width: 100%; max-height: 360px; object-fit: cover; border-radius: 12px; border: 1px solid var(--a-border); display: block; }
+.prose { color: var(--a-ink); line-height: 1.7; font-size: 14.5px; }
+.prose h2 { font-size: 18px; margin: 20px 0 8px; } .prose h3 { font-size: 16px; margin: 16px 0 6px; }
+.prose p { margin: 0 0 10px; } .prose ul, .prose ol { padding-left: 20px; margin: 0 0 12px; }
+.prose img { max-width: 100%; border-radius: 10px; } .prose a { color: var(--a-primary); }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.stat-row .card { padding: 14px 16px; }
+.stat-row .label { color: var(--a-muted); font-size: 12px; }
+.stat-row .value { font-size: 20px; font-weight: 700; color: var(--a-ink); margin-top: 2px; }
+
+/* les cartes côte à côte dans une grille ne doivent pas hériter de la marge des cartes empilées */
+.kpis > .card + .card, .stat-row > .card + .card, .grid-2 > .card + .card { margin-top: 0; }

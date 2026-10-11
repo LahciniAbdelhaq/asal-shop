@@ -26,7 +26,7 @@ export default async function CategoriesPage() {
                 <td>{c._count.products}</td>
                 <td>{c.sortOrder}</td>
                 <td>{c.isActive ? <span className="pill green">Visible</span> : <span className="pill gray">Masquée</span>}</td>
-                <td><RowActions id={c.id} view={`/collections/${c.slug}`} viewExternal edit={`/admin/categories/${c.id}`} remove={deleteCategory} confirm={`Supprimer la catégorie « ${c.title} » ? Les produits ne seront pas supprimés.`} /></td>
+                <td><RowActions id={c.id} view={`/admin/categories/${c.id}/view`} edit={`/admin/categories/${c.id}`} remove={deleteCategory} confirm={`Supprimer la catégorie « ${c.title} » ? Les produits ne seront pas supprimés.`} /></td>
               </tr>
             ))}
           </tbody>

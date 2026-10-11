@@ -29,7 +29,7 @@ export default async function PagesPage() {
                   <td>{PAGE_TEMPLATES[p.template] || p.template}</td>
                   <td>{p.isPublished ? <span className="pill green">Publiée</span> : <span className="pill gray">Brouillon</span>}</td>
                   <td className="muted">{frDateTime(p.updatedAt)}</td>
-                  <td><RowActions id={p.id} view={url} viewExternal edit={`/admin/pages/${p.id}`} remove={deletePage} confirm={`Supprimer la page « ${p.title} » ?`} /></td>
+                  <td><RowActions id={p.id} view={`/admin/pages/${p.id}/view`} edit={`/admin/pages/${p.id}`} remove={deletePage} confirm={`Supprimer la page « ${p.title} » ?`} /></td>
                 </tr>
               );
             })}

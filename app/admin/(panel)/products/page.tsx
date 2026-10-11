@@ -68,7 +68,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Pro
                       </div>
                     </td>
                     <td className="num"><strong>{min === max ? money(min, s.shop) : `${money(min, s.shop)} – ${money(max, s.shop)}`}</strong></td>
-                    <td><RowActions id={p.id} view={`/products/${p.slug}`} viewExternal edit={`/admin/products/${p.id}`} remove={deleteProduct} confirm={`Supprimer le produit « ${p.title} » ?`} /></td>
+                    <td><RowActions id={p.id} view={`/admin/products/${p.id}/view`} edit={`/admin/products/${p.id}`} remove={deleteProduct} confirm={`Supprimer le produit « ${p.title} » ?`} /></td>
                   </tr>
                 );
               })}
