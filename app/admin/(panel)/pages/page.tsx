@@ -3,6 +3,8 @@ import Icon from '@/components/Icon';
 import { db } from '@/lib/db';
 import { frDateTime } from '@/lib/format';
 import { PAGE_TEMPLATES } from '@/lib/defaults';
+import RowActions from '@/components/admin/RowActions';
+import { deletePage } from '../../actions';
 
 export const metadata = { title: 'Pages' };
 
@@ -16,7 +18,7 @@ export default async function PagesPage() {
       </div>
       <div className="card table-wrap">
         <table className="tbl">
-          <thead><tr><th>Titre</th><th>URL</th><th>Modèle</th><th>Statut</th><th>Modifiée</th><th /></tr></thead>
+          <thead><tr><th>Titre</th><th>URL</th><th>Modèle</th><th>Statut</th><th>Modifiée</th><th className="actions-col">Actions</th></tr></thead>
           <tbody>
             {pages.map((p) => {
               const url = `/${p.template === 'policy' ? 'policies' : 'pages'}/${p.slug}`;
@@ -27,7 +29,7 @@ export default async function PagesPage() {
                   <td>{PAGE_TEMPLATES[p.template] || p.template}</td>
                   <td>{p.isPublished ? <span className="pill green">Publiée</span> : <span className="pill gray">Brouillon</span>}</td>
                   <td className="muted">{frDateTime(p.updatedAt)}</td>
-                  <td className="num"><a className="btn btn-ghost btn-sm" href={url} target="_blank" rel="noreferrer"><Icon name="external" /></a></td>
+                  <td><RowActions id={p.id} view={url} viewExternal edit={`/admin/pages/${p.id}`} remove={deletePage} confirm={`Supprimer la page « ${p.title} » ?`} /></td>
                 </tr>
               );
             })}

@@ -4,6 +4,8 @@ import Icon from '@/components/Icon';
 import { db } from '@/lib/db';
 import { getSettings } from '@/lib/settings';
 import { frDate, money } from '@/lib/format';
+import RowActions from '@/components/admin/RowActions';
+import { deleteCustomer } from '../../actions';
 
 export const metadata = { title: 'Clients' };
 
@@ -42,7 +44,7 @@ export default async function CustomersPage({ searchParams }: { searchParams: Pr
         </form>
         <div className="table-wrap">
           <table className="tbl">
-            <thead><tr><th>Client</th><th>Téléphone</th><th>Ville</th><th>Compte</th><th>Commandes</th><th>Dernière commande</th><th className="num">Total dépensé</th></tr></thead>
+            <thead><tr><th>Client</th><th>Téléphone</th><th>Ville</th><th>Compte</th><th>Commandes</th><th>Dernière commande</th><th className="num">Total dépensé</th><th className="actions-col">Actions</th></tr></thead>
             <tbody>
               {rows.map((c) => (
                 <tr key={c.id}>
@@ -53,6 +55,7 @@ export default async function CustomersPage({ searchParams }: { searchParams: Pr
                   <td>{c.count}</td>
                   <td className="muted">{c.last ? frDate(c.last) : '—'}</td>
                   <td className="num"><strong>{money(c.spent, s.shop)}</strong></td>
+                  <td><RowActions id={c.id} view={`/admin/customers/${c.id}`} edit={`/admin/customers/${c.id}#coordonnees`} remove={deleteCustomer} confirm="Supprimer ce client ? Ses commandes seront conservées." /></td>
                 </tr>
               ))}
             </tbody>

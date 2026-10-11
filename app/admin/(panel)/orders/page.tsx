@@ -6,6 +6,8 @@ import { getSettings } from '@/lib/settings';
 import { frDateTime, money } from '@/lib/format';
 import { ORDER_STATUSES } from '@/lib/defaults';
 import { PaymentPill, StatusPill } from '@/components/admin/StatusPill';
+import RowActions from '@/components/admin/RowActions';
+import { deleteOrder } from '../../actions';
 
 export const metadata = { title: 'Commandes' };
 const PER = 25;
@@ -57,7 +59,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
         </div>
         <div className="table-wrap">
           <table className="tbl">
-            <thead><tr><th>N°</th><th>Date</th><th>Client</th><th>Ville</th><th>Articles</th><th>Paiement</th><th>Statut</th><th className="num">Total</th></tr></thead>
+            <thead><tr><th>N°</th><th>Date</th><th>Client</th><th>Ville</th><th>Articles</th><th>Paiement</th><th>Statut</th><th className="num">Total</th><th className="actions-col">Actions</th></tr></thead>
             <tbody>
               {orders.map((o) => (
                 <tr key={o.id}>
@@ -69,6 +71,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
                   <td><PaymentPill status={o.paymentStatus} /></td>
                   <td><StatusPill status={o.status} /></td>
                   <td className="num"><strong>{money(o.total, s.shop)}</strong></td>
+                  <td><RowActions id={o.id} view={`/admin/orders/${o.id}`} edit={`/admin/orders/${o.id}#traitement`} remove={deleteOrder} confirm={`Supprimer définitivement la commande #${o.number} ? (préférez le statut « Annulée » pour garder l’historique)`} /></td>
                 </tr>
               ))}
             </tbody>

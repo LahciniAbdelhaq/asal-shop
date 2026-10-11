@@ -2,7 +2,8 @@ import Link from 'next/link';
 import Icon from '@/components/Icon';
 import { db } from '@/lib/db';
 import { frDateTime } from '@/lib/format';
-import { deleteSubscriber } from '../../actions';
+import RowActions from '@/components/admin/RowActions';
+import { deleteMessage, deleteSubscriber } from '../../actions';
 
 export const metadata = { title: 'Messages' };
 
@@ -48,7 +49,7 @@ export default async function MessagesPage({ searchParams }: { searchParams: Pro
         ) : (
           <div className="table-wrap">
             <table className="tbl">
-              <thead><tr><th>De</th><th>Message</th><th>Reçu le</th></tr></thead>
+              <thead><tr><th>De</th><th>Message</th><th>Reçu le</th><th className="actions-col">Actions</th></tr></thead>
               <tbody>
                 {msgs.map((m) => (
                   <tr key={m.id} className={m.isRead ? '' : 'unread'}>
@@ -62,6 +63,7 @@ export default async function MessagesPage({ searchParams }: { searchParams: Pro
                       </Link>
                     </td>
                     <td className="muted" style={{ whiteSpace: 'nowrap' }}>{frDateTime(m.createdAt)}</td>
+                    <td><RowActions id={m.id} view={`/admin/messages/${m.id}`} remove={deleteMessage} confirm="Supprimer ce message ?" /></td>
                   </tr>
                 ))}
               </tbody>

@@ -11,7 +11,7 @@ export default function CustomerForm({ c }: { c: C }) {
   return (
     <form action={action}>
       {c && <input type="hidden" name="id" value={c.id} />}
-      <div className="card">
+      <div className="card" id="coordonnees">
         <div className="card-head"><h2>Coordonnées</h2></div>
         <div className="card-body">
           <div className="cols-2">

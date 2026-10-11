@@ -2,6 +2,8 @@ import Link from 'next/link';
 import Icon from '@/components/Icon';
 import { db } from '@/lib/db';
 import { frDate } from '@/lib/format';
+import RowActions from '@/components/admin/RowActions';
+import { deletePost } from '../../actions';
 
 export const metadata = { title: 'Blog' };
 
@@ -15,7 +17,7 @@ export default async function BlogAdmin() {
       </div>
       <div className="card table-wrap">
         <table className="tbl">
-          <thead><tr><th style={{ width: 60 }} /><th>Titre</th><th>Date</th><th>Statut</th><th /></tr></thead>
+          <thead><tr><th style={{ width: 60 }} /><th>Titre</th><th>Date</th><th>Statut</th><th className="actions-col">Actions</th></tr></thead>
           <tbody>
             {posts.map((p) => (
               <tr key={p.id}>
@@ -23,7 +25,7 @@ export default async function BlogAdmin() {
                 <td><Link className="row-link" href={`/admin/blog/${p.id}`}>{p.title}</Link><div className="muted" style={{ fontSize: 12, maxWidth: 520, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.excerpt}</div></td>
                 <td className="muted">{frDate(p.publishedAt)}</td>
                 <td>{p.isPublished ? <span className="pill green">Publié</span> : <span className="pill gray">Brouillon</span>}</td>
-                <td className="num"><a className="btn btn-ghost btn-sm" href={`/blogs/le-miel-un-art-de-vivre/${p.slug}`} target="_blank" rel="noreferrer"><Icon name="external" /></a></td>
+                <td><RowActions id={p.id} view={`/blogs/le-miel-un-art-de-vivre/${p.slug}`} viewExternal edit={`/admin/blog/${p.id}`} remove={deletePost} confirm={`Supprimer l’article « ${p.title} » ?`} /></td>
               </tr>
             ))}
           </tbody>

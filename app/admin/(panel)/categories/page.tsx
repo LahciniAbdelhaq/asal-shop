@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Icon from '@/components/Icon';
 import { db } from '@/lib/db';
+import RowActions from '@/components/admin/RowActions';
+import { deleteCategory } from '../../actions';
 
 export const metadata = { title: 'Catégories' };
 
@@ -14,7 +16,7 @@ export default async function CategoriesPage() {
       </div>
       <div className="card table-wrap">
         <table className="tbl">
-          <thead><tr><th style={{ width: 60 }} /><th>Catégorie</th><th>URL</th><th>Produits</th><th>Ordre</th><th>Statut</th><th /></tr></thead>
+          <thead><tr><th style={{ width: 60 }} /><th>Catégorie</th><th>URL</th><th>Produits</th><th>Ordre</th><th>Statut</th><th className="actions-col">Actions</th></tr></thead>
           <tbody>
             {cats.map((c) => (
               <tr key={c.id}>
@@ -24,7 +26,7 @@ export default async function CategoriesPage() {
                 <td>{c._count.products}</td>
                 <td>{c.sortOrder}</td>
                 <td>{c.isActive ? <span className="pill green">Visible</span> : <span className="pill gray">Masquée</span>}</td>
-                <td className="num"><a className="btn btn-ghost btn-sm" href={`/collections/${c.slug}`} target="_blank" rel="noreferrer"><Icon name="external" /></a></td>
+                <td><RowActions id={c.id} view={`/collections/${c.slug}`} viewExternal edit={`/admin/categories/${c.id}`} remove={deleteCategory} confirm={`Supprimer la catégorie « ${c.title} » ? Les produits ne seront pas supprimés.`} /></td>
               </tr>
             ))}
           </tbody>

@@ -3,6 +3,8 @@ import Icon from '@/components/Icon';
 import { db } from '@/lib/db';
 import { getSettings } from '@/lib/settings';
 import { frDate, money } from '@/lib/format';
+import RowActions from '@/components/admin/RowActions';
+import { deletePromo } from '../../actions';
 
 export const metadata = { title: 'Codes promo' };
 
@@ -28,7 +30,7 @@ export default async function PromosPage() {
       </div>
       <div className="card table-wrap">
         <table className="tbl">
-          <thead><tr><th>Code</th><th>Réduction</th><th>Conditions</th><th>Validité</th><th>Utilisations</th><th>Ventes générées</th><th>Statut</th></tr></thead>
+          <thead><tr><th>Code</th><th>Réduction</th><th>Conditions</th><th>Validité</th><th>Utilisations</th><th>Ventes générées</th><th>Statut</th><th className="actions-col">Actions</th></tr></thead>
           <tbody>
             {promos.map((p) => {
               const u = usage.find((x) => x.promoCode === p.code);
@@ -41,6 +43,7 @@ export default async function PromosPage() {
                   <td>{p.usedCount}{p.maxUses != null ? ` / ${p.maxUses}` : ''}</td>
                   <td>{u ? <>{money(u._sum.total || 0, s.shop)} <span className="muted">(−{money(u._sum.discount || 0, s.shop)})</span></> : <span className="muted">—</span>}</td>
                   <td>{state(p)}</td>
+                  <td><RowActions id={p.id} edit={`/admin/promos/${p.id}`} remove={deletePromo} confirm={`Supprimer le code ${p.code} ?`} /></td>
                 </tr>
               );
             })}

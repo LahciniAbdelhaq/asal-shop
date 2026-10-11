@@ -12,7 +12,7 @@ export default function OrderForm({ order }: { order: O }) {
   return (
     <form action={action}>
       <input type="hidden" name="id" value={order.id} />
-      <div className="card">
+      <div className="card" id="traitement">
         <div className="card-head"><h2>Traitement</h2></div>
         <div className="card-body">
           <div className="cols-2">

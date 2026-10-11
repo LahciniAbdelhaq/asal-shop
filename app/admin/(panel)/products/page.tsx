@@ -4,7 +4,8 @@ import Icon from '@/components/Icon';
 import { db } from '@/lib/db';
 import { getSettings } from '@/lib/settings';
 import { money } from '@/lib/format';
-import { quickStock } from '../../actions';
+import RowActions from '@/components/admin/RowActions';
+import { deleteProduct, quickStock } from '../../actions';
 
 export const metadata = { title: 'Produits' };
 
@@ -43,7 +44,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Pro
         </form>
         <div className="table-wrap">
           <table className="tbl">
-            <thead><tr><th style={{ width: 60 }} /><th>Produit</th><th>Statut</th><th>Catégories</th><th>Variantes &amp; stock</th><th className="num">Prix</th></tr></thead>
+            <thead><tr><th style={{ width: 60 }} /><th>Produit</th><th>Statut</th><th>Catégories</th><th>Variantes &amp; stock</th><th className="num">Prix</th><th className="actions-col">Actions</th></tr></thead>
             <tbody>
               {products.map((p) => {
                 const prices = p.variants.map((v) => v.price);
@@ -67,6 +68,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Pro
                       </div>
                     </td>
                     <td className="num"><strong>{min === max ? money(min, s.shop) : `${money(min, s.shop)} – ${money(max, s.shop)}`}</strong></td>
+                    <td><RowActions id={p.id} view={`/products/${p.slug}`} viewExternal edit={`/admin/products/${p.id}`} remove={deleteProduct} confirm={`Supprimer le produit « ${p.title} » ?`} /></td>
                   </tr>
                 );
               })}

@@ -264,3 +264,10 @@ table.tbl { width: 100%; border-collapse: collapse; }
   .card { box-shadow: none; border: 0; }
   body { background: #fff; }
 }
+
+/* boutons de gestion des lignes */
+.row-actions { display: flex; gap: 6px; justify-content: flex-end; align-items: center; flex-wrap: nowrap; }
+.row-actions form { margin: 0; }
+.row-actions .btn { white-space: nowrap; }
+.tbl th.actions-col { text-align: right; }
+@media (max-width: 1200px) { .row-actions .btn { font-size: 0; gap: 0; padding: 7px; } .row-actions .btn svg { width: 16px; height: 16px; } }
