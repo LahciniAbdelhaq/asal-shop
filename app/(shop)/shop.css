@@ -178,7 +178,7 @@ button { cursor: pointer; }
 .asal-footnoir__inner { max-width: 1280px; margin: 0 auto; padding: 60px 20px 0; }
 .asal-footnoir__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; align-items: start; }
 .asal-footnoir__logo { font-family: var(--font-serif); font-size: 30px; letter-spacing: .04em; color: var(--c-cream); margin: 0 0 14px; }
-.asal-footnoir__logo img { max-width: 120px; display: block; }
+.asal-footnoir__logo img { width: 190px; max-width: 100%; height: auto; display: block; }
 .asal-footnoir__blurb { color: var(--c-cream); opacity: .65; font-size: 14px; line-height: 1.75; margin: 0; max-width: 320px; }
 .asal-footnoir__title { font-size: 12px; text-transform: uppercase; letter-spacing: .14em; color: var(--c-primary); margin: 0 0 18px; font-weight: 700; }
 .asal-footnoir__links { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }

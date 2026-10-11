@@ -12,7 +12,7 @@ export default async function PanelLayout({ children }: { children: React.ReactN
     db.review.count({ where: { approved: false } }),
   ]);
   return (
-    <Shell brand={{ name: s.brand.name, logo: s.brand.logo }} admin={{ name: admin.name, email: admin.email }} badges={{ messages: unread, orders: pending, reviews }}>
+    <Shell brand={{ name: s.brand.name, logo: s.brand.logoDark || s.brand.logo }} admin={{ name: admin.name, email: admin.email }} badges={{ messages: unread, orders: pending, reviews }}>
       {children}
     </Shell>
   );

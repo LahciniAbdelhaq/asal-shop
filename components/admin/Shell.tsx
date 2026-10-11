@@ -34,8 +34,11 @@ export default function Shell({ brand, admin, badges, children }: { brand: { nam
     <div className="adm">
       <aside className={`adm-side${open ? ' open' : ''}`}>
         <Link href="/admin" className="adm-brand">
-          {brand.logo && <img src={brand.logo} alt="" />}
-          <span>{brand.name}<small>Back-office</small></span>
+          {brand.logo ? (
+            <span style={{ display: 'grid', gap: 4 }}><img src={brand.logo} alt={brand.name} /><small>Back-office</small></span>
+          ) : (
+            <span>{brand.name}<small>Back-office</small></span>
+          )}
         </Link>
         <nav className="adm-nav">
           {NAV.map((n) => (

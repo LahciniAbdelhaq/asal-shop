@@ -34,7 +34,7 @@ img { max-width: 100%; }
 .adm { display: grid; grid-template-columns: 248px 1fr; min-height: 100vh; }
 .adm-side { background: var(--a-side); color: var(--a-side-text); position: sticky; top: 0; height: 100vh; overflow-y: auto; display: flex; flex-direction: column; padding: 18px 12px; }
 .adm-brand { display: flex; align-items: center; gap: 10px; padding: 6px 10px 18px; text-decoration: none; color: #fff; }
-.adm-brand img { height: 30px; width: auto; filter: brightness(1.1); }
+.adm-brand img { height: 34px; width: auto; max-width: 150px; }
 .adm-brand span { font-weight: 700; font-size: 15px; letter-spacing: .02em; }
 .adm-brand small { display: block; font-size: 11px; color: var(--a-side-text); font-weight: 400; }
 .adm-nav { display: grid; gap: 2px; }

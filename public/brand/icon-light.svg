@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="abeille__bio"><title>abeille__bio</title><polygon points="60,10 103.3,35 103.3,85 60,110 16.7,85 16.7,35" fill="#1A1207" stroke="#1A1207" stroke-width="10" stroke-linejoin="round"/>
+  <g transform="translate(60 62) scale(1.1) rotate(-22) translate(-60 -62)">
+    <g fill="#FBF7EF" opacity=".96" >
+      <ellipse cx="44.5" cy="47" rx="10.5" ry="17" transform="rotate(-32 44.5 47)"/>
+      <ellipse cx="75.5" cy="47" rx="10.5" ry="17" transform="rotate(32 75.5 47)"/>
+    </g>
+    <path d="M56.2 36.5q-3.6-7.2-9.6-8.4M63.8 36.5q3.6-7.2 9.6-8.4" fill="none" stroke="#C8861A" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="60" cy="43" r="8" fill="#C8861A" />
+    
+    <path d="M57.4 88L60 95.5L62.6 88z" fill="#C8861A" />
+    <path d="M44.94 58A16.5 22 0 0 1 75.06 58Z M43.63 64.2L76.37 64.2A16.5 22 0 0 1 76.29 70.5L43.71 70.5A16.5 22 0 0 1 43.63 64.2Z M74.81 76.7A16.5 22 0 0 1 45.19 76.7Z" fill="#C8861A"/><path d="M44.94 58L75.06 58A16.5 22 0 0 1 76.37 64.2L43.63 64.2A16.5 22 0 0 1 44.94 58Z M43.71 70.5L76.29 70.5A16.5 22 0 0 1 74.81 76.7L45.19 76.7A16.5 22 0 0 1 43.71 70.5Z" fill="#1A1207"/>
+  </g>
+</svg>

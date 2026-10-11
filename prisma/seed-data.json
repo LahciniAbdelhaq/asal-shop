@@ -1121,13 +1121,14 @@
   "brand": {
    "name": "ASAL",
    "tagline": "L'or naturel du Maroc",
-   "logo": "/media/8a0f20c6_logo_asal_maroc.png",
-   "logoWidth": 54,
-   "logoWidthMobile": 42,
-   "favicon": "/media/8a0f20c6_logo_asal_maroc.png",
+   "logo": "/brand/logo-horizontal-light.svg",
+   "logoWidth": 150,
+   "logoWidthMobile": 118,
+   "favicon": "/brand/favicon.svg",
    "footerLogoText": "Asal",
    "footerBlurb": "Des miels rares du Maroc, sélectionnés à la source et livrés avec soin partout au Maroc.",
-   "copyright": "© 2026 ASAL Maroc"
+   "copyright": "© 2026 ASAL Maroc",
+   "logoDark": "/brand/logo-horizontal-dark.svg"
   },
   "menus": {
    "header": [

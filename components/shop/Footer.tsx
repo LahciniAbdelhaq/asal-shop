@@ -17,7 +17,9 @@ export default function Footer({ s }: { s: Settings }) {
         <div className="asal-footnoir__inner">
           <div className="asal-footnoir__grid">
             <div>
-              <p className="asal-footnoir__logo">{s.brand.footerLogoText}</p>
+              <p className="asal-footnoir__logo">
+                {s.brand.logoDark ? <img src={s.brand.logoDark} alt={s.brand.name} /> : s.brand.footerLogoText}
+              </p>
               <p className="asal-footnoir__blurb">{s.brand.footerBlurb}</p>
             </div>
             <div>

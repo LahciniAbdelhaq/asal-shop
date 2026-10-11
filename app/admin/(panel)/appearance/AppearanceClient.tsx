@@ -58,7 +58,8 @@ export default function AppearanceClient({ tab, s, links }: { tab: string; s: Se
       <SettingsCard k="brand" title="Identité de la marque" initial={s.brand} links={links} fields={[
         { key: 'name', label: 'Nom de la boutique', type: 'text' },
         { key: 'tagline', label: 'Slogan', type: 'text' },
-        { key: 'logo', label: 'Logo (en-tête)', type: 'image', help: 'PNG ou SVG à fond transparent recommandé.' },
+        { key: 'logo', label: 'Logo (en-tête, fond clair)', type: 'image', help: 'PNG ou SVG à fond transparent recommandé.' },
+        { key: 'logoDark', label: 'Logo sur fond sombre (pied de page, back-office)', type: 'image', help: 'Laisser vide pour afficher le nom en texte dans le pied de page.' },
         { key: 'logoWidth', label: 'Largeur du logo — ordinateur (px)', type: 'number', min: 20, max: 300 },
         { key: 'logoWidthMobile', label: 'Largeur du logo — mobile (px)', type: 'number', min: 20, max: 200 },
         { key: 'favicon', label: 'Icône d’onglet (favicon)', type: 'image' },
