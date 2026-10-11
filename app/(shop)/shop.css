@@ -665,3 +665,25 @@ a.asal-ma-blog-card:hover { transform: translateY(-4px); }
 @keyframes honeyPulse { 0%, 100% { transform: translateY(0) scale(.85); opacity: .45; } 50% { transform: translateY(-8px) scale(1); opacity: 1; } }
 @keyframes shopFade { from { opacity: 0; } to { opacity: 1; } }
 .add-to-cart.is-loading, .btn.is-loading, .asal-composer-cta.is-loading { color: transparent !important; }
+
+/* barre filtres / tri sur mobile : une ligne compacte, menus ancrés aux bords de l'écran */
+@media (max-width: 749px) {
+  .facets { position: relative; display: grid; grid-template-columns: 1fr auto auto; grid-template-areas: "left sort view" "count count count"; align-items: center; column-gap: 10px; row-gap: 2px; padding: 14px 0 12px; }
+  .facets__left { grid-area: left; gap: 14px; flex-wrap: nowrap; min-width: 0; }
+  .facets__right { display: contents; }
+  .facets__right > .facet { grid-area: sort; }
+  .facets__right > .grid-toggle { grid-area: view; }
+  .facets__right > .facet-count { grid-area: count; font-size: 13px; color: var(--c-muted); }
+  .facet { position: static; }
+  .facet > summary { padding: 10px 0; white-space: nowrap; }
+  .facet__panel { top: calc(100% + 2px); width: min(290px, 100%); min-width: 0; z-index: 30; }
+  .facets__left .facet__panel { left: 0; right: auto; }
+  .facets__right .facet__panel { right: 0; left: auto; }
+  .facet__panel input[type=number] { min-width: 0; }
+  .grid-toggle a { width: 30px; height: 30px; }
+}
+@media (max-width: 370px) {
+  .facets__left { gap: 10px; }
+  .facet > summary { font-size: 13.5px; }
+  .grid-toggle { gap: 0; }
+}
