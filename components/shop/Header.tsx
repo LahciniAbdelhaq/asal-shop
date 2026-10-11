@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import Icon from '@/components/Icon';
 import type { MenuItem } from '@/lib/defaults';
 import { useCart } from './CartProvider';
+import { small } from '@/lib/img';
 
 type Props = {
   menu: MenuItem[];
@@ -53,7 +54,7 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
           {!loading && q.length >= 2 && !hits.length && <p style={{ padding: 8, color: 'var(--c-muted)' }}>Aucun résultat pour « {q} »</p>}
           {hits.map((h) => (
             <Link key={h.slug} href={`/products/${h.slug}`} className="search-result" onClick={onClose}>
-              <img src={h.image} alt="" />
+              <img src={small(h.image)} alt="" />
               <span>{h.title}</span>
               <em>{h.price}</em>
             </Link>

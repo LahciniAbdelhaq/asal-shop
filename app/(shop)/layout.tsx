@@ -7,7 +7,9 @@ import Header from '@/components/shop/Header';
 import Footer from '@/components/shop/Footer';
 import NavProgress from '@/components/NavProgress';
 
-export const dynamic = 'force-dynamic';
+// Pages mises en cache sur le CDN de Vercel, régénérées toutes les 5 min au plus tard
+// et immédiatement après chaque modification dans le back-office (revalidatePath).
+export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
   const s = await getSettings();
@@ -28,7 +30,9 @@ export default async function ShopLayout({ children }: { children: React.ReactNo
   return (
     <html lang="fr">
       <head>
-        {fonts && <link rel="stylesheet" href={fonts} />}
+        <link rel="preload" href="/fonts/inter-n4.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/fonts/inter-n7.woff2" as="font" type="font/woff2" crossOrigin="" />
+        {fonts && <><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" /><link rel="stylesheet" href={fonts} /></>}
         <style dangerouslySetInnerHTML={{ __html: themeCss(s) }} />
       </head>
       <body>

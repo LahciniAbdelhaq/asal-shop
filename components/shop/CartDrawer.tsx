@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import Icon from '@/components/Icon';
 import { useCart } from './CartProvider';
+import { small } from '@/lib/img';
 
 export function FreeShipping({ subtotal }: { subtotal: number }) {
   const { shop, fmt } = useCart();
@@ -28,7 +29,7 @@ export function CartLines({ compact = false }: { compact?: boolean }) {
     <div>
       {lines.map((l) => (
         <div className="cart-line" key={l.key}>
-          {l.image ? <img src={l.image} alt="" /> : <div style={{ width: 76, height: 76, background: '#F6EFE2', borderRadius: 10 }} />}
+          {l.image ? <img src={small(l.image)} alt="" loading="lazy" decoding="async" /> : <div style={{ width: 76, height: 76, background: '#F6EFE2', borderRadius: 10 }} />}
           <div>
             <Link className="cart-line__title" href={l.slug ? `/products/${l.slug}` : '/pages/composez-votre-coffret'}>{l.title}</Link>
             {l.variantTitle && <div className="cart-line__meta">{l.variantTitle}</div>}

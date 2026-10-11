@@ -1,4 +1,5 @@
 import { cache } from 'react';
+import { unstable_cache } from 'next/cache';
 import { db } from './db';
 import { DEFAULT_SETTINGS, LOCAL_FONTS, type Settings, type SettingKey } from './defaults';
 
@@ -13,8 +14,10 @@ function merge<T>(base: T, over: unknown): T {
   return out as T;
 }
 
+const loadRows = unstable_cache(() => db.setting.findMany(), ['settings'], { tags: ['shop'], revalidate: 300 });
+
 export const getSettings = cache(async (): Promise<Settings> => {
-  const rows = await db.setting.findMany();
+  const rows = await loadRows();
   let s: Settings = structuredClone(DEFAULT_SETTINGS);
   for (const r of rows) {
     if (!(r.key in s)) continue;

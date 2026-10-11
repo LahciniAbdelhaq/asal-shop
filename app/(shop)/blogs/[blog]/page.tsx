@@ -4,6 +4,10 @@ import { BlogCard } from '@/components/shop/Sections';
 
 export const metadata: Metadata = { title: 'Le miel, un art de vivre', description: 'Nos conseils, recettes et découvertes autour du miel' };
 
+export function generateStaticParams() {
+  return [{ blog: 'le-miel-un-art-de-vivre' }];
+}
+
 export default async function BlogPage() {
   const posts = await db.post.findMany({ where: { isPublished: true }, orderBy: [{ publishedAt: 'desc' }, { id: 'asc' }] });
   return (

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { useCart } from './CartProvider';
+import { small } from '@/lib/img';
 
 export type ComposerItem = { productId: number; slug: string; title: string; image: string; variants: Record<string, { id: number; price: number; available: boolean }> };
 
@@ -48,7 +49,7 @@ export default function Composer({ items, formats, sizes, boxPrice, labels }: {
       slug: '',
       title: `Coffret sur mesure — ${size} pots`,
       variantTitle: `${format}${message ? ` · Message : « ${message.slice(0, 80)} »` : ''}`,
-      image: chosen[0]?.image || '',
+      image: small(chosen[0]?.image || ''),
       price,
       bundle: { format, items: chosen.map((i) => ({ variantId: i.variants[format].id, title: i.title, qty: picks[i.productId] })) },
     });
@@ -94,7 +95,7 @@ export default function Composer({ items, formats, sizes, boxPrice, labels }: {
               const q = picks[it.productId] || 0;
               return (
                 <div className={`asal-composer-card${q ? ' picked' : ''}`} key={it.productId} style={v.available ? undefined : { opacity: .5 }}>
-                  {it.image && <img src={it.image} alt={it.title} loading="lazy" />}
+                  {it.image && <img src={small(it.image)} alt={it.title} loading="lazy" decoding="async" />}
                   <h4>{it.title}</h4>
                   <div className="asal-composer-price">{v.available ? `${fmt(v.price)} · ${format}` : 'Épuisé'}</div>
                   <div className="asal-composer-stepper">

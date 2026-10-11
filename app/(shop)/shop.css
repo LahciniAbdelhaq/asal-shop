@@ -213,7 +213,9 @@ button { cursor: pointer; }
   .asal-row::-webkit-scrollbar { display: none; }
   .asal-row > a, .asal-row.cols-4 > a, .asal-row.cols-3 > a, .asal-row.cols-5 > a { flex: 0 0 70%; scroll-snap-align: start; }
 }
-.pcard__img { position: relative; aspect-ratio: 1/1; background: #F6EFE2 center/cover no-repeat; }
+.pcard__img { position: relative; aspect-ratio: 1/1; background: #F6EFE2; overflow: hidden; }
+.pcard__img > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pcard__badge { z-index: 1; }
 .pcard__badge { position: absolute; top: 12px; left: 12px; background: var(--c-primary); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .06em; padding: 6px 12px; border-radius: 999px; }
 .pcard__body { padding: 14px 16px 18px; }
 .pcard__title { font-weight: 600; font-size: 15px; line-height: 1.35; }

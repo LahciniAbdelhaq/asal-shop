@@ -4,7 +4,7 @@
    "slug": "coffrets-cadeaux",
    "title": "Coffrets Cadeaux",
    "description": "",
-   "image": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.png",
+   "image": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.webp",
    "sortOrder": 0
   },
   {
@@ -32,14 +32,14 @@
    "slug": "les-rares",
    "title": "Les Pépites",
    "description": "Les trésors de la ruche : Manuka 840 MGO, Daghmous, Thym et Jujubier. Des miels d'exception, récoltés en quantités limitées.",
-   "image": "/media/86028358_4BCE11BF-F602-4B65-9BF7-D3395DA9183A.png",
+   "image": "/media/86028358_4BCE11BF-F602-4B65-9BF7-D3395DA9183A.webp",
    "sortOrder": 4
   },
   {
    "slug": "nos-miels",
    "title": "Nos Miels",
    "description": "",
-   "image": "/media/6217d566_Untitleddesign.png",
+   "image": "/media/6217d566_Untitleddesign.webp",
    "sortOrder": 5
   },
   {
@@ -66,17 +66,17 @@
    ],
    "images": [
     {
-     "url": "/media/1dfbfd9f_54869762-4051-4891-9ba4-f707332e9519.jpg",
+     "url": "/media/1dfbfd9f_54869762-4051-4891-9ba4-f707332e9519.webp",
      "alt": "Coffret gourmand – 4 pots de 500 g",
      "position": 0
     },
     {
-     "url": "/media/58a7ba8c_D44A904C-2719-40D0-9925-5839FB9FE0FD.png",
+     "url": "/media/58a7ba8c_D44A904C-2719-40D0-9925-5839FB9FE0FD.webp",
      "alt": "Coffret gourmand – 4 pots de 500 g",
      "position": 1
     },
     {
-     "url": "/media/66c79b1e_IMG_6576.jpg",
+     "url": "/media/66c79b1e_IMG_6576.webp",
      "alt": "Coffret gourmand – 4 pots de 500 g",
      "position": 2
     }
@@ -109,7 +109,7 @@
    ],
    "images": [
     {
-     "url": "/media/08e3d049_5B0794B1-10A6-4FC7-A66A-C46D03C20253.png",
+     "url": "/media/08e3d049_5B0794B1-10A6-4FC7-A66A-C46D03C20253.webp",
      "alt": "Miel de Caroubier",
      "position": 0
     }
@@ -161,7 +161,7 @@
    ],
    "images": [
     {
-     "url": "/media/c73a8ea0_CB1E3609-C162-4DD5-8D05-D94CAFEFDE4E.png",
+     "url": "/media/c73a8ea0_CB1E3609-C162-4DD5-8D05-D94CAFEFDE4E.webp",
      "alt": "Miel d'Eucalyptus",
      "position": 0
     }
@@ -213,7 +213,7 @@
    ],
    "images": [
     {
-     "url": "/media/d4999243_808190F3-0CA8-49DD-97D9-0864934FAFF8.png",
+     "url": "/media/d4999243_808190F3-0CA8-49DD-97D9-0864934FAFF8.webp",
      "alt": "Miel de Thym",
      "position": 0
     }
@@ -264,7 +264,7 @@
    ],
    "images": [
     {
-     "url": "/media/6217d566_Untitleddesign.png",
+     "url": "/media/6217d566_Untitleddesign.webp",
      "alt": "Miel d'Oranger",
      "position": 0
     }
@@ -315,7 +315,7 @@
    ],
    "images": [
     {
-     "url": "/media/f1d13850_BFEEE2FD-0893-4D36-89E8-6F5D95B4408E.png",
+     "url": "/media/f1d13850_BFEEE2FD-0893-4D36-89E8-6F5D95B4408E.webp",
      "alt": "Miel des Herbes des Montagnes",
      "position": 0
     }
@@ -367,7 +367,7 @@
    ],
    "images": [
     {
-     "url": "/media/0ed3e901_0DD4EDA3-094B-4A5A-B04B-A0E3267BF7FC.png",
+     "url": "/media/0ed3e901_0DD4EDA3-094B-4A5A-B04B-A0E3267BF7FC.webp",
      "alt": "Miel de Jujubier",
      "position": 0
     }
@@ -418,7 +418,7 @@
    ],
    "images": [
     {
-     "url": "/media/624d36f0_AD8C590F-A5FA-49F4-9481-50BEB13151B8.png",
+     "url": "/media/624d36f0_AD8C590F-A5FA-49F4-9481-50BEB13151B8.webp",
      "alt": "Miel Multifleurs",
      "position": 0
     }
@@ -469,7 +469,7 @@
    ],
    "images": [
     {
-     "url": "/media/1638ffd3_60954408-3FA9-4A8B-8D8B-4E2F5AE03620_5aa.png",
+     "url": "/media/1638ffd3_60954408-3FA9-4A8B-8D8B-4E2F5AE03620_5aa.webp",
      "alt": "Miel de Zakoum",
      "position": 0
     }
@@ -521,7 +521,7 @@
    ],
    "images": [
     {
-     "url": "/media/86028358_4BCE11BF-F602-4B65-9BF7-D3395DA9183A.png",
+     "url": "/media/86028358_4BCE11BF-F602-4B65-9BF7-D3395DA9183A.webp",
      "alt": "Miel de Daghmous",
      "position": 0
     }
@@ -571,42 +571,42 @@
    ],
    "images": [
     {
-     "url": "/media/b80bab6b_ChatGPT_Image_Aug_15_2026_02_48_05_PM.png",
+     "url": "/media/b80bab6b_ChatGPT_Image_Aug_15_2026_02_48_05_PM.webp",
      "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
      "position": 0
     },
     {
-     "url": "/media/07e293b2_4F3B71C4-931D-48E3-8CC6-55A676739FF9_5cd.png",
+     "url": "/media/07e293b2_4F3B71C4-931D-48E3-8CC6-55A676739FF9_5cd.webp",
      "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
      "position": 1
     },
     {
-     "url": "/media/287d8701_ChatGPT_Image_Aug_15_2026_02_47_04_PM_83.png",
+     "url": "/media/287d8701_ChatGPT_Image_Aug_15_2026_02_47_04_PM_83.webp",
      "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
      "position": 2
     },
     {
-     "url": "/media/a34a8f2d_ChatGPT_Image_Aug_8_2026_06_41_40_PM.png",
+     "url": "/media/a34a8f2d_ChatGPT_Image_Aug_8_2026_06_41_40_PM.webp",
      "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
      "position": 3
     },
     {
-     "url": "/media/65ad6057_ChatGPT_Image_Aug_8_2026_07_23_12_PM_708.png",
+     "url": "/media/65ad6057_ChatGPT_Image_Aug_8_2026_07_23_12_PM_708.webp",
      "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
      "position": 4
     },
     {
-     "url": "/media/c08f3682_coffret-noir-noir-satin_541b6ea4-1d01-4a.jpg",
+     "url": "/media/c08f3682_coffret-noir-noir-satin_541b6ea4-1d01-4a.webp",
      "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
      "position": 5
     },
     {
-     "url": "/media/403fbeea_coffret-noir-dore-satin_58a34d6b-e907-48.jpg",
+     "url": "/media/403fbeea_coffret-noir-dore-satin_58a34d6b-e907-48.webp",
      "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
      "position": 6
     },
     {
-     "url": "/media/1b00d6d6_coffret-noir-ferme-ruban_dc9da767-132e-4.jpg",
+     "url": "/media/1b00d6d6_coffret-noir-ferme-ruban_dc9da767-132e-4.webp",
      "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
      "position": 7
     }
@@ -618,7 +618,7 @@
      "price": 599,
      "compareAtPrice": null,
      "stock": 25,
-     "image": "/media/b80bab6b_ChatGPT_Image_Aug_15_2026_02_48_05_PM.png",
+     "image": "/media/b80bab6b_ChatGPT_Image_Aug_15_2026_02_48_05_PM.webp",
      "position": 0
     },
     {
@@ -627,7 +627,7 @@
      "price": 599,
      "compareAtPrice": null,
      "stock": 25,
-     "image": "/media/287d8701_ChatGPT_Image_Aug_15_2026_02_47_04_PM_83.png",
+     "image": "/media/287d8701_ChatGPT_Image_Aug_15_2026_02_47_04_PM_83.webp",
      "position": 1
     }
    ]
@@ -648,7 +648,7 @@
    ],
    "images": [
     {
-     "url": "/media/7e0ad3e7_ChatGPTImageAug9_2026_04_42_54PM.png",
+     "url": "/media/7e0ad3e7_ChatGPTImageAug9_2026_04_42_54PM.webp",
      "alt": "Miel d'Anis",
      "position": 0
     }
@@ -699,32 +699,32 @@
    ],
    "images": [
     {
-     "url": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.png",
+     "url": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.webp",
      "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
      "position": 0
     },
     {
-     "url": "/media/1747b337_4F3B71C4-931D-48E3-8CC6-55A676739FF9.png",
+     "url": "/media/1747b337_4F3B71C4-931D-48E3-8CC6-55A676739FF9.webp",
      "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
      "position": 1
     },
     {
-     "url": "/media/f7ca95ad_ChatGPT_Image_Aug_15_2026_03_30_14_PM.png",
+     "url": "/media/f7ca95ad_ChatGPT_Image_Aug_15_2026_03_30_14_PM.webp",
      "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
      "position": 2
     },
     {
-     "url": "/media/ed18bb2f_ChatGPT_Image_Aug_8_2026_07_23_12_PM.png",
+     "url": "/media/ed18bb2f_ChatGPT_Image_Aug_8_2026_07_23_12_PM.webp",
      "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
      "position": 3
     },
     {
-     "url": "/media/dc0aaa2c_coffret-beige-blanc-satin_e1c282fe-8c36-.jpg",
+     "url": "/media/dc0aaa2c_coffret-beige-blanc-satin_e1c282fe-8c36-.webp",
      "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
      "position": 4
     },
     {
-     "url": "/media/5214992b_coffret-beige-bleu-satin_68a2c8d5-acd3-4.jpg",
+     "url": "/media/5214992b_coffret-beige-bleu-satin_68a2c8d5-acd3-4.webp",
      "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
      "position": 5
     }
@@ -736,7 +736,7 @@
      "price": 549,
      "compareAtPrice": null,
      "stock": 25,
-     "image": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.png",
+     "image": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.webp",
      "position": 0
     },
     {
@@ -745,7 +745,7 @@
      "price": 549,
      "compareAtPrice": null,
      "stock": 25,
-     "image": "/media/f7ca95ad_ChatGPT_Image_Aug_15_2026_03_30_14_PM.png",
+     "image": "/media/f7ca95ad_ChatGPT_Image_Aug_15_2026_03_30_14_PM.webp",
      "position": 1
     }
    ]
@@ -757,7 +757,7 @@
    "title": "4 Façons de Manger votre miel au Quotidien",
    "excerpt": "Découvrez comment intégrer le miel dans votre routine quotidienne pour profiter de tous ses bienfaits, du petit-déjeuner au coucher.",
    "content": "<p>Le miel n'est pas réservé aux maux de gorge de l'hiver. Voici quatre façons simples de l'intégrer à votre quotidien, du matin au soir.</p>\n<h2>1. Au petit-déjeuner</h2>\n<p>Sur une tartine de pain complet, dans un yaourt nature ou sur un granola maison : une cuillère de miel au petit-déjeuner apporte une énergie douce pour bien démarrer la journée. Le miel d'oranger ou de thym se marie particulièrement bien avec les produits laitiers.</p>\n<h2>2. Dans vos boissons</h2>\n<p>Thé tiède au miel et au citron, lait chaud au miel le soir : des classiques qui n'ont pas pris une ride. Règle d'or : attendez que la boisson soit tiède (sous 40 degrés) avant d'ajouter le miel, pour préserver tout ce qu'il a de bon.</p>\n<h2>3. En cuisine, côté salé</h2>\n<p>Le miel sublime les plats sucrés-salés : vinaigrette au miel, marinade pour poulet, ou le fameux tajine marocain aux pruneaux et aux amandes. Quelques gouttes de miel d'euphorbe relèvent aussi un fromage de chèvre.</p>\n<h2>4. Au goûter et avant l'effort</h2>\n<p>Composé de sucres simples naturels, le miel est une source d'énergie rapidement disponible. Une cuillère avant une séance de sport ou au goûter des enfants : simple et efficace.</p>\n<p>Comme tout sucre, le miel se consomme avec modération : une à deux cuillères à soupe par jour suffisent à en profiter.</p>",
-   "image": "/media/8890f3db_ma-blog-facons.png",
+   "image": "/media/8890f3db_ma-blog-facons.webp",
    "publishedAt": "2026-09-24T10:00:00.000Z"
   },
   {
@@ -765,7 +765,7 @@
    "title": "Le Miel de Manuka : un trésor de médecine naturelle",
    "excerpt": "Le miel de Manuka est reconnu dans le monde entier pour ses propriétés uniques et ses vertus thérapeutiques exceptionnelles.",
    "content": "<h2>Un miel pas comme les autres</h2>\n<p>Le miel de Manuka vient de Nouvelle-Zélande, où les abeilles butinent les fleurs du manuka, un arbuste de la famille du tea-tree (Leptospermum scoparium). Ce qui le rend célèbre dans le monde entier, c'est sa concentration exceptionnelle en méthylglyoxal (MGO), un composé naturellement présent à des niveaux bien supérieurs à ceux des autres miels.</p>\n<h2>Les indices UMF et MGO : s'y retrouver</h2>\n<p>Pour garantir son authenticité, le Manuka est classé selon deux échelles : l'UMF (Unique Manuka Factor) et le MGO. Plus l'indice est élevé, plus la teneur en méthylglyoxal est importante. Un MGO 100+ convient à un usage quotidien, tandis que les indices 400+ et au-delà sont recherchés pour des usages plus ciblés.</p>\n<h2>Comment l'utiliser au quotidien</h2>\n<p>La tradition veut qu'on le consomme à la petite cuillère, le matin à jeun ou en cas de gorge irritée. Évitez de le mélanger à un liquide brûlant : comme tous les miels bruts, il perd une partie de ses qualités au-delà de 40 degrés. Préférez une boisson tiède.</p>\n<h2>Et les miels marocains dans tout ça ?</h2>\n<p>Chez ASAL, nous défendons la même exigence : des miels bruts, non chauffés, récoltés à froid. Nos miels de thym, d'euphorbe ou de caroubier sont eux aussi des trésors de la ruche, chacun avec son caractère et ses usages traditionnels. Le Manuka a sa réputation mondiale ; nos miels du Maroc ont leur authenticité.</p>",
-   "image": "/media/ef2a1039_ma-blog-manuka.png",
+   "image": "/media/ef2a1039_ma-blog-manuka.webp",
    "publishedAt": "2026-09-24T10:00:00.000Z"
   },
   {
@@ -773,7 +773,7 @@
    "title": "Les bienfaits du Miel : Entre la science et les traditions",
    "excerpt": "Depuis des millénaires, le miel est utilisé comme remède naturel. Que dit la science moderne de ces traditions anciennes ?",
    "content": "<h2>Un remède vieux de 4000 ans</h2>\n<p>On retrouve la trace du miel dans les papyrus de l'Égypte ancienne, où il servait déjà à soigner les plaies. Hippocrate le prescrivait, et les traditions du monde entier, du Maroc à l'Asie, lui prêtent des vertus protectrices. Mais que dit la science moderne ?</p>\n<h2>Ce que la recherche confirme</h2>\n<p>Les études menées ces dernières décennies ont mis en évidence plusieurs propriétés : le miel est riche en antioxydants (polyphénols), il apaise la gorge irritée et plusieurs essais cliniques montrent son efficacité contre la toux nocturne, comparable à certains sirops. En usage externe, le miel de qualité médicale est même utilisé en milieu hospitalier pour favoriser la cicatrisation.</p>\n<h2>Les traditions marocaines</h2>\n<p>Au Maroc, le miel fait partie de la pharmacopée familiale : lait chaud au miel contre les refroidissements, miel de thym pour la gorge, ou simplement une cuillère de miel le matin pendant l'hiver. Des gestes simples transmis de génération en génération.</p>\n<h2>Le mot de la fin : qualité et modération</h2>\n<p>Tous ces bienfaits supposent un miel brut, non chauffé et non transformé : c'est exactement ce que nous récoltons chez ASAL. Et rappelons l'évidence : le miel reste un sucre naturel. Une à deux cuillères par jour, dans le cadre d'une alimentation équilibrée, c'est la bonne mesure pour en profiter durablement.</p>",
-   "image": "/media/ebedb575_ma-blog-bienfaits.png",
+   "image": "/media/ebedb575_ma-blog-bienfaits.webp",
    "publishedAt": "2026-09-24T10:00:00.000Z"
   }
  ],
@@ -836,7 +836,7 @@
     "heading": "Des miels d'exception,<br>directement du Maroc.",
     "text": "Euphorbe, Daghmous, Thym, Oranger. Des récoltes rares, 100 % naturelles, sélectionnées avec exigence et livrées chez vous.",
     "video": "/media/32722593_8437bad76a6b4fbb9706d72ce3a686ed.SD-480p.mp4",
-    "poster": "/media/d4999243_808190F3-0CA8-49DD-97D9-0864934FAFF8.png",
+    "poster": "/media/d4999243_808190F3-0CA8-49DD-97D9-0864934FAFF8.webp",
     "btn1Label": "Découvrir nos miels",
     "btn1Link": "/collections/nos-miels",
     "btn2Label": "Voir les coffrets",
@@ -943,7 +943,7 @@
       "link": "/collections/energie-vitalite"
      },
      {
-      "image": "/media/49be57fa_besoin-decouverte-original.jpg",
+      "image": "/media/49be57fa_besoin-decouverte-original.webp",
       "title": "Découverte",
       "text": "Explorez nos terroirs du Maroc.",
       "linkLabel": "Découvrir →",
@@ -973,7 +973,7 @@
       "label": "Présentation soignée"
      }
     ],
-    "image": "/media/b77c088f_asal-carte-message.jpg",
+    "image": "/media/b77c088f_asal-carte-message.webp",
     "imageAlt": "Carte message ASAL scellée à la cire",
     "seal": "Votre<br>message"
    }
@@ -988,7 +988,7 @@
     "cards": [
      {
       "product": "coffret-cosy-6-miels-dexception-pots-de-250-g",
-      "image": "/media/b80bab6b_ChatGPT_Image_Aug_15_2026_02_48_05_PM.png",
+      "image": "/media/b80bab6b_ChatGPT_Image_Aug_15_2026_02_48_05_PM.webp",
       "badge": "Le plus généreux",
       "title": "Coffret Cosy, 6 Miels d'Exception",
       "tagline": "Idéal pour les fêtes et les grandes occasions.",
@@ -1001,7 +1001,7 @@
      },
      {
       "product": "coffret-decouverte-9-miels-dexception-pots-de-100-g",
-      "image": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.png",
+      "image": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.webp",
       "badge": "9 miels à explorer",
       "title": "Coffret Découverte, 9 Miels d'Exception",
       "tagline": "Pour explorer et trouver vos miels préférés.",
@@ -1060,7 +1060,7 @@
     "eyebrow": "NOTRE HISTOIRE",
     "heading": "Du rucher marocain à votre table",
     "text": "ASAL sélectionne des miels rares du Maroc, issus d'une apiculture artisanale et responsable. Chaque récolte est préservée avec soin pour garder toute la richesse naturelle du miel.",
-    "image": "/media/6217d566_Untitleddesign.png",
+    "image": "/media/6217d566_Untitleddesign.webp",
     "imageAlt": "Miel ASAL du terroir marocain",
     "link": "/pages/notre-histoire",
     "linkLabel": "Découvrir notre histoire →"

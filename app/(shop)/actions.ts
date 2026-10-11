@@ -2,6 +2,7 @@
 
 import bcrypt from 'bcryptjs';
 import { redirect } from 'next/navigation';
+import { revalidatePath } from 'next/cache';
 import { db } from '@/lib/db';
 import { priceCart } from '@/lib/pricing';
 import { getSettings } from '@/lib/settings';
@@ -109,6 +110,7 @@ export async function placeOrder(_: OrderState, f: FormData): Promise<OrderState
     if (cart.promo) await tx.promoCode.update({ where: { code: cart.promo.code }, data: { usedCount: { increment: 1 } } });
   });
 
+  revalidatePath('/', 'layout'); // stock à jour sur la boutique
   redirect(`/checkout/merci/${number}?e=${encodeURIComponent(fields.email.toLowerCase())}`);
 }
 

@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import Icon from '@/components/Icon';
 import { useCart } from './CartProvider';
+import { imgProps, small } from '@/lib/img';
 
 type V = { id: number; title: string; price: number; compareAtPrice: number | null; stock: number; trackStock: boolean; image: string };
 type P = { id: number; slug: string; title: string; optionName: string; images: { url: string; alt: string }[]; variants: V[] };
@@ -38,7 +39,7 @@ export default function ProductView({ p, labels, defaultVariant, children }: { p
     <div className="product-main">
       <div className="product-gallery">
         <div className="product-gallery__main">
-          {images[idx] && <img src={images[idx].url} alt={images[idx].alt || p.title} />}
+          {images[idx] && <img {...imgProps(images[idx].url, '(max-width: 899px) 100vw, 50vw', idx === 0)} alt={images[idx].alt || p.title} />}
           {images.length > 1 && (
             <>
               <button className="product-gallery__nav prev" aria-label="Image précédente" onClick={() => setIdx((idx - 1 + images.length) % images.length)}><Icon name="chevron" /></button>
@@ -50,7 +51,7 @@ export default function ProductView({ p, labels, defaultVariant, children }: { p
           <div className="product-gallery__thumbs">
             {images.map((im, i) => (
               <button key={im.url} className={i === idx ? 'on' : ''} onClick={() => setIdx(i)} aria-label={`Image ${i + 1}`}>
-                <img src={im.url} alt="" loading="lazy" />
+                <img src={small(im.url)} alt="" loading="lazy" decoding="async" />
               </button>
             ))}
           </div>
@@ -99,7 +100,7 @@ export default function ProductView({ p, labels, defaultVariant, children }: { p
                 slug: p.slug,
                 title: p.title,
                 variantTitle: v.title === 'Défaut' ? '' : v.title,
-                image: v.image || p.images[0]?.url || '',
+                image: small(v.image || p.images[0]?.url || ''),
                 price: v.price,
                 qty,
               }); }, 450);

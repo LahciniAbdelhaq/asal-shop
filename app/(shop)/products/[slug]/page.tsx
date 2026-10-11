@@ -22,6 +22,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   };
 }
 
+// pages produits générées au déploiement puis mises en cache (régénérées après modification)
+export async function generateStaticParams() {
+  return (await db.product.findMany({ where: { status: 'active' }, select: { slug: true } })).map((p) => ({ slug: p.slug }));
+}
+
 export default async function ProductPage({ params }: { params: Params }) {
   const p = await getProduct((await params).slug);
   if (!p) notFound();

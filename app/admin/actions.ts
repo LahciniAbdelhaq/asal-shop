@@ -1,7 +1,7 @@
 'use server';
 
 import bcrypt from 'bcryptjs';
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { db } from '@/lib/db';
 import { clearSession, requireAdmin, setSession } from '@/lib/auth';
@@ -17,7 +17,7 @@ const str = (f: FormData, k: string) => String(f.get(k) ?? '').trim();
 const num = (f: FormData, k: string, d = 0) => { const n = Number(String(f.get(k) ?? '').replace(',', '.')); return Number.isFinite(n) ? n : d; };
 const bool = (f: FormData, k: string) => f.get(k) === 'on' || f.get(k) === 'true' || f.get(k) === '1';
 const json = <T,>(f: FormData, k: string, d: T): T => { try { return JSON.parse(String(f.get(k) ?? '')) as T; } catch { return d; } };
-const refreshShop = () => revalidatePath('/', 'layout');
+const refreshShop = () => { revalidateTag('shop'); revalidatePath('/', 'layout'); };
 
 // ---------------------------------------------------------------- session
 export async function adminLogin(_: Result, f: FormData): Promise<Result> {

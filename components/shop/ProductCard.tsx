@@ -1,6 +1,9 @@
 import Link from 'next/link';
-import { cardInfo, type FullProduct } from '@/lib/catalog';
+import type { FullProduct } from '@/lib/catalog';
+import { cardInfo } from '@/lib/product-utils';
 import { money, type MoneyFormat } from '@/lib/format';
+import { imgProps, small } from '@/lib/img';
+
 
 /** Carte « collection » (grille sobre du thème d'origine). */
 export function ProductCard({ p, fmt }: { p: FullProduct; fmt: MoneyFormat }) {
@@ -9,8 +12,8 @@ export function ProductCard({ p, fmt }: { p: FullProduct; fmt: MoneyFormat }) {
     <Link href={`/products/${p.slug}`} className="product-card">
       <div className="product-card__media">
         {c.soldOut ? <span className="product-card__badge product-card__badge--out">Épuisé</span> : c.compareAt && c.compareAt > c.price ? <span className="product-card__badge">Promo</span> : null}
-        {c.image && <img src={c.image} alt={p.title} loading="lazy" />}
-        {c.image2 && <img className="alt" src={c.image2} alt="" loading="lazy" />}
+        {c.image && <img {...imgProps(c.image, '(max-width: 749px) 50vw, (max-width: 989px) 33vw, 20vw')} alt={p.title} />}
+        {c.image2 && <img className="alt" {...imgProps(c.image2, '(max-width: 749px) 50vw, (max-width: 989px) 33vw, 20vw')} alt="" />}
       </div>
       <div className="product-card__title">{p.title}</div>
       <div className="product-card__price">
@@ -26,7 +29,8 @@ export function HomeCard({ p, fmt, variant, badge }: { p: FullProduct; fmt: Mone
   const c = cardInfo(p, variant);
   return (
     <Link href={`/products/${p.slug}`}>
-      <div className="pcard__img" style={{ backgroundImage: c.image ? `url('${c.image}')` : undefined }}>
+      <div className="pcard__img">
+        {c.image && <img {...imgProps(c.image, '(max-width: 860px) 70vw, 380px')} alt={p.title} />}
         {badge && <div className="pcard__badge">{badge}</div>}
       </div>
       <div className="pcard__body">

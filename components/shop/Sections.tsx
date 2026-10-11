@@ -4,6 +4,9 @@ import { db } from '@/lib/db';
 import { cardInfo, getProductsBySlugs, type FullProduct } from '@/lib/catalog';
 import { frDate, money, type MoneyFormat } from '@/lib/format';
 import { HomeCard } from './ProductCard';
+import HeroMedia from './HeroMedia';
+import { imgProps, small } from '@/lib/img';
+
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type D = Record<string, any>;
@@ -16,11 +19,7 @@ function HeroVideo({ d }: { d: D }) {
   return (
     <div className="asal-sec">
       <div className="asal-video-hero">
-        {d.video ? (
-          <video autoPlay muted loop playsInline preload="metadata" poster={d.poster || undefined}>
-            <source src={d.video} type="video/mp4" />
-          </video>
-        ) : d.poster ? <img className="poster" src={d.poster} alt="" /> : null}
+        <HeroMedia video={d.video} poster={d.poster} media="(min-width: 761px)" />
         <div className="asal-video-shade" />
         <div className="asal-video-text">
           <div className="asal-video-inner">
@@ -35,11 +34,7 @@ function HeroVideo({ d }: { d: D }) {
         </div>
       </div>
       <div className="asal-hero-m">
-        {d.video ? (
-          <video autoPlay muted loop playsInline preload="metadata" poster={d.poster || undefined}>
-            <source src={d.video} type="video/mp4" />
-          </video>
-        ) : d.poster ? <img className="poster" src={d.poster} alt="" /> : null}
+        <HeroMedia video={d.video} poster={d.poster} media="(max-width: 760px)" />
         <div className="asal-hm-shade" />
         <div className="asal-hm-text">
           {d.eyebrow && <div className="asal-eyebrow">{d.eyebrow}</div>}
@@ -122,7 +117,7 @@ function Needs({ d }: { d: D }) {
       <div className="asal-needs-grid">
         {(d.cards || []).map((c: D, i: number) => (
           <Link className="asal-need-card" href={c.link || '#'} key={i}>
-            {c.image && <img src={c.image} alt={c.title} loading="lazy" />}
+            {c.image && <img {...imgProps(c.image, '(max-width: 600px) 74vw, (max-width: 960px) 50vw, 300px')} alt={c.title} />}
             <div className="asal-need-shade" />
             <div className="asal-need-text">
               <div className="asal-need-title">{c.title}</div>
@@ -151,7 +146,7 @@ function GiftSplit({ d }: { d: D }) {
           </div>
         </div>
         <div className="asal-offrir-photo">
-          {d.image && <img src={d.image} alt={d.imageAlt || ''} loading="lazy" />}
+          {d.image && <img {...imgProps(d.image, '(max-width: 820px) 100vw, 700px')} alt={d.imageAlt || ''} />}
           {d.seal && <Html className="asal-offrir-seal" as="div" html={d.seal} />}
         </div>
       </div>
@@ -176,7 +171,7 @@ function Coffrets({ d, ctx }: { d: D; ctx: Ctx }) {
             return (
               <div className="asal-coffret-card" key={i}>
                 <Link className="asal-coffret-img" href={href}>
-                  <img src={c.image || p?.images[0]?.url || ''} alt={c.title} loading="lazy" />
+                  <img {...imgProps(c.image || p?.images[0]?.url || '', '(max-width: 760px) 100vw, 570px')} alt={c.title} />
                 </Link>
                 <div className="asal-coffret-body">
                   {c.badge && <span className="asal-coffret-badge">{c.badge}</span>}
@@ -201,7 +196,7 @@ function Coffrets({ d, ctx }: { d: D; ctx: Ctx }) {
 export function BlogCard({ p }: { p: { slug: string; title: string; excerpt: string; image: string; publishedAt: Date } }) {
   return (
     <Link className="asal-ma-blog-card" href={`/blogs/le-miel-un-art-de-vivre/${p.slug}`}>
-      {p.image && <img src={p.image} alt={p.title} loading="lazy" />}
+      {p.image && <img {...imgProps(p.image, '(max-width: 760px) 100vw, 400px')} alt={p.title} />}
       <div className="asal-ma-blog-body">
         <div className="asal-ma-blog-date">{frDate(p.publishedAt)}</div>
         <h3 className="asal-ma-blog-title">{p.title}</h3>
@@ -251,7 +246,7 @@ function ComposeCta({ d }: { d: D }) {
 function Story({ d }: { d: D }) {
   return (
     <div className="asal-sec asal-story">
-      <div>{d.image && <Link href={d.link || '#'}><img src={d.image} alt={d.imageAlt || ''} loading="lazy" /></Link>}</div>
+      <div>{d.image && <Link href={d.link || '#'}><img {...imgProps(d.image, '(max-width: 760px) 100vw, 580px')} alt={d.imageAlt || ''} /></Link>}</div>
       <div>
         {d.eyebrow && <div className="eyebrow">{d.eyebrow}</div>}
         <h2 className="sec-title" style={{ marginBottom: 14 }}>{d.heading}</h2>

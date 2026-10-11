@@ -17,6 +17,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return p ? { title: p.seoTitle || p.title, description: p.seoDescription || stripHtml(p.content).slice(0, 160) || undefined } : {};
 }
 
+export async function generateStaticParams() {
+  return (await db.page.findMany({ where: { isPublished: true, NOT: { template: 'policy' } }, select: { slug: true } })).map((p) => ({ slug: p.slug }));
+}
+
 export default async function CmsPage({ params }: { params: Params }) {
   const page = await getPage((await params).slug);
   if (!page) notFound();

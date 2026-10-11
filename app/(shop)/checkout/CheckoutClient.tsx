@@ -5,6 +5,7 @@ import { useActionState, useCallback, useEffect, useState } from 'react';
 import { useCart } from '@/components/shop/CartProvider';
 import { placeOrder, quoteCart } from '../actions';
 import type { PricedCart } from '@/lib/cart-types';
+import { small } from '@/lib/img';
 
 type Customer = { email: string; phone: string; firstName: string; lastName: string; address: string; city: string; zip: string } | null;
 
@@ -84,7 +85,7 @@ export default function CheckoutClient({ customer, cities, cod }: { customer: Cu
         <h2>Votre commande</h2>
         {(quote?.lines || lines.map((l) => ({ ...l, ok: true, error: undefined }))).map((l) => (
           <div className="mini-line" key={l.key}>
-            <div className="thumb">{l.image && <img src={l.image} alt="" />}<span className="badge">{l.qty}</span></div>
+            <div className="thumb">{l.image && <img src={small(l.image)} alt="" />}<span className="badge">{l.qty}</span></div>
             <div>
               <div style={{ fontWeight: 600, fontSize: 14 }}>{l.title}</div>
               <div className="cart-line__meta">{l.bundle ? l.bundle.items.map((i) => `${i.qty}× ${i.title}`).join(', ') : l.variantTitle}</div>
