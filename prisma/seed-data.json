@@ -1,0 +1,1248 @@
+{
+ "categories": [
+  {
+   "slug": "coffrets-cadeaux",
+   "title": "Coffrets Cadeaux",
+   "description": "",
+   "image": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.png",
+   "sortOrder": 0
+  },
+  {
+   "slug": "decouverte",
+   "title": "Découverte",
+   "description": "Vos premiers pas dans l'univers ASAL : le coffret découverte et nos incontournables les plus doux.",
+   "image": "",
+   "sortOrder": 1
+  },
+  {
+   "slug": "gorge-respiration",
+   "title": "Gorge & Respiration",
+   "description": "Douceur pour la gorge : des miels aux notes douces et balsamiques, à déguster à la cuillère ou en boisson chaude.",
+   "image": "",
+   "sortOrder": 2
+  },
+  {
+   "slug": "immunite",
+   "title": "Immunité",
+   "description": "Nos miels traditionnellement appréciés pour accompagner les changements de saison.",
+   "image": "",
+   "sortOrder": 3
+  },
+  {
+   "slug": "les-rares",
+   "title": "Les Pépites",
+   "description": "Les trésors de la ruche : Manuka 840 MGO, Daghmous, Thym et Jujubier. Des miels d'exception, récoltés en quantités limitées.",
+   "image": "/media/86028358_4BCE11BF-F602-4B65-9BF7-D3395DA9183A.png",
+   "sortOrder": 4
+  },
+  {
+   "slug": "nos-miels",
+   "title": "Nos Miels",
+   "description": "",
+   "image": "/media/6217d566_Untitleddesign.png",
+   "sortOrder": 5
+  },
+  {
+   "slug": "energie-vitalite",
+   "title": "Énergie & Vitalité",
+   "description": "Pour bien démarrer la journée : des miels généreux, à la cuillère, sur une tartine ou dans une boisson chaude.",
+   "image": "",
+   "sortOrder": 6
+  }
+ ],
+ "products": [
+  {
+   "slug": "coffret-gourmand-4-pots-de-500-g",
+   "title": "Coffret gourmand – 4 pots de 500 g",
+   "subtitle": "",
+   "description": "<p>Un coffret gourmand pour dégustation ou à partager, composé de 4 pots de 500 g chacun.</p>\n<ul>\n<li>Contenu : Miel d’oranger | Daghmous | herbes de montagnes | Eucalyptus </li>\n<li>Quantité par pot : 500 g</li>\n<li>Poids net total : 2 kg</li>\n</ul>",
+   "productType": "Coffret gourmand",
+   "vendor": "ASAL",
+   "optionName": "",
+   "badge": "",
+   "sortOrder": 0,
+   "categories": [
+    "coffrets-cadeaux"
+   ],
+   "images": [
+    {
+     "url": "/media/1dfbfd9f_54869762-4051-4891-9ba4-f707332e9519.jpg",
+     "alt": "Coffret gourmand – 4 pots de 500 g",
+     "position": 0
+    },
+    {
+     "url": "/media/58a7ba8c_D44A904C-2719-40D0-9925-5839FB9FE0FD.png",
+     "alt": "Coffret gourmand – 4 pots de 500 g",
+     "position": 1
+    },
+    {
+     "url": "/media/66c79b1e_IMG_6576.jpg",
+     "alt": "Coffret gourmand – 4 pots de 500 g",
+     "position": 2
+    }
+   ],
+   "variants": [
+    {
+     "title": "Défaut",
+     "sku": "COFFRET-GOURMAND-4-1",
+     "price": 648,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 0
+    }
+   ]
+  },
+  {
+   "slug": "miel-de-caroubier",
+   "title": "Miel de Caroubier",
+   "subtitle": "250 g",
+   "description": "<p>Rare et précieux, le miel de caroubier -<b></b>- est l'un des trésors les plus recherchés du terroir marocain. Sa couleur ambrée profonde et sa texture onctueuse révèlent des arômes boisés et légèrement sucrés, d'une douceur enveloppante.</p>\n<p>Récolté dans les forêts préservées du Maroc, ce miel d'exception est sélectionné pour sa pureté et son caractère unique. Chaque pot est une invitation à découvrir la richesse de la flore marocaine.</p>\n<h2>Origine </h2>\n<p>Idaou Tanan</p>\n<h2>Saveur</h2>\n<p>Boisée, douce, légèrement caramélisée</p>\n<h2>Texture</h2>\n<p>Onctueuse, dense, fondante</p>\n<h2>Conseils de dégustation</h2>\n<p>À déguster pur à la cuillère, sur une tranche de pain artisanal ou en accompagnement d'un plateau de fromages affinés.</p>\n<h2>Conseils de conservation</h2>\n<p>Conserver à température ambiante, à l'abri de la lumière et de l'humidité. Ne pas réfrigérer.</p>",
+   "productType": "Miel",
+   "vendor": "Asal",
+   "optionName": "Poids",
+   "badge": "",
+   "sortOrder": 1,
+   "categories": [
+    "immunite",
+    "nos-miels"
+   ],
+   "images": [
+    {
+     "url": "/media/08e3d049_5B0794B1-10A6-4FC7-A66A-C46D03C20253.png",
+     "alt": "Miel de Caroubier",
+     "position": 0
+    }
+   ],
+   "variants": [
+    {
+     "title": "250 g",
+     "sku": "MIEL-DE-CAROUBIER-1",
+     "price": 105,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 0
+    },
+    {
+     "title": "500 g",
+     "sku": "MIEL-DE-CAROUBIER-2",
+     "price": 180,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 1
+    },
+    {
+     "title": "1 KG",
+     "sku": "MIEL-DE-CAROUBIER-3",
+     "price": 350,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 2
+    }
+   ]
+  },
+  {
+   "slug": "miel-deucalyptus",
+   "title": "Miel d'Eucalyptus",
+   "subtitle": "250 g",
+   "description": "<p>Frais et aromatique, le miel d'eucalyptus ASAL — <strong></strong> — est récolté dans les vastes forêts d'eucalyptus du Maroc. Sa couleur dorée claire et sa texture fluide révèlent des notes mentholées et légèrement balsamiques, d'une fraîcheur incomparable.</p><p>Traditionnellement utilisé pour adoucir la gorge, ce miel d'exception accompagne aussi bien les moments de dégustation que le quotidien.</p><h2>Origine</h2><p>Oualidia (récolte d'été) &amp; Agadir</p><h2>Saveur</h2><p>Fraîche, mentholée, légèrement balsamique</p><h2>Texture</h2><p>Fluide, légère, cristallisation lente</p><h2>Conseils de dégustation</h2><p>Idéal dans une infusion chaude, sur un yaourt nature ou en accompagnement d'un fromage frais.</p><h2>Conseils de conservation</h2><p>Conserver à température ambiante, à l'abri de la lumière et de l'humidité. Ne pas réfrigérer.</p>",
+   "productType": "Miel",
+   "vendor": "Asal",
+   "optionName": "Poids",
+   "badge": "",
+   "sortOrder": 2,
+   "categories": [
+    "gorge-respiration",
+    "immunite",
+    "nos-miels"
+   ],
+   "images": [
+    {
+     "url": "/media/c73a8ea0_CB1E3609-C162-4DD5-8D05-D94CAFEFDE4E.png",
+     "alt": "Miel d'Eucalyptus",
+     "position": 0
+    }
+   ],
+   "variants": [
+    {
+     "title": "250 g",
+     "sku": "MIEL-DEUCALYPTUS-1",
+     "price": 90,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 0
+    },
+    {
+     "title": "500 g",
+     "sku": "MIEL-DEUCALYPTUS-2",
+     "price": 165,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 1
+    },
+    {
+     "title": "1 KG",
+     "sku": "MIEL-DEUCALYPTUS-3",
+     "price": 300,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 2
+    }
+   ]
+  },
+  {
+   "slug": "miel-de-thym",
+   "title": "Miel de Thym",
+   "subtitle": "250 g",
+   "description": "<p>Intense et envoûtant, le miel de thym ASAL<b> -- </b>est l'un des plus nobles de la gastronomie marocaine. Sa couleur ambrée chaude et sa texture généreuse dévoilent des arômes herbacés et floraux d'une profondeur remarquable.</p>\n<p>Récolté dans les garrigues sauvages du Maroc où le thym pousse librement, ce miel rare est le reflet d'un terroir préservé et d'un savoir-faire apicole ancestral.</p>\n<h2>Origine</h2>\n<p>Rachidia &amp; Idaoutanan</p>\n<h2>Saveur</h2>\n<p>Herbacée, florale, légèrement épicée</p>\n<h2>Texture</h2>\n<p>Généreuse, onctueuse, cristallisation fine</p>\n<h2>Conseils de dégustation</h2>\n<p>Sublime sur une viande rôtie, dans une vinaigrette maison ou simplement à la cuillère pour apprécier toute sa complexité.</p>\n<h2>Conseils de conservation</h2>\n<p>Conserver à température ambiante, à l'abri de la lumière et de l'humidité. Ne pas réfrigérer.</p>",
+   "productType": "Miel",
+   "vendor": "Asal",
+   "optionName": "Poids",
+   "badge": "Récolte limitée",
+   "sortOrder": 3,
+   "categories": [
+    "gorge-respiration",
+    "les-rares",
+    "nos-miels"
+   ],
+   "images": [
+    {
+     "url": "/media/d4999243_808190F3-0CA8-49DD-97D9-0864934FAFF8.png",
+     "alt": "Miel de Thym",
+     "position": 0
+    }
+   ],
+   "variants": [
+    {
+     "title": "250 g",
+     "sku": "MIEL-DE-THYM-1",
+     "price": 135,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 0
+    },
+    {
+     "title": "500 g",
+     "sku": "MIEL-DE-THYM-2",
+     "price": 249,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 1
+    },
+    {
+     "title": "1 KG",
+     "sku": "MIEL-DE-THYM-3",
+     "price": 419,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 2
+    }
+   ]
+  },
+  {
+   "slug": "miel-doranger",
+   "title": "Miel d'Oranger",
+   "subtitle": "250 g",
+   "description": "<p>D'une douceur lumineuse et d'une délicatesse incomparable, le miel d'oranger ASAL — <strong></strong> — est récolté au cœur des orangeraies fleuries du Maroc. Sa couleur dorée pâle et sa texture soyeuse révèlent des notes florales subtiles et un parfum envoûtant de fleur d'oranger.</p>\n<p>L'un des miels les plus appréciés pour sa finesse, il séduit dès la première cuillère par sa douceur élégante et son arôme délicat.</p>\n<h2>Origine</h2>\n<p>Oulad Taima, région de Sous</p>\n<h2>Saveur</h2>\n<p>Florale, douce, délicate, légèrement fruitée</p>\n<h2>Texture</h2>\n<p>Soyeuse, fluide, fondante</p>\n<h2>Conseils de dégustation</h2>\n<p>Parfait sur des crêpes, dans un thé à la menthe ou en accompagnement d'un dessert léger. Idéal pour sucrer avec élégance.</p>\n<h2>Conseils de conservation</h2>\n<p>Conserver à température ambiante, à l'abri de la lumière et de l'humidité. Ne pas réfrigérer.</p>",
+   "productType": "Miel",
+   "vendor": "Asal",
+   "optionName": "Poids",
+   "badge": "",
+   "sortOrder": 4,
+   "categories": [
+    "nos-miels",
+    "energie-vitalite"
+   ],
+   "images": [
+    {
+     "url": "/media/6217d566_Untitleddesign.png",
+     "alt": "Miel d'Oranger",
+     "position": 0
+    }
+   ],
+   "variants": [
+    {
+     "title": "250 g",
+     "sku": "MIEL-DORANGER-1",
+     "price": 39,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 0
+    },
+    {
+     "title": "500 g",
+     "sku": "MIEL-DORANGER-2",
+     "price": 69,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 1
+    },
+    {
+     "title": "1 KG",
+     "sku": "MIEL-DORANGER-3",
+     "price": 129,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 2
+    }
+   ]
+  },
+  {
+   "slug": "miel-des-herbes-des-montagnes",
+   "title": "Miel des Herbes des Montagnes",
+   "subtitle": "250 g",
+   "description": "<p>Complexe et sauvage, le miel des herbes des montagnes ASAL <b>--</b> est une symphonie de saveurs née de la diversité florale des hauteurs marocaines. Sa couleur ambrée profonde et sa texture riche révèlent un bouquet aromatique unique, mélange subtil de plantes sauvages et de fleurs d'altitude.</p>\n<p>Récolté dans les montagnes préservées du Maroc, ce miel rare porte en lui la pureté de l'air des cimes et la richesse d'une flore exceptionnelle. Un miel vivant, authentique, qui raconte l'histoire d'un terroir d'altitude hors du commun.</p>\n<h2>Origine</h2>\n<p>Montagnes du grand Atlas</p>\n<h2>Saveur</h2>\n<p>Complexe, aromatique, florale et herbacée, notes boisées d'altitude</p>\n<h2>Texture</h2>\n<p>Riche, onctueuse, cristallisation naturelle</p>\n<h2>Conseils de dégustation</h2>\n<p>À déguster pur pour apprécier toute sa complexité, ou en accompagnement d'un plateau de fromages affinés et de pain artisanal.</p>\n<h2>Conseils de conservation</h2>\n<p>Conserver à température ambiante, à l'abri de la lumière et de l'humidité. Ne pas réfrigérer.</p>",
+   "productType": "Miel",
+   "vendor": "Asal",
+   "optionName": "Poids",
+   "badge": "",
+   "sortOrder": 5,
+   "categories": [
+    "nos-miels",
+    "energie-vitalite"
+   ],
+   "images": [
+    {
+     "url": "/media/f1d13850_BFEEE2FD-0893-4D36-89E8-6F5D95B4408E.png",
+     "alt": "Miel des Herbes des Montagnes",
+     "position": 0
+    }
+   ],
+   "variants": [
+    {
+     "title": "250 g",
+     "sku": "MIEL-DES-HERBES-DE-1",
+     "price": 90,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 0
+    },
+    {
+     "title": "500 g",
+     "sku": "MIEL-DES-HERBES-DE-2",
+     "price": 155,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 1
+    },
+    {
+     "title": "1 KG",
+     "sku": "MIEL-DES-HERBES-DE-3",
+     "price": 300,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 2
+    }
+   ]
+  },
+  {
+   "slug": "miel-de-jujubier",
+   "title": "Miel de Jujubier",
+   "subtitle": "250 g",
+   "description": "<p>Considéré comme l'un des miels les plus précieux au monde, le miel de Sidr ASAL <b>-- </b>est récolté dans les vallées sauvages du Maroc où pousse le jujubier sauvage. Sa couleur ambrée foncée, presque acajou, et sa texture épaisse et veloutée en font un miel d'exception, recherché par les plus grands connaisseurs.</p>\n<p>Son arôme puissant et enveloppant, aux notes caramelées et boisées, laisse une impression durable. Un miel rare, d'une noblesse incomparable, digne des plus belles tables.</p>\n<h2>Origine</h2>\n<p>Région de Sous</p>\n<h2>Saveur</h2>\n<p>Puissante, caramelée, boisée, longue persistance en bouche</p>\n<h2>Texture</h2>\n<p>Épaisse, veloutée, dense, cristallisation très lente</p>\n<h2>Conseils de dégustation</h2>\n<p>À savourer pur, à la cuillère, pour apprécier pleinement sa complexité. Sublime également sur un fromage à pâte persillée ou en accompagnement d'un thé noir intense.</p>\n<h2>Conseils de conservation</h2>\n<p>Conserver à température ambiante, à l'abri de la lumière et de l'humidité. Ne pas réfrigérer.</p>",
+   "productType": "Miel",
+   "vendor": "Asal",
+   "optionName": "Poids",
+   "badge": "Récolte limitée",
+   "sortOrder": 6,
+   "categories": [
+    "gorge-respiration",
+    "les-rares",
+    "nos-miels"
+   ],
+   "images": [
+    {
+     "url": "/media/0ed3e901_0DD4EDA3-094B-4A5A-B04B-A0E3267BF7FC.png",
+     "alt": "Miel de Jujubier",
+     "position": 0
+    }
+   ],
+   "variants": [
+    {
+     "title": "250 g",
+     "sku": "MIEL-DE-JUJUBIER-1",
+     "price": 99,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 0
+    },
+    {
+     "title": "500 g",
+     "sku": "MIEL-DE-JUJUBIER-2",
+     "price": 189,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 1
+    },
+    {
+     "title": "1 KG",
+     "sku": "MIEL-DE-JUJUBIER-3",
+     "price": 349,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 2
+    }
+   ]
+  },
+  {
+   "slug": "miel-multifleurs",
+   "title": "Miel Multifleurs",
+   "subtitle": "250 g",
+   "description": "<p>Expression vivante de la biodiversité marocaine, le miel multifleurs ASAL <b>-- </b>est une composition naturelle née de la rencontre de dizaines d'espèces florales sauvages. Sa couleur dorée ambre et sa texture onctueuse révèlent un profil aromatique évolutif, doux et complexe à la fois.</p>\n<p>Un miel généreux et accessible, qui capture l'essence d'un terroir marocain préservé et la richesse de ses saisons.</p>\n<h2>Origine</h2>\n<p>Prairies de la région Sous et Al haouz</p>\n<h2>Saveur</h2>\n<p>Douce, florale, évolutive, légèrement fruitée</p>\n<h2>Texture</h2>\n<p>Onctueuse, fluide, cristallisation progressive</p>\n<h2>Conseils de dégustation</h2>\n<p>Parfait au quotidien — sur des tartines, dans un yaourt, ou pour sucrer naturellement vos boissons chaudes.</p>\n<h2>Conseils de conservation</h2>\n<p>Conserver à température ambiante, à l'abri de la lumière et de l'humidité. Ne pas réfrigérer.</p>",
+   "productType": "Miel",
+   "vendor": "Asal",
+   "optionName": "Poids",
+   "badge": "",
+   "sortOrder": 7,
+   "categories": [
+    "nos-miels",
+    "energie-vitalite"
+   ],
+   "images": [
+    {
+     "url": "/media/624d36f0_AD8C590F-A5FA-49F4-9481-50BEB13151B8.png",
+     "alt": "Miel Multifleurs",
+     "position": 0
+    }
+   ],
+   "variants": [
+    {
+     "title": "250 g",
+     "sku": "MIEL-MULTIFLEURS-1",
+     "price": 45,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 0
+    },
+    {
+     "title": "500 g",
+     "sku": "MIEL-MULTIFLEURS-2",
+     "price": 79,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 1
+    },
+    {
+     "title": "1 KG",
+     "sku": "MIEL-MULTIFLEURS-3",
+     "price": 149,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 2
+    }
+   ]
+  },
+  {
+   "slug": "miel-d-euphorbe",
+   "title": "Miel de Zakoum",
+   "subtitle": "250 g",
+   "description": "<p>Issu du Zakkoun, plante emblématique des régions arides du Maroc, ce miel rare et précieux ASAL— — est l'un des plus recherchés par les connaisseurs. Sa couleur ambrée foncée et sa texture dense révèlent des arômes puissants et légèrement boisés, d'une singularité remarquable.</p>\n<p>Un miel de caractère, ancré dans la tradition marocaine, qui séduit par sa rareté et sa personnalité affirmée.</p>\n<h2>Origine</h2>\n<p>Beni Mellal</p>\n<h2>Saveur</h2>\n<p>Puissante, boisée, légèrement amère, persistante</p>\n<h2>Texture</h2>\n<p>Dense, épaisse, cristallisation lente</p>\n<h2>Conseils de dégustation</h2>\n<p>À savourer pur pour apprécier toute sa singularité, ou en accompagnement de fromages affinés et de dattes.</p>\n<h2>Conseils de conservation</h2>\n<p>Conserver à température ambiante, à l'abri de la lumière et de l'humidité. Ne pas réfrigérer.</p>",
+   "productType": "Miel",
+   "vendor": "Asal",
+   "optionName": "Poids",
+   "badge": "",
+   "sortOrder": 8,
+   "categories": [
+    "immunite",
+    "nos-miels"
+   ],
+   "images": [
+    {
+     "url": "/media/1638ffd3_60954408-3FA9-4A8B-8D8B-4E2F5AE03620_5aa.png",
+     "alt": "Miel de Zakoum",
+     "position": 0
+    }
+   ],
+   "variants": [
+    {
+     "title": "250 g",
+     "sku": "MIEL-D-EUPHORBE-1",
+     "price": 99,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 0
+    },
+    {
+     "title": "500 g",
+     "sku": "MIEL-D-EUPHORBE-2",
+     "price": 179,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 1
+    },
+    {
+     "title": "1 KG",
+     "sku": "MIEL-D-EUPHORBE-3",
+     "price": 349,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 2
+    }
+   ]
+  },
+  {
+   "slug": "miel-de-daghmous",
+   "title": "Miel de Daghmous",
+   "subtitle": "250 g",
+   "description": "<p>Issu du Daghmous, plante succulente des zones arides marocaines, ce miel confidentiel ASAL — — est une véritable rareté. Sa couleur dorée ambre et sa texture onctueuse révèlent des arômes doux et légèrement épicés, d'une originalité unique.</p>\n<p>Un miel confidentiel, apprécié des amateurs éclairés pour sa rareté et son lien profond avec le terroir marocain le plus sauvage.</p>\n<h2>Origine</h2>\n<p>Aït Baamrane</p>\n<h2>Saveur</h2>\n<p>Douce, légèrement épicée, originale</p>\n<h2>Texture</h2>\n<p>Onctueuse, dense, cristallisation naturelle</p>\n<h2>Conseils de dégustation</h2>\n<p>À déguster pur pour découvrir sa singularité, ou en accompagnement de pâtisseries orientales.</p>\n<h2>Conseils de conservation</h2>\n<p>Conserver à température ambiante, à l'abri de la lumière et de l'humidité. Ne pas réfrigérer.</p>",
+   "productType": "Miel",
+   "vendor": "Asal",
+   "optionName": "Poids",
+   "badge": "Récolte limitée",
+   "sortOrder": 9,
+   "categories": [
+    "les-rares",
+    "nos-miels",
+    "energie-vitalite"
+   ],
+   "images": [
+    {
+     "url": "/media/86028358_4BCE11BF-F602-4B65-9BF7-D3395DA9183A.png",
+     "alt": "Miel de Daghmous",
+     "position": 0
+    }
+   ],
+   "variants": [
+    {
+     "title": "250 g",
+     "sku": "MIEL-DE-DAGHMOUS-1",
+     "price": 129,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 0
+    },
+    {
+     "title": "500 g",
+     "sku": "MIEL-DE-DAGHMOUS-2",
+     "price": 219,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 1
+    },
+    {
+     "title": "1 KG",
+     "sku": "MIEL-DE-DAGHMOUS-3",
+     "price": 399,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 2
+    }
+   ]
+  },
+  {
+   "slug": "coffret-cosy-6-miels-dexception-pots-de-250-g",
+   "title": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
+   "subtitle": "",
+   "description": "<p>Offrez ou offrez-vous un moment de douceur avec le Coffret Cosy ASAL. Une sélection de 6 miels marocains, choisis pour leur complémentarité et leur élégance naturelle.</p>\n<h2>Contenu du coffret</h2>\n<ul>\n<li>Miel de Thym – 250g</li>\n<li>Miel d'Oranger – 250g</li>\n<li>Miel de Sidr – 250g</li>\n<li>Miel d'Eucalyptus – 250g</li>\n<li>Miel de Daghmous – 250g</li>\n<li>Miel de Caroubier – 250g</li>\n</ul>\n<p>Idéal pour les fêtes, les occasions spéciales ou simplement pour se faire plaisir.</p>\n<h2>Vous offrez ASAL ?</h2>\n<p>Vous pouvez désormais rajouter vos mots à vos proches et exprimer votre gratitude ✍️</p>",
+   "productType": "Coffret",
+   "vendor": "Asal",
+   "optionName": "Couleur du coffret",
+   "badge": "",
+   "sortOrder": 10,
+   "categories": [
+    "coffrets-cadeaux"
+   ],
+   "images": [
+    {
+     "url": "/media/b80bab6b_ChatGPT_Image_Aug_15_2026_02_48_05_PM.png",
+     "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
+     "position": 0
+    },
+    {
+     "url": "/media/07e293b2_4F3B71C4-931D-48E3-8CC6-55A676739FF9_5cd.png",
+     "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
+     "position": 1
+    },
+    {
+     "url": "/media/287d8701_ChatGPT_Image_Aug_15_2026_02_47_04_PM_83.png",
+     "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
+     "position": 2
+    },
+    {
+     "url": "/media/a34a8f2d_ChatGPT_Image_Aug_8_2026_06_41_40_PM.png",
+     "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
+     "position": 3
+    },
+    {
+     "url": "/media/65ad6057_ChatGPT_Image_Aug_8_2026_07_23_12_PM_708.png",
+     "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
+     "position": 4
+    },
+    {
+     "url": "/media/c08f3682_coffret-noir-noir-satin_541b6ea4-1d01-4a.jpg",
+     "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
+     "position": 5
+    },
+    {
+     "url": "/media/403fbeea_coffret-noir-dore-satin_58a34d6b-e907-48.jpg",
+     "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
+     "position": 6
+    },
+    {
+     "url": "/media/1b00d6d6_coffret-noir-ferme-ruban_dc9da767-132e-4.jpg",
+     "alt": "Coffret Cosy – 6 Miels d'Exception ( Pots de 250 G)",
+     "position": 7
+    }
+   ],
+   "variants": [
+    {
+     "title": "Noir",
+     "sku": "COFFRET-COSY-6-MIE-1",
+     "price": 599,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "/media/b80bab6b_ChatGPT_Image_Aug_15_2026_02_48_05_PM.png",
+     "position": 0
+    },
+    {
+     "title": "Beige",
+     "sku": "COFFRET-COSY-6-MIE-2",
+     "price": 599,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "/media/287d8701_ChatGPT_Image_Aug_15_2026_02_47_04_PM_83.png",
+     "position": 1
+    }
+   ]
+  },
+  {
+   "slug": "miel-danis",
+   "title": "Miel d'Anis",
+   "subtitle": "250 g",
+   "description": "<p class=\"PDq2pG_selectionAnchorContainer\">Rare et délicat, le miel d’anis ASAL est récolté à partir des fleurs d’anis dans les régions Idaoutanane. Il se distingue par sa couleur dorée, sa douceur et ses notes aromatiques qui rappellent naturellement l’anis.<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<h2>Origine</h2>\n<p>Idaoutanane</p>\n<h2>Saveur</h2>\n<p>Douce, aromatique, avec des notes anisées et légèrement épicées</p>\n<h2>Texture</h2>\n<p>Onctueuse et douce, pouvant cristalliser naturellement avec le temps</p>\n<h2>Conseils de dégustation</h2>\n<p>À déguster pur à la cuillère, sur du pain, dans un yaourt ou pour sucrer naturellement une infusion. Il peut également être utilisé dans les pâtisseries et certaines préparations culinaires.</p>\n<h2>Conseils de conservation</h2>\n<p>Conserver à température ambiante, à l’abri de la lumière, de la chaleur et de l’humidité. La cristallisation est un phénomène naturel qui n’altère pas la qualité du miel.</p>",
+   "productType": "Miel",
+   "vendor": "Asal",
+   "optionName": "Taille",
+   "badge": "",
+   "sortOrder": 11,
+   "categories": [
+    "immunite",
+    "nos-miels"
+   ],
+   "images": [
+    {
+     "url": "/media/7e0ad3e7_ChatGPTImageAug9_2026_04_42_54PM.png",
+     "alt": "Miel d'Anis",
+     "position": 0
+    }
+   ],
+   "variants": [
+    {
+     "title": "250 g",
+     "sku": "MIEL-DANIS-1",
+     "price": 89,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 0
+    },
+    {
+     "title": "500 g",
+     "sku": "MIEL-DANIS-2",
+     "price": 169,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 1
+    },
+    {
+     "title": "1 KG",
+     "sku": "MIEL-DANIS-3",
+     "price": 349,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "",
+     "position": 2
+    }
+   ]
+  },
+  {
+   "slug": "coffret-decouverte-9-miels-dexception-pots-de-100-g",
+   "title": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
+   "subtitle": "",
+   "description": "<h2>Pourquoi ce coffret ?</h2>\n<p class=\"PDq2pG_selectionAnchorContainer\">Vous hésitez sur les miels qui correspondent le mieux à votre quotidien, à vos habitudes ou simplement à vos envies de dégustation ?<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<p>Optez pour le <strong><em>coffret Découverte</em></strong> et explorez 9 miels parmi les plus appréciés au Maroc. </p>\n<p><em><strong>Testez, comparez et trouvez vos miels préférés pour votre prochain achat.</strong></em></p>\n<h2>Contenu du coffret</h2>\n<ul>\n<li>Miel de Thym – 100g</li>\n<li>Miel d'Oranger – 100g</li>\n<li>Miel de Sidr – 100g</li>\n<li>Miel d'Eucalyptus – 100g</li>\n<li>Miel de Daghmous – 100g</li>\n<li>Miel de Caroubier – 100g</li>\n<li>Miel Multifleurs – 100g</li>\n<li>Miel des Herbes des Montagnes – 100g</li>\n<li>Miel de Zakkoum – 100g</li>\n</ul>",
+   "productType": "Coffret",
+   "vendor": "Asal",
+   "optionName": "couleur de coffret",
+   "badge": "",
+   "sortOrder": 12,
+   "categories": [
+    "coffrets-cadeaux",
+    "decouverte"
+   ],
+   "images": [
+    {
+     "url": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.png",
+     "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
+     "position": 0
+    },
+    {
+     "url": "/media/1747b337_4F3B71C4-931D-48E3-8CC6-55A676739FF9.png",
+     "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
+     "position": 1
+    },
+    {
+     "url": "/media/f7ca95ad_ChatGPT_Image_Aug_15_2026_03_30_14_PM.png",
+     "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
+     "position": 2
+    },
+    {
+     "url": "/media/ed18bb2f_ChatGPT_Image_Aug_8_2026_07_23_12_PM.png",
+     "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
+     "position": 3
+    },
+    {
+     "url": "/media/dc0aaa2c_coffret-beige-blanc-satin_e1c282fe-8c36-.jpg",
+     "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
+     "position": 4
+    },
+    {
+     "url": "/media/5214992b_coffret-beige-bleu-satin_68a2c8d5-acd3-4.jpg",
+     "alt": "Coffret Découverte – 9 Miels d'Exception ( Pots de 100 G)",
+     "position": 5
+    }
+   ],
+   "variants": [
+    {
+     "title": "Beige",
+     "sku": "COFFRET-DECOUVERTE-1",
+     "price": 549,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.png",
+     "position": 0
+    },
+    {
+     "title": "Noir",
+     "sku": "COFFRET-DECOUVERTE-2",
+     "price": 549,
+     "compareAtPrice": null,
+     "stock": 25,
+     "image": "/media/f7ca95ad_ChatGPT_Image_Aug_15_2026_03_30_14_PM.png",
+     "position": 1
+    }
+   ]
+  }
+ ],
+ "posts": [
+  {
+   "slug": "4-facons-de-manger-votre-miel-au-quotidien",
+   "title": "4 Façons de Manger votre miel au Quotidien",
+   "excerpt": "Découvrez comment intégrer le miel dans votre routine quotidienne pour profiter de tous ses bienfaits, du petit-déjeuner au coucher.",
+   "content": "<p>Le miel n'est pas réservé aux maux de gorge de l'hiver. Voici quatre façons simples de l'intégrer à votre quotidien, du matin au soir.</p>\n<h2>1. Au petit-déjeuner</h2>\n<p>Sur une tartine de pain complet, dans un yaourt nature ou sur un granola maison : une cuillère de miel au petit-déjeuner apporte une énergie douce pour bien démarrer la journée. Le miel d'oranger ou de thym se marie particulièrement bien avec les produits laitiers.</p>\n<h2>2. Dans vos boissons</h2>\n<p>Thé tiède au miel et au citron, lait chaud au miel le soir : des classiques qui n'ont pas pris une ride. Règle d'or : attendez que la boisson soit tiède (sous 40 degrés) avant d'ajouter le miel, pour préserver tout ce qu'il a de bon.</p>\n<h2>3. En cuisine, côté salé</h2>\n<p>Le miel sublime les plats sucrés-salés : vinaigrette au miel, marinade pour poulet, ou le fameux tajine marocain aux pruneaux et aux amandes. Quelques gouttes de miel d'euphorbe relèvent aussi un fromage de chèvre.</p>\n<h2>4. Au goûter et avant l'effort</h2>\n<p>Composé de sucres simples naturels, le miel est une source d'énergie rapidement disponible. Une cuillère avant une séance de sport ou au goûter des enfants : simple et efficace.</p>\n<p>Comme tout sucre, le miel se consomme avec modération : une à deux cuillères à soupe par jour suffisent à en profiter.</p>",
+   "image": "/media/8890f3db_ma-blog-facons.png",
+   "publishedAt": "2026-09-24T10:00:00.000Z"
+  },
+  {
+   "slug": "le-miel-de-manuka-un-tresor-de-medecine-naturelle",
+   "title": "Le Miel de Manuka : un trésor de médecine naturelle",
+   "excerpt": "Le miel de Manuka est reconnu dans le monde entier pour ses propriétés uniques et ses vertus thérapeutiques exceptionnelles.",
+   "content": "<h2>Un miel pas comme les autres</h2>\n<p>Le miel de Manuka vient de Nouvelle-Zélande, où les abeilles butinent les fleurs du manuka, un arbuste de la famille du tea-tree (Leptospermum scoparium). Ce qui le rend célèbre dans le monde entier, c'est sa concentration exceptionnelle en méthylglyoxal (MGO), un composé naturellement présent à des niveaux bien supérieurs à ceux des autres miels.</p>\n<h2>Les indices UMF et MGO : s'y retrouver</h2>\n<p>Pour garantir son authenticité, le Manuka est classé selon deux échelles : l'UMF (Unique Manuka Factor) et le MGO. Plus l'indice est élevé, plus la teneur en méthylglyoxal est importante. Un MGO 100+ convient à un usage quotidien, tandis que les indices 400+ et au-delà sont recherchés pour des usages plus ciblés.</p>\n<h2>Comment l'utiliser au quotidien</h2>\n<p>La tradition veut qu'on le consomme à la petite cuillère, le matin à jeun ou en cas de gorge irritée. Évitez de le mélanger à un liquide brûlant : comme tous les miels bruts, il perd une partie de ses qualités au-delà de 40 degrés. Préférez une boisson tiède.</p>\n<h2>Et les miels marocains dans tout ça ?</h2>\n<p>Chez ASAL, nous défendons la même exigence : des miels bruts, non chauffés, récoltés à froid. Nos miels de thym, d'euphorbe ou de caroubier sont eux aussi des trésors de la ruche, chacun avec son caractère et ses usages traditionnels. Le Manuka a sa réputation mondiale ; nos miels du Maroc ont leur authenticité.</p>",
+   "image": "/media/ef2a1039_ma-blog-manuka.png",
+   "publishedAt": "2026-09-24T10:00:00.000Z"
+  },
+  {
+   "slug": "les-bienfaits-du-miel-entre-la-science-et-les-traditions",
+   "title": "Les bienfaits du Miel : Entre la science et les traditions",
+   "excerpt": "Depuis des millénaires, le miel est utilisé comme remède naturel. Que dit la science moderne de ces traditions anciennes ?",
+   "content": "<h2>Un remède vieux de 4000 ans</h2>\n<p>On retrouve la trace du miel dans les papyrus de l'Égypte ancienne, où il servait déjà à soigner les plaies. Hippocrate le prescrivait, et les traditions du monde entier, du Maroc à l'Asie, lui prêtent des vertus protectrices. Mais que dit la science moderne ?</p>\n<h2>Ce que la recherche confirme</h2>\n<p>Les études menées ces dernières décennies ont mis en évidence plusieurs propriétés : le miel est riche en antioxydants (polyphénols), il apaise la gorge irritée et plusieurs essais cliniques montrent son efficacité contre la toux nocturne, comparable à certains sirops. En usage externe, le miel de qualité médicale est même utilisé en milieu hospitalier pour favoriser la cicatrisation.</p>\n<h2>Les traditions marocaines</h2>\n<p>Au Maroc, le miel fait partie de la pharmacopée familiale : lait chaud au miel contre les refroidissements, miel de thym pour la gorge, ou simplement une cuillère de miel le matin pendant l'hiver. Des gestes simples transmis de génération en génération.</p>\n<h2>Le mot de la fin : qualité et modération</h2>\n<p>Tous ces bienfaits supposent un miel brut, non chauffé et non transformé : c'est exactement ce que nous récoltons chez ASAL. Et rappelons l'évidence : le miel reste un sucre naturel. Une à deux cuillères par jour, dans le cadre d'une alimentation équilibrée, c'est la bonne mesure pour en profiter durablement.</p>",
+   "image": "/media/ebedb575_ma-blog-bienfaits.png",
+   "publishedAt": "2026-09-24T10:00:00.000Z"
+  }
+ ],
+ "pages": [
+  {
+   "slug": "notre-histoire",
+   "title": "Notre Histoire",
+   "template": "default",
+   "content": "<h2 style=\"font-family:Georgia,'Times New Roman',serif;font-size:clamp(26px,3vw,34px);color:#2B2118;margin:48px 0 16px;font-weight:400;\">L'histoire d'Asal</h2>\n<p style=\"font-size:16.5px;color:#4a4036;line-height:1.8;margin:0 auto;max-width:640px;\">Asal est née d'une passion profonde pour le miel marocain et d'un désir de partager ses trésors avec le monde. Dans les montagnes de l'Atlas et les plaines fleuries du Maroc, nos abeilles butinent des fleurs sauvages pour produire un miel d'une richesse et d'une pureté incomparables.</p>\n<h2 style=\"font-family:Georgia,'Times New Roman',serif;font-size:clamp(26px,3vw,34px);color:#2B2118;margin:48px 0 16px;font-weight:400;\">Notre engagement</h2>\n<p style=\"font-size:16.5px;color:#4a4036;line-height:1.8;margin:0 auto;max-width:640px;\">Chaque pot d'Asal est le fruit d'un savoir-faire artisanal transmis de génération en génération. Nous travaillons en étroite collaboration avec des apiculteurs locaux qui partagent notre vision : préserver les traditions, respecter la nature et offrir un produit d'exception.</p>\n<h2 style=\"font-family:Georgia,'Times New Roman',serif;font-size:clamp(26px,3vw,34px);color:#2B2118;margin:48px 0 16px;font-weight:400;\">Une qualité d'exception</h2>\n<p style=\"font-size:16.5px;color:#4a4036;line-height:1.8;margin:0 auto;max-width:640px;\">Nos miels sont récoltés à la main, sans additifs ni conservateurs, pour vous garantir un produit 100% naturel. Du miel de Jujubier aux variétés de montagne, chaque saveur raconte une histoire unique du terroir marocain.</p>\n<h2 style=\"font-family:Georgia,'Times New Roman',serif;font-size:clamp(26px,3vw,34px);color:#2B2118;margin:48px 0 16px;font-weight:400;\">Notre vision</h2>\n<p style=\"font-size:16.5px;color:#4a4036;line-height:1.8;margin:0 auto;max-width:640px;\">Chez Asal, nous croyons que le miel est bien plus qu'un aliment — c'est un art de vivre. C'est pourquoi nous soignons chaque détail, de la ruche à votre table, pour vous offrir une expérience gustative et sensorielle hors du commun.</p>"
+  },
+  {
+   "slug": "faq",
+   "title": "FAQ",
+   "template": "faq",
+   "content": "[{\"q\":\"Comment conserver le miel ASAL ?\",\"a\":\"Conservez votre miel dans un endroit frais et sec, à l'abri de la lumière directe. Le miel peut cristalliser avec le temps, ce qui est normal. Vous pouvez le réchauffer légèrement au bain-marie pour retrouver sa texture liquide.\"},{\"q\":\"Quels sont les délais de livraison ?\",\"a\":\"Les commandes sont traitées sous 2-3 jours ouvrables. La livraison prend généralement 5-7 jours ouvrables selon votre localisation.\"},{\"q\":\"Le paiement à la livraison est-il disponible ?\",\"a\":\"Oui, nous proposons le paiement à la livraison pour plus de commodité. Vous pouvez payer directement au livreur à la réception de votre commande.\"},{\"q\":\"Comment choisir son coffret ?\",\"a\":\"Chaque coffret est conçu pour offrir une expérience unique. Consultez les descriptions détaillées de chaque coffret pour découvrir les variétés de miel incluses et choisir celui qui correspond à vos préférences.\"},{\"q\":\"Est ce que je peux composer mon coffret ?\",\"a\":\"Oui, vous pouvez personnaliser le coffret de votre choix selon vos envies.Indiquez-nous simplement votre demande par message privé (composition, types de miels, formats, quantité, etc.) et nous vous communiquerons le prix correspondant.\"},{\"q\":\"Proposez-vous des options pour les entreprises ?\",\"a\":\"Absolument. Nous proposons des coffrets personnalisés pour les entreprises : cadeaux clients, séminaires, événements corporate. Packaging sur mesure, gravure et message personnalisé disponibles. Contactez-nous pour un devis adapté à vos besoins.\"},{\"q\":\"Collaborez-vous avec d'autres marques ?\",\"a\":\"Oui, nous sommes ouverts à des collaborations avec des marques premium partageant nos valeurs d'authenticité et d'excellence. Que ce soit pour des coffrets co-brandés, des événements ou des partenariats B2B, contactez-nous à contact@asalmaroc.com pour discuter de votre projet.\"},{\"q\":\"D'où proviennent vos miels ?\",\"a\":\"Nos miels sont récoltés dans les régions les plus préservées du Maroc : les montagnes de l'Atlas, les vallées du Souss, les plaines du Gharb et les zones arides du Sud. Chaque variété reflète le terroir unique de sa région d'origine, offrant des profils aromatiques exceptionnels.\"},{\"q\":\"Vos miels sont-ils certifiés ?\",\"a\":\"Oui, nos miels sont certifiés 100% naturels et purs. Chaque lot est analysé en laboratoire pour garantir l'absence de pesticides, d'antibiotiques et d'additifs. Nous travaillons exclusivement avec des apiculteurs certifiés qui respectent des pratiques apicoles traditionnelles et durables.\"}]"
+  },
+  {
+   "slug": "livraison-retours",
+   "title": "Livraison & Retours",
+   "template": "default",
+   "content": "<h3>Livraison en France métropolitaine</h3>\n<p><strong>Délais :</strong> expédition sous 24 à 48&nbsp;h ouvrées, livraison en 2 à 4 jours ouvrés\nvia Colissimo ou Mondial Relay (point relais ou domicile).</p>\n<p><strong>Frais de port :</strong>32 MAD —<strong>offerts dès 328 MAD d'achat</strong>.</p>\n<p>Un e-mail de confirmation avec le suivi vous est envoyé dès l'expédition de votre commande.</p>\n<h3>Retours</h3>\n<p>Conformément au droit européen, vous disposez de 14 jours après réception pour changer d'avis.\nPour des raisons d'hygiène, seuls les produits non ouverts, dans leur emballage d'origine, peuvent\nêtre retournés. Contactez-nous avant tout retour pour recevoir la procédure.</p>"
+  },
+  {
+   "slug": "contact",
+   "title": "Contact",
+   "template": "contact",
+   "content": ""
+  },
+  {
+   "slug": "composez-votre-coffret",
+   "title": "Composez votre coffret",
+   "template": "composer",
+   "content": ""
+  },
+  {
+   "slug": "privacy-policy",
+   "title": "Politique de confidentialité",
+   "template": "policy",
+   "content": "<p>Dernière mise à jour : 6 octobre 2026</p><p>ASAL exploite cette boutique et ce site web, y compris toutes les informations, le contenu, les fonctionnalités, les outils, les produits et les services connexes afin de vous fournir, en tant que client(e), une expérience d’achat personnalisée (ci-après les « Services »). ASAL est une boutique propulsée par Shopify, qui nous permet de vous fournir les Services. La présente Politique de confidentialité décrit la façon dont nous collectons, utilisons et divulguons vos informations personnelles lorsque vous accédez aux Services, les utilisez, effectuez un achat ou toute autre transaction, ou lorsque vous communiquez avec nous par tout autre moyen. En cas de contradiction entre nos Conditions de service et la présente Politique de confidentialité, la présente Politique de confidentialité prévaut en ce qui concerne la collecte, le traitement et la divulgation de vos informations personnelles.</p><p>Veuillez lire attentivement la présente Politique de confidentialité. En accédant à nos Services et en les utilisant, vous reconnaissez avoir lu la présente Politique de confidentialité et comprendre les modalités de collecte, d’utilisation et de divulgation de vos informations qui sont décrites dans la présente Politique de confidentialité.</p><h2>Les informations personnelles que nous collectons ou traitons</h2><p>Lorsque nous utilisons le terme « informations personnelles », nous faisons référence aux informations qui permettent de vous identifier ou qui peuvent raisonnablement être reliées à vous ou à une autre personne. Les informations personnelles n’incluent pas les informations collectées anonymement ou rendues non identifiables, de sorte qu’elles ne permettent pas de vous identifier ni d’être raisonnablement reliées à vous. Nous pouvons collecter ou traiter les catégories suivantes d’informations personnelles, y compris les déductions tirées de ces informations personnelles, en fonction de votre manière d’interagir avec les Services, de votre lieu de résidence, et dans la mesure permise ou exigée par la législation applicable :</p><ul><li>\n<strong>Coordonnées</strong> y compris votre nom, adresse, adresse de facturation, adresse de livraison, numéro de téléphone et adresse e-mail.</li><li>\n<strong>Informations financières</strong> y compris les numéros de carte de crédit, de carte de débit et de compte bancaire, les informations relatives aux cartes de paiement, les informations de compte bancaire, les détails de transaction, le moyen de paiement, la confirmation de paiement et les autres détails de paiement.</li><li>\n<strong>Informations du compte</strong>y compris votre nom d’utilisateur, votre mot de passe, vos questions de sécurité, vos préférences et vos paramètres.</li><li>\n<strong>Informations de transaction</strong> y compris les articles que vous consultez, placez dans votre panier, ajoutez à votre liste d’envies, achetez, retournez, échangez ou annulez, ainsi que vos transactions passées.</li><li>\n<strong>Vos communications avec nous</strong> y compris les informations que vous incluez dans vos communications avec nous, par exemple lorsque vous envoyez une enquête au service à la clientèle.</li><li>\n<strong>Informations sur l’appareil</strong>y compris les informations concernant votre appareil, votre navigateur ou votre connexion réseau, votre adresse IP et d’autres identifiants uniques.</li><li>\n<strong>Informations d’utilisation</strong> y compris les informations concernant votre interaction avec les Services, notamment comment et quand vous accédez aux Services ou interagissez avec eux.</li></ul><h2>Sources des informations personnelles</h2><p>Nous pouvons collecter des informations personnelles à partir des sources suivantes :</p><ul><li>\n<strong>Directement auprès de vous</strong> y compris lorsque vous créez un compte, accédez aux Services ou les utilisez, communiquez avec nous, ou nous fournissez de toute autre manière vos informations personnelles&nbsp;;</li><li>\n<strong>Automatiquement via les Services</strong> y compris depuis votre appareil lorsque vous utilisez nos produits ou services ou accédez à nos sites web, et via l’utilisation de cookies et de technologies similaires&nbsp;;</li><li>\n<strong>Auprès de nos fournisseurs de services</strong> y compris lorsque nous faisons appel à eux pour mettre en œuvre certaines technologies et lorsqu’ils collectent ou traitent vos informations personnelles en notre nom&nbsp;;</li><li><strong>Auprès de nos partenaires ou d’autres tiers.</strong></li></ul><h2>Comment nous utilisons vos informations personnelles</h2><p>En fonction de la façon dont vous interagissez avec nous ou des Services que vous utilisez, nous pouvons utiliser vos informations personnelles aux fins suivantes :</p><ul><li>\n<strong>Fournir, adapter et améliorer les Services.</strong> Nous utilisons vos informations personnelles pour vous fournir les Services, notamment afin d’exécuter notre contrat avec vous, de traiter vos paiements, de traiter vos commandes, de mémoriser vos préférences et les articles qui vous intéressent, de vous envoyer des notifications liées à votre compte, de traiter les achats, retours, échanges ou autres transactions, de créer, maintenir et gérer de toute autre façon votre compte, d’organiser les expéditions, de faciliter les éventuels retours et échanges, de vous permettre de publier des avis, et de créer une expérience d’achat personnalisée, par exemple en vous recommandant des produits en lien avec vos achats. Ceci peut inclure l’utilisation de vos informations personnelles afin d’adapter et d’améliorer les Services de manière plus pertinente.</li><li>\n<strong>Marketing et publicité.</strong> Nous utilisons vos informations personnelles à des fins de marketing et de promotion, par exemple pour vous envoyer des communications marketing, publicitaires et promotionnelles par e-mail, SMS ou courrier postal, et pour vous montrer des publicités en ligne concernant des produits ou des services sur les Services ou sur d’autres sites web, notamment en fonction des articles que vous avez précédemment achetés ou ajoutés à votre panier, ainsi que de vos autres activités sur les Services.</li><li>\n<strong>Sécurité et prévention de la fraude.</strong>Nous utilisons vos informations personnelles pour authentifier votre compte, offrir une expérience de paiement et d’achat sécurisée, détecter, enquêter ou intervenir en cas d’activité frauduleuse, illégale, dangereuse ou malveillante, protéger la sécurité publique et sécuriser nos services. Si vous choisissez d’utiliser les Services et de créer un compte, vous êtes responsable de la confidentialité des identifiants de votre compte. Nous vous recommandons vivement de ne pas partager votre nom d’utilisateur, votre mot de passe ou tout autre identifiant d’accès avec qui que ce soit.</li><li>\n<strong>Communiquer avec vous.</strong> Nous utilisons vos informations personnelles pour vous fournir un service à la clientèle, répondre à vos demandes, vous offrir des services efficaces et entretenir notre relation commerciale avec vous.</li><li>\n<strong>Raisons légales.</strong>Nous utilisons vos informations personnelles afin de nous conformer à la législation en vigueur ou de répondre à des procédures judiciaires valides, notamment aux demandes émanant des forces de l’ordre ou d’organismes gouvernementaux, pour enquêter ou participer à des procédures civiles de communication de preuves, à des litiges potentiels ou en cours, ou à d’autres procédures contentieuses, ainsi que pour faire respecter nos conditions ou politiques, ou enquêter sur d’éventuelles violations de celles-ci.</li></ul><h2>Comment nous divulguons les informations personnelles</h2><p>Dans certaines circonstances, nous pouvons divulguer vos informations personnelles à des tiers pour des raisons légitimes, conformément à la présente Politique de confidentialité. Ces circonstances peuvent inclure :</p><ul><li>Avec Shopify, des prestataires et autres tiers qui fournissent des services en notre nom (par exemple gestion informatique, traitement des paiements, analyses de données, service à la clientèle, stockage cloud, traitement et expédition).</li><li>Avec des partenaires commerciaux et marketing afin de vous fournir des services de marketing et de vous adresser des publicités. Par exemple, nous utilisons Shopify pour prendre en charge la publicité personnalisée via des services tiers, en fonction de votre activité en ligne auprès de différents marchands et sites web. Nos partenaires commerciaux et marketing utiliseront vos informations conformément à leurs propres avis de confidentialité. En fonction de votre lieu de résidence, vous pouvez avoir le droit de nous demander de ne pas partager d’informations vous concernant dans le but de vous montrer des publicités et des contenus marketing ciblés, basés sur votre activité en ligne auprès de différents marchands et sites web.</li><li>Lorsque vous nous donnez instruction, nous adressez une demande ou consentez par tout autre moyen à la divulgation de certaines informations à des tiers, par exemple pour vous expédier des produits ou via votre utilisation de widgets de réseaux sociaux ou d’intégrations de connexion.</li><li>Avec nos affiliés ou plus généralement au sein de notre groupe de sociétés.</li><li>Dans le cadre d’une transaction commerciale telle qu’une fusion ou un dépôt de bilan, pour nous conformer à toute obligation légale applicable (notamment en réponse à des citations à comparaître, mandats de perquisition ou demandes similaires), pour faire respecter les conditions de service ou politiques applicables, ainsi que pour protéger ou défendre les Services, nos droits et les droits de nos utilisateurs ou de tiers.</li></ul><h2>Relation avec Shopify</h2><p>Les Services sont hébergés par Shopify, qui collecte et traite des informations personnelles concernant votre accès aux Services et votre utilisation de ceux-ci afin de vous fournir les Services et de les améliorer. Les informations que vous soumettez aux Services seront transmises et partagées avec Shopify, ainsi qu’avec des tiers qui peuvent être situés dans d’autres pays que celui où vous résidez, afin de vous fournir les Services et de les améliorer. De plus, afin de protéger, développer et améliorer notre activité, nous utilisons certaines fonctionnalités améliorées de Shopify qui intègrent des données et informations issues de vos interactions avec notre Boutique, ainsi qu’avec d’autres marchands et avec Shopify. Pour fournir ces fonctionnalités améliorées, Shopify peut utiliser des informations personnelles collectées à partir de vos interactions avec notre boutique, avec d’autres marchands et avec Shopify. Dans ces circonstances, Shopify est responsable du traitement de vos informations personnelles, notamment afin de répondre à vos demandes d’exercer vos droits concernant l’utilisation de vos informations personnelles à ces fins. Pour en savoir plus sur l’utilisation par Shopify de vos informations personnelles et sur les droits dont vous disposez, vous pouvez consulter la </p><p> . En fonction de votre lieu de résidence, vous pouvez exercer certains droits relatifs à vos informations personnelles ici </p><h2>Sites web et liens de tiers</h2><p>Les Services peuvent fournir des liens à des sites web ou autres plateformes en ligne exploitées par des tiers. Si vous suivez des liens menant vers des sites qui ne sont pas affiliés à nous ou que nous ne contrôlons pas, nous vous recommandons de consulter leurs politiques de confidentialité et de sécurité ainsi que leurs autres conditions générales d’utilisation. Nous ne garantissons pas et ne sommes pas responsables de la confidentialité ou de la sécurité de ces sites, y compris de l’exactitude, de l’exhaustivité ou de la fiabilité des informations qui se trouvent sur ces sites. Les informations que vous fournissez dans des espaces publics ou semi-publics, y compris les informations que vous partagez sur des plateformes de réseaux sociaux tierces, peuvent également être visibles par d’autres utilisateurs des Services et/ou par des utilisateurs de ces plateformes tierces sans restriction quant à leur utilisation par nous ou par un tiers. Le fait que nous incluions ces liens n’implique pas en soi une quelconque approbation du contenu de ces plateformes, ni de leurs propriétaires ou exploitants, sauf indication contraire figurant sur les Services.</p><h2>Données des enfants</h2><p>Les Services ne sont pas destinés à être utilisés par des enfants et nous ne collectons sciemment aucune information personnelle concernant des enfants n’ayant pas atteint l’âge de la majorité dans votre juridiction. Si vous êtes le parent ou le tuteur d’un enfant qui nous a fourni ses informations personnelles, vous pouvez nous contacter à l’aide des coordonnées indiquées ci-dessous pour demander leur suppression. À la date d’effet de la présente Politique de confidentialité, nous n’avons pas connaissance du fait que nous « partageons » ou « vendons » (au sens des définitions de ces termes prévues par la législation applicable) des informations personnelles concernant des personnes de moins de 16 ans.</p><h2>Sécurité et conservation de vos informations</h2><p>Veuillez noter qu’aucune mesure de sécurité n’est parfaite ou infaillible et que nous ne pouvons garantir une « sécurité parfaite ». De plus, toute information que vous nous envoyez peut ne pas être sécurisée lors de sa transmission. Nous vous recommandons de ne pas utiliser de canaux non sécurisés pour nous communiquer des informations sensibles ou confidentielles.</p><p>La durée de conservation de vos informations personnelles dépend de différents facteurs, tels que la nécessité de conserver ces informations pour gérer votre compte, vous fournir les Services, respecter nos obligations légales, résoudre les litiges ou faire appliquer tout autre contrat ou politique applicable.</p><h2>Vos droits et vos choix</h2><p>En fonction de votre lieu de résidence, vous pouvez disposer de certains ou de l’ensemble des droits indiqués ci-dessous concernant vos informations personnelles. Cependant, ces droits ne sont pas absolus, peuvent s’appliquer uniquement dans certaines circonstances et, dans certains cas, nous pouvons refuser votre demande dans les limites autorisées par la loi.</p><ul><li>\n<strong>Droit d’accès/droit à l’information.</strong> Vous pouvez avoir le droit de demander l’accès aux informations personnelles que nous détenons à votre sujet.</li><li>\n<strong>Droit à l’effacement.</strong> Vous pouvez avoir le droit de demander la suppression des informations personnelles que nous détenons à votre sujet.</li><li>\n<strong>Droit de rectification.</strong> Vous pouvez avoir le droit de demander la rectification des informations personnelles inexactes que nous détenons à votre sujet.</li><li>\n<strong>Droit à la portabilité.</strong>Vous pouvez avoir le droit de recevoir une copie des informations personnelles que nous détenons à votre sujet et de demander leur transfert à un tiers, dans certaines circonstances et avec certaines exceptions.</li><li>\n<strong>Gestion des préférences en matière de communication.</strong> Nous pouvons vous envoyer des e-mails promotionnels. Vous pouvez à tout moment choisir de ne plus en recevoir en utilisant l’option de désabonnement incluse dans nos e-mails. Si vous vous désabonnez, nous pouvons toujours vous envoyer des e-mails non promotionnels, par exemple concernant votre compte ou des commandes que vous avez effectuées.</li></ul><p><strong>Si vous résidez au Royaume-Uni ou dans l’Espace économique européen,</strong> et sous réserve des exceptions et limitations prévues par la législation locale, vous pouvez exercer les droits suivants en complément des droits énumérés ci-dessus&nbsp;:</p>\n<ul>\n<li>\n<strong>Opposition au traitement et limitation du traitement&nbsp;:</strong> Vous pouvez avoir le droit de nous demander de cesser ou de restreindre le traitement de vos informations personnelles à certaines fins.</li>\n<li>\n<strong>Retrait du consentement&nbsp;:</strong> Lorsque nous dépendons de votre consentement pour traiter vos informations personnelles, vous avez le droit de retirer ce consentement. Si vous retirez votre consentement, la légalité du traitement fondé sur votre consentement avant son retrait ne sera pas affectée.</li>\n</ul><p>Vous pouvez exercer ces droits aux emplacements prévus à cet effet sur les Services ou en nous contactant aux coordonnées fournies ci-dessous. Pour en savoir plus sur l’utilisation par Shopify de vos informations personnelles et sur les droits dont vous pouvez disposer, y compris les droits relatifs aux données traitées par Shopify, vous pouvez consulter https://privacy.shopify.com/fr.</p><p>Nous ne vous pénaliserons pas pour avoir exercé un de ces droits. Nous devrons peut-être vérifier votre identité avant de pouvoir traiter vos demandes, dans les limites prévues ou autorisées par la législation applicable. Conformément à la législation applicable, vous pouvez désigner un mandataire autorisé pour demander à exercer vos droits en votre nom. Avant d’accepter ladite demande de la part d’un agent, nous exigerons que l’agent fournisse une preuve de l’autorisation que vous lui avez donnée pour agir en votre nom, et il se peut que nous vous demandions de vérifier directement votre identité auprès de nous. Nous répondrons à votre demande dans les délais prévus par la législation applicable.</p><h2>Plaintes</h2><p>Si vous souhaitez déposer une plainte concernant notre traitement de vos informations personnelles, veuillez nous contacter aux coordonnées indiquées ci-dessous. En fonction de votre lieu de résidence, vous pouvez avoir le droit de contester notre décision en nous contactant aux coordonnées indiquées ci-dessous, ou en déposant une plainte auprès de l’autorité de protection des données compétente de votre région. Pour l’EEE, vous trouverez une liste des autorités de contrôle responsables de la protection des données </p><h2>Transferts internationaux</h2><p>Veuillez noter que nous pouvons transférer, stocker et traiter vos informations personnelles en dehors du pays dans lequel vous résidez.</p><p>Si nous transférons vos informations personnelles en dehors de l’Espace économique européen ou du Royaume-Uni, nous nous appuierons sur des mécanismes de transfert reconnus, tels que les clauses contractuelles types de la Commission européenne, ou le cas échéant sur tout contrat équivalent émis par l’autorité compétente du Royaume-Uni, sauf si le transfert de données est effectué vers un pays reconnu comme offrant un niveau de protection adéquat.</p><h2>Modifications de la présente Politique de confidentialité</h2><p>Nous pouvons mettre à jour cette Politique de confidentialité à tout moment, notamment pour refléter des modifications de nos pratiques ou pour d’autres raisons opérationnelles, juridiques ou réglementaires. Nous publierons la Politique de confidentialité révisée sur ce site web, mettrons à jour la date de « Dernière mise à jour » et fournirons un avis, conformément à la législation applicable.</p>"
+  },
+  {
+   "slug": "legal-notice",
+   "title": "Mentions légales",
+   "template": "policy",
+   "content": "<h2>Éditeur du site</h2><p>ASAL Maroc — Marrakech, Maroc.<br>E-mail : contact@asalmaroc.com</p><h2>Hébergement</h2><p>Indiquez ici votre hébergeur.</p><h2>Propriété intellectuelle</h2><p>L’ensemble des contenus (textes, images, logos) de ce site est la propriété exclusive d’ASAL. Toute reproduction est interdite sans autorisation préalable.</p>"
+  },
+  {
+   "slug": "terms-of-service",
+   "title": "Conditions générales de vente",
+   "template": "policy",
+   "content": "<h2>Article 1 — Objet</h2><p>Les présentes conditions régissent les ventes de produits ASAL réalisées sur ce site.</p><h2>Article 2 — Prix</h2><p>Les prix sont indiqués en dirhams marocains (MAD), toutes taxes comprises.</p><h2>Article 3 — Commande et paiement</h2><p>Le paiement s’effectue à la livraison, en espèces, auprès du livreur.</p><h2>Article 4 — Livraison</h2><p>Livraison partout au Maroc. Livraison gratuite dès 300 MAD d’achat.</p><h2>Article 5 — Retours</h2><p>Consultez notre page Livraison &amp; Retours.</p>"
+  }
+ ],
+ "sections": [
+  {
+   "type": "hero_video",
+   "isEnabled": true,
+   "data": {
+    "eyebrow": "L'ART D'OFFRIR",
+    "heading": "Des miels d'exception,<br>directement du Maroc.",
+    "text": "Euphorbe, Daghmous, Thym, Oranger. Des récoltes rares, 100 % naturelles, sélectionnées avec exigence et livrées chez vous.",
+    "video": "/media/32722593_8437bad76a6b4fbb9706d72ce3a686ed.SD-480p.mp4",
+    "poster": "/media/d4999243_808190F3-0CA8-49DD-97D9-0864934FAFF8.png",
+    "btn1Label": "Découvrir nos miels",
+    "btn1Link": "/collections/nos-miels",
+    "btn2Label": "Voir les coffrets",
+    "btn2Link": "/collections/coffrets-cadeaux",
+    "mobileHeading": "Des coffrets d'exception, directement du Maroc.",
+    "mobileText": "Six ou neuf miels rares dans un écrin noir et or.",
+    "mobileBtnLabel": "Voir les coffrets",
+    "mobileBtnLink": "/collections/coffrets-cadeaux",
+    "mobileLinkLabel": "Nos miels",
+    "mobileLinkHref": "/collections/nos-miels"
+   }
+  },
+  {
+   "type": "reassurance",
+   "isEnabled": true,
+   "data": {
+    "items": [
+     {
+      "icon": "gift",
+      "title": "Liberté de choix de votre coffret",
+      "text": "Composez-le en 250g ou en 500g"
+     },
+     {
+      "icon": "truck",
+      "title": "Livraison gratuite dès 300 DHS",
+      "text": "Partout au Maroc · Expédié depuis Marrakech"
+     },
+     {
+      "icon": "leaf",
+      "title": "Miel 100% naturel",
+      "text": "Récolté au Maroc"
+     },
+     {
+      "icon": "chat",
+      "title": "Réponse sous 24h",
+      "text": "Une question ? Écrivez-nous"
+     }
+    ]
+   }
+  },
+  {
+   "type": "product_band",
+   "isEnabled": true,
+   "data": {
+    "eyebrow": "ÉDITION LIMITÉE",
+    "title": "Les Pépites",
+    "titleLink": "/collections/les-rares",
+    "text": "Nos miels les plus rares, réservés aux connaisseurs.",
+    "products": [
+     "miel-de-daghmous",
+     "miel-de-jujubier",
+     "miel-de-thym"
+    ],
+    "variant": "250 g",
+    "badge": "Récolte limitée",
+    "columns": 3
+   }
+  },
+  {
+   "type": "product_row",
+   "isEnabled": true,
+   "data": {
+    "title": "Nos Miels",
+    "titleLink": "/collections/nos-miels",
+    "text": "Les classiques de la ruche, du doux au corsé.",
+    "linkLabel": "Voir tout →",
+    "link": "/collections/nos-miels",
+    "products": [
+     "miel-danis",
+     "miel-deucalyptus",
+     "miel-doranger",
+     "miel-de-caroubier"
+    ],
+    "variant": "250 g",
+    "columns": 4
+   }
+  },
+  {
+   "type": "needs",
+   "isEnabled": false,
+   "data": {
+    "heading": "Par besoin",
+    "text": "Le bon miel pour chaque moment de la journée.",
+    "cards": [
+     {
+      "image": "/media/9b629fb0_besoin-immunite.webp",
+      "title": "Immunité",
+      "text": "Renforcez vos défenses naturelles.",
+      "linkLabel": "Découvrir →",
+      "link": "/collections/immunite"
+     },
+     {
+      "image": "/media/f13aefb6_besoin-gorge.webp",
+      "title": "Gorge & Respiration",
+      "text": "Douceur pour la gorge.",
+      "linkLabel": "Découvrir →",
+      "link": "/collections/gorge-respiration"
+     },
+     {
+      "image": "/media/4aeeb86f_besoin-energie.webp",
+      "title": "Énergie & Vitalité",
+      "text": "Le coup de boost naturel.",
+      "linkLabel": "Découvrir →",
+      "link": "/collections/energie-vitalite"
+     },
+     {
+      "image": "/media/49be57fa_besoin-decouverte-original.jpg",
+      "title": "Découverte",
+      "text": "Explorez nos terroirs du Maroc.",
+      "linkLabel": "Découvrir →",
+      "link": "/collections/decouverte"
+     }
+    ]
+   }
+  },
+  {
+   "type": "gift_split",
+   "isEnabled": true,
+   "data": {
+    "eyebrow": "L’ART D’OFFRIR",
+    "heading": "Deux écrins.<br><em>Une attention.</em>",
+    "text": "Une sélection de miels du Maroc présentée dans un écrin soigné, accompagnée d’une carte pour laisser vos propres mots.",
+    "pills": [
+     {
+      "icon": "gift",
+      "label": "Prêt à offrir"
+     },
+     {
+      "icon": "card",
+      "label": "Carte message"
+     },
+     {
+      "icon": "tag",
+      "label": "Présentation soignée"
+     }
+    ],
+    "image": "/media/b77c088f_asal-carte-message.jpg",
+    "imageAlt": "Carte message ASAL scellée à la cire",
+    "seal": "Votre<br>message"
+   }
+  },
+  {
+   "type": "coffrets",
+   "isEnabled": true,
+   "data": {
+    "eyebrow": "À offrir",
+    "heading": "Coffrets Cadeaux",
+    "text": "Nos miels les plus appréciés, réunis en coffrets prêts à offrir.",
+    "cards": [
+     {
+      "product": "coffret-cosy-6-miels-dexception-pots-de-250-g",
+      "image": "/media/b80bab6b_ChatGPT_Image_Aug_15_2026_02_48_05_PM.png",
+      "badge": "Le plus généreux",
+      "title": "Coffret Cosy, 6 Miels d'Exception",
+      "tagline": "Idéal pour les fêtes et les grandes occasions.",
+      "features": [
+       "6 miels d'exception, pots de 250 g",
+       "Thym, Oranger, Sidr, Eucalyptus, Daghmous, Caroubier",
+       "Carte message personnalisée offerte"
+      ],
+      "ctaLabel": "Choisir ce coffret"
+     },
+     {
+      "product": "coffret-decouverte-9-miels-dexception-pots-de-100-g",
+      "image": "/media/c24ef11c_ChatGPT_Image_Aug_15_2026_03_27_07_PM.png",
+      "badge": "9 miels à explorer",
+      "title": "Coffret Découverte, 9 Miels d'Exception",
+      "tagline": "Pour explorer et trouver vos miels préférés.",
+      "features": [
+       "9 miels d'exception, pots de 100 g",
+       "Daghmous, Sidr, Thym, Oranger, Zakkoum et plus",
+       "Carte message personnalisée offerte"
+      ],
+      "ctaLabel": "Choisir ce coffret"
+     }
+    ]
+   }
+  },
+  {
+   "type": "blog_latest",
+   "isEnabled": true,
+   "data": {
+    "heading": "Le miel, un art de vivre",
+    "text": "Nos conseils, recettes et découvertes autour du miel",
+    "count": 3
+   }
+  },
+  {
+   "type": "compose_cta",
+   "isEnabled": true,
+   "data": {
+    "eyebrow": "Sur mesure",
+    "heading": "Composez votre coffret",
+    "text": "Un cadeau unique, à votre image.",
+    "note": "Composition acceptée en 250g uniquement ou en 500g uniquement.",
+    "steps": [
+     {
+      "num": "01",
+      "title": "Choisissez vos miels",
+      "text": "Parmi nos 10 variétés de miels d’exception."
+     },
+     {
+      "num": "02",
+      "title": "Ajoutez votre message",
+      "text": "Personnalisé, avec vos mots, glissé dans le coffret."
+     },
+     {
+      "num": "03",
+      "title": "Nous préparons votre coffret",
+      "text": "Avec soin, prêt à offrir."
+     }
+    ],
+    "ctaLabel": "Créer mon coffret",
+    "ctaLink": "/pages/composez-votre-coffret"
+   }
+  },
+  {
+   "type": "story",
+   "isEnabled": false,
+   "data": {
+    "eyebrow": "NOTRE HISTOIRE",
+    "heading": "Du rucher marocain à votre table",
+    "text": "ASAL sélectionne des miels rares du Maroc, issus d'une apiculture artisanale et responsable. Chaque récolte est préservée avec soin pour garder toute la richesse naturelle du miel.",
+    "image": "/media/6217d566_Untitleddesign.png",
+    "imageAlt": "Miel ASAL du terroir marocain",
+    "link": "/pages/notre-histoire",
+    "linkLabel": "Découvrir notre histoire →"
+   }
+  },
+  {
+   "type": "faq",
+   "isEnabled": true,
+   "data": {
+    "heading": "Questions fréquentes",
+    "text": "Tout ce qu'il faut savoir avant de commander.",
+    "items": [
+     {
+      "q": "Comment conserver le miel ASAL ?",
+      "a": "Conservez votre miel dans un endroit frais et sec, à l'abri de la lumière directe. Le miel peut cristalliser avec le temps, ce qui est normal. Vous pouvez le réchauffer légèrement au bain-marie pour retrouver sa texture liquide."
+     },
+     {
+      "q": "Quels sont les délais de livraison ?",
+      "a": "Les commandes sont traitées sous 2-3 jours ouvrables. La livraison prend généralement 5-7 jours ouvrables selon votre localisation."
+     },
+     {
+      "q": "Le paiement à la livraison est-il disponible ?",
+      "a": "Oui, nous proposons le paiement à la livraison pour plus de commodité. Vous pouvez payer directement au livreur à la réception de votre commande."
+     },
+     {
+      "q": "Comment choisir son coffret ?",
+      "a": "Chaque coffret est conçu pour offrir une expérience unique. Consultez les descriptions détaillées de chaque coffret pour découvrir les variétés de miel incluses et choisir celui qui correspond à vos préférences."
+     },
+     {
+      "q": "Est ce que je peux composer mon coffret ?",
+      "a": "Oui, vous pouvez personnaliser le coffret de votre choix selon vos envies.Indiquez-nous simplement votre demande par message privé (composition, types de miels, formats, quantité, etc.) et nous vous communiquerons le prix correspondant."
+     },
+     {
+      "q": "Proposez-vous des options pour les entreprises ?",
+      "a": "Absolument. Nous proposons des coffrets personnalisés pour les entreprises : cadeaux clients, séminaires, événements corporate. Packaging sur mesure, gravure et message personnalisé disponibles. Contactez-nous pour un devis adapté à vos besoins."
+     },
+     {
+      "q": "Collaborez-vous avec d'autres marques ?",
+      "a": "Oui, nous sommes ouverts à des collaborations avec des marques premium partageant nos valeurs d'authenticité et d'excellence. Que ce soit pour des coffrets co-brandés, des événements ou des partenariats B2B, contactez-nous à contact@asalmaroc.com pour discuter de votre projet."
+     },
+     {
+      "q": "D'où proviennent vos miels ?",
+      "a": "Nos miels sont récoltés dans les régions les plus préservées du Maroc : les montagnes de l'Atlas, les vallées du Souss, les plaines du Gharb et les zones arides du Sud. Chaque variété reflète le terroir unique de sa région d'origine, offrant des profils aromatiques exceptionnels."
+     },
+     {
+      "q": "Vos miels sont-ils certifiés ?",
+      "a": "Oui, nos miels sont certifiés 100% naturels et purs. Chaque lot est analysé en laboratoire pour garantir l'absence de pesticides, d'antibiotiques et d'additifs. Nous travaillons exclusivement avec des apiculteurs certifiés qui respectent des pratiques apicoles traditionnelles et durables."
+     }
+    ],
+    "cardTitle": "Une autre question ?",
+    "cardText": "Notre équipe vous répond avec plaisir, sous 24 h ouvrées.",
+    "cardBtnLabel": "Nous contacter",
+    "cardBtnLink": "/pages/contact"
+   }
+  }
+ ],
+ "settings": {
+  "brand": {
+   "name": "ASAL",
+   "tagline": "L'or naturel du Maroc",
+   "logo": "/media/8a0f20c6_logo_asal_maroc.png",
+   "logoWidth": 54,
+   "logoWidthMobile": 42,
+   "favicon": "/media/8a0f20c6_logo_asal_maroc.png",
+   "footerLogoText": "Asal",
+   "footerBlurb": "Des miels rares du Maroc, sélectionnés à la source et livrés avec soin partout au Maroc.",
+   "copyright": "© 2026 ASAL Maroc"
+  },
+  "menus": {
+   "header": [
+    {
+     "label": "Nos Miels",
+     "href": "/collections/nos-miels",
+     "children": []
+    },
+    {
+     "label": "Coffrets Cadeaux",
+     "href": "/collections/coffrets-cadeaux",
+     "children": []
+    },
+    {
+     "label": "Les Pépites",
+     "href": "/collections/les-rares",
+     "children": []
+    },
+    {
+     "label": "Par besoin",
+     "href": "#",
+     "children": [
+      {
+       "label": "Immunité",
+       "href": "/collections/immunite",
+       "children": []
+      },
+      {
+       "label": "Gorge & Respiration",
+       "href": "/collections/gorge-respiration",
+       "children": []
+      },
+      {
+       "label": "Énergie & Vitalité",
+       "href": "/collections/energie-vitalite",
+       "children": []
+      },
+      {
+       "label": "Découverte",
+       "href": "/collections/decouverte",
+       "children": []
+      }
+     ]
+    },
+    {
+     "label": "Notre Histoire",
+     "href": "/pages/notre-histoire",
+     "children": []
+    },
+    {
+     "label": "Blog",
+     "href": "/blogs/le-miel-un-art-de-vivre",
+     "children": []
+    },
+    {
+     "label": "Contact",
+     "href": "/pages/contact",
+     "children": []
+    }
+   ],
+   "footer1Title": "La marque",
+   "footer1": [
+    {
+     "label": "Notre Histoire",
+     "href": "/pages/notre-histoire",
+     "children": []
+    },
+    {
+     "label": "FAQ",
+     "href": "/pages/faq",
+     "children": []
+    },
+    {
+     "label": "Contact",
+     "href": "/pages/contact",
+     "children": []
+    }
+   ],
+   "footer2Title": "Informations",
+   "footer2": [
+    {
+     "label": "Mentions légales",
+     "href": "/policies/legal-notice",
+     "children": []
+    },
+    {
+     "label": "CGV",
+     "href": "/policies/terms-of-service",
+     "children": []
+    },
+    {
+     "label": "Politique de confidentialité",
+     "href": "/policies/privacy-policy",
+     "children": []
+    },
+    {
+     "label": "Livraison & Retours",
+     "href": "/pages/livraison-retours",
+     "children": []
+    }
+   ],
+   "legal": [
+    {
+     "label": "Mentions légales",
+     "href": "/policies/legal-notice"
+    },
+    {
+     "label": "CGV",
+     "href": "/policies/terms-of-service"
+    },
+    {
+     "label": "Confidentialité",
+     "href": "/policies/privacy-policy"
+    }
+   ]
+  }
+ }
+}

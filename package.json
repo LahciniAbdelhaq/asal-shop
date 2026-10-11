@@ -1,0 +1,40 @@
+{
+  "name": "asal-shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ASAL — boutique de miels du Maroc (Next.js + back-office), reconstruite depuis asalmaroc.com",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "db:push": "prisma db push",
+    "db:seed": "node prisma/seed.mjs",
+    "setup": "prisma db push && node prisma/seed.mjs",
+    "import:clone": "node scripts/import-clone.mjs",
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate && prisma db push --skip-generate && next build",
+    "db:seed:demo": "node prisma/seed.mjs --demo"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.3",
+    "@vercel/blob": "^2.8.1",
+    "bcryptjs": "3.0.3",
+    "jose": "6.2.12",
+    "next": "15.5.27",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "recharts": "3.10.1",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.0",
+    "@types/react": "19.2.0",
+    "@types/react-dom": "19.2.0",
+    "prisma": "6.19.3",
+    "typescript": "5.8.3",
+    "vercel": "^63.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
