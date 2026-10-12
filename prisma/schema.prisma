@@ -19,19 +19,19 @@ model AdminUser {
 }
 
 model Customer {
-  id               Int       @id @default(autoincrement())
-  email            String    @unique
-  firstName        String    @default("")
-  lastName         String    @default("")
-  phone            String    @default("")
+  id               Int      @id @default(autoincrement())
+  email            String   @unique
+  firstName        String   @default("")
+  lastName         String   @default("")
+  phone            String   @default("")
   passwordHash     String?
-  address          String    @default("")
-  city             String    @default("")
-  zip              String    @default("")
-  country          String    @default("Maroc")
-  acceptsMarketing Boolean   @default(false)
-  notes            String    @default("")
-  createdAt        DateTime  @default(now())
+  address          String   @default("")
+  city             String   @default("")
+  zip              String   @default("")
+  country          String   @default("Maroc")
+  acceptsMarketing Boolean  @default(false)
+  notes            String   @default("")
+  createdAt        DateTime @default(now())
   orders           Order[]
   reviews          Review[]
 }
@@ -46,6 +46,7 @@ model Category {
   isActive       Boolean   @default(true)
   seoTitle       String    @default("")
   seoDescription String    @default("")
+  i18n           String    @default("{}") // traductions : { "en": {…}, "ar": {…} }
   createdAt      DateTime  @default(now())
   products       Product[]
 }
@@ -65,6 +66,7 @@ model Product {
   sortOrder      Int            @default(0)
   seoTitle       String         @default("")
   seoDescription String         @default("")
+  i18n           String         @default("{}") // traductions : { "en": {…}, "ar": {…} }
   createdAt      DateTime       @default(now())
   updatedAt      DateTime       @updatedAt
   images         ProductImage[]
@@ -195,6 +197,7 @@ model Page {
   isPublished    Boolean  @default(true)
   seoTitle       String   @default("")
   seoDescription String   @default("")
+  i18n           String   @default("{}") // traductions : { "en": {…}, "ar": {…} }
   updatedAt      DateTime @updatedAt
 }
 
@@ -207,6 +210,7 @@ model Post {
   image       String   @default("")
   author      String   @default("ASAL")
   isPublished Boolean  @default(true)
+  i18n        String   @default("{}") // traductions : { "en": {…}, "ar": {…} }
   publishedAt DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
@@ -218,6 +222,7 @@ model HomeSection {
   position  Int     @default(0)
   isEnabled Boolean @default(true)
   data      String  @default("{}")
+  i18n      String  @default("{}")
 }
 
 // Réglages globaux : marque, couleurs, typo, menus, livraison… (valeur JSON)

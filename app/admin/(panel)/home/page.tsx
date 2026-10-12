@@ -5,6 +5,8 @@ import { SECTION_SCHEMAS } from '@/lib/sections';
 import { getLinkOptions, getPickProducts } from '@/lib/admin-data';
 import { addSection, sectionOp } from '../../actions';
 import SectionEditor from './SectionEditor';
+import { LangTabs } from '@/components/admin/Translate';
+import { applyText, asLocale, parseI18n } from '@/lib/i18n';
 
 export const metadata = { title: 'Page d’accueil' };
 
@@ -15,8 +17,11 @@ const summary = (data: string) => {
   } catch { return ''; }
 };
 
-export default async function HomeBuilder({ searchParams }: { searchParams: Promise<{ s?: string }> }) {
-  const sel = Number((await searchParams).s);
+export default async function HomeBuilder({ searchParams }: { searchParams: Promise<{ s?: string; lang?: string }> }) {
+  const sp = await searchParams;
+  const sel = Number(sp.s);
+  const lang = asLocale(sp.lang);
+  const q = lang === 'fr' ? '' : `&lang=${lang}`;
   const [sections, products, links] = await Promise.all([db.homeSection.findMany({ orderBy: { position: 'asc' } }), getPickProducts(), getLinkOptions()]);
   const current = sections.find((s) => s.id === sel) || null;
   const Op = ({ id, op, children, title }: { id: number; op: string; children: React.ReactNode; title: string }) => (
@@ -39,13 +44,13 @@ export default async function HomeBuilder({ searchParams }: { searchParams: Prom
                     {i > 0 && <Op id={s.id} op="up" title="Monter">▲</Op>}
                     {i < sections.length - 1 && <Op id={s.id} op="down" title="Descendre">▼</Op>}
                   </div>
-                  <Link href={`/admin/home?s=${s.id}`} className="meta" style={{ textDecoration: 'none' }}>
+                  <Link href={`/admin/home?s=${s.id}${q}`} className="meta" style={{ textDecoration: 'none' }}>
                     <strong>{SECTION_SCHEMAS[s.type]?.label || s.type}</strong>
                     <span>{s.isEnabled ? '' : 'Masquée · '}{summary(s.data) || SECTION_SCHEMAS[s.type]?.description}</span>
                   </Link>
                   <Op id={s.id} op="toggle" title={s.isEnabled ? 'Masquer' : 'Afficher'}><Icon name="eye" /></Op>
                   <Op id={s.id} op="duplicate" title="Dupliquer"><Icon name="copy" /></Op>
-                  <Link className="btn btn-ghost btn-sm btn-icon" href={`/admin/home?s=${s.id}`} title="Modifier"><Icon name="edit" /></Link>
+                  <Link className="btn btn-ghost btn-sm btn-icon" href={`/admin/home?s=${s.id}${q}`} title="Modifier"><Icon name="edit" /></Link>
                 </div>
               ))}
             </div>
@@ -58,10 +63,17 @@ export default async function HomeBuilder({ searchParams }: { searchParams: Prom
           </div>
         </div>
         <div>
+          {current && <LangTabs current={lang} />}
           {current ? (
             <SectionEditor
-              key={current.id}
-              section={{ id: current.id, type: current.type, isEnabled: current.isEnabled, data: (() => { try { return JSON.parse(current.data); } catch { return {}; } })() }}
+              key={`${current.id}-${lang}`}
+              lang={lang}
+              section={{ id: current.id, type: current.type, isEnabled: current.isEnabled, data: (() => {
+                let d = {};
+                try { d = JSON.parse(current.data); } catch { /* */ }
+                // en traduction : textes déjà traduits par-dessus le français
+                return lang === 'fr' ? d : applyText(d, parseI18n(current.i18n)[lang]);
+              })() }}
               products={products}
               links={links}
             />

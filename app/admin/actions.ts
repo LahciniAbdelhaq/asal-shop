@@ -5,8 +5,10 @@ import { revalidatePath, revalidateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { db } from '@/lib/db';
 import { clearSession, requireAdmin, setSession } from '@/lib/auth';
-import { saveSetting } from '@/lib/settings';
+import { getSettings, getSettingsOverrides, getStringOverrides, saveRaw, saveSetting, settingI18nKey } from '@/lib/settings';
 import { DEFAULT_SETTINGS, type SettingKey } from '@/lib/defaults';
+import { DICTS, type DictKey } from '@/lib/dict';
+import { applyText, diffText, isLocale, parseI18n, type Locale } from '@/lib/i18n';
 import { SECTION_SCHEMAS } from '@/lib/sections';
 import { slugify } from '@/lib/format';
 
@@ -108,7 +110,7 @@ export async function duplicateProduct(f: FormData) {
   const copy = await db.product.create({
     data: {
       slug, title: `${p.title} (copie)`, subtitle: p.subtitle, description: p.description, productType: p.productType, vendor: p.vendor,
-      status: 'draft', badge: p.badge, optionName: p.optionName, sortOrder: p.sortOrder + 1,
+      status: 'draft', badge: p.badge, optionName: p.optionName, sortOrder: p.sortOrder + 1, i18n: p.i18n,
       categories: { connect: p.categories.map((c) => ({ id: c.id })) },
       images: { create: p.images.map(({ url, alt, position }) => ({ url, alt, position })) },
       variants: { create: p.variants.map(({ title, sku, price, compareAtPrice, stock, trackStock, image, position }) => ({ title, sku, price, compareAtPrice, stock, trackStock, image, position })) },
@@ -368,7 +370,7 @@ export async function sectionOp(f: FormData) {
   if (op === 'delete') await db.homeSection.delete({ where: { id } });
   if (op === 'toggle') await db.homeSection.update({ where: { id }, data: { isEnabled: !all[i].isEnabled } });
   if (op === 'duplicate') {
-    await db.homeSection.create({ data: { type: all[i].type, data: all[i].data, isEnabled: false, position: all[i].position } });
+    await db.homeSection.create({ data: { type: all[i].type, data: all[i].data, i18n: all[i].i18n, isEnabled: false, position: all[i].position } });
   }
   if (op === 'up' || op === 'down') {
     const j = op === 'up' ? i - 1 : i + 1;
@@ -427,4 +429,98 @@ export async function deleteAdminUser(f: FormData) {
   if (me.role !== 'admin' || id === me.id) return;
   await db.adminUser.delete({ where: { id } });
   revalidatePath('/admin/settings');
+}
+
+// ---------------------------------------------------------------- traductions
+// Le français reste dans les champs habituels ; chaque traduction ne garde que les textes qui diffèrent.
+const TEXT_FIELDS = {
+  product: ['title', 'optionName', 'badge', 'description', 'seoTitle', 'seoDescription'],
+  category: ['title', 'description', 'seoTitle', 'seoDescription'],
+  page: ['title', 'content', 'seoTitle', 'seoDescription'],
+  post: ['title', 'excerpt', 'content'],
+} as const;
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const pick = (rec: Record<string, any>, keys: readonly string[]) => Object.fromEntries(keys.map((k) => [k, rec[k] ?? '']));
+const withLang = (raw: string, lang: Locale, over: Record<string, any> | undefined) => {
+  const all = parseI18n(raw);
+  if (over && Object.keys(over).length) all[lang] = over;
+  else delete all[lang];
+  return JSON.stringify(all);
+};
+
+export async function saveTranslation(_: Result, f: FormData): Promise<Result> {
+  await requireAdmin();
+  const entity = str(f, 'entity');
+  const lang = str(f, 'lang');
+  const id = str(f, 'id');
+  if (!isLocale(lang) || lang === 'fr') return fail('Langue invalide.');
+  const v = json<Record<string, any>>(f, 'data', {});
+
+  if (entity === 'product') {
+    const p = await db.product.findUnique({ where: { id: Number(id) }, include: { variants: true } });
+    if (!p) return fail('Produit introuvable.');
+    const over: Record<string, any> = diffText(pick(p, TEXT_FIELDS.product), v) || {};
+    const variants: Record<string, string> = {};
+    for (const x of Array.isArray(v.variants) ? v.variants : []) {
+      const base = p.variants.find((pv) => pv.id === x.id);
+      if (base && typeof x.title === 'string' && x.title.trim() && x.title.trim() !== base.title) variants[base.id] = x.title.trim();
+    }
+    if (Object.keys(variants).length) over.variants = variants;
+    await db.product.update({ where: { id: p.id }, data: { i18n: withLang(p.i18n, lang, over) } });
+  } else if (entity === 'category') {
+    const c = await db.category.findUnique({ where: { id: Number(id) } });
+    if (!c) return fail('Catégorie introuvable.');
+    await db.category.update({ where: { id: c.id }, data: { i18n: withLang(c.i18n, lang, diffText(pick(c, TEXT_FIELDS.category), v)) } });
+  } else if (entity === 'post') {
+    const p = await db.post.findUnique({ where: { id: Number(id) } });
+    if (!p) return fail('Article introuvable.');
+    await db.post.update({ where: { id: p.id }, data: { i18n: withLang(p.i18n, lang, diffText(pick(p, TEXT_FIELDS.post), v)) } });
+  } else if (entity === 'page') {
+    const p = await db.page.findUnique({ where: { id: Number(id) } });
+    if (!p) return fail('Page introuvable.');
+    const base: Record<string, any> = pick(p, TEXT_FIELDS.page);
+    const val = { ...v };
+    if (Array.isArray(v.content)) {
+      // page FAQ : questions/réponses (JSON)
+      let list: unknown[] = [];
+      try { list = JSON.parse(p.content); } catch { /* */ }
+      val.content = diffText(list, v.content) ? JSON.stringify(applyText(list, v.content)) : p.content;
+    }
+    await db.page.update({ where: { id: p.id }, data: { i18n: withLang(p.i18n, lang, diffText(base, val)) } });
+  } else if (entity === 'section') {
+    const sec = await db.homeSection.findUnique({ where: { id: Number(id) } });
+    if (!sec) return fail('Section introuvable.');
+    let base: unknown = {};
+    try { base = JSON.parse(sec.data); } catch { /* */ }
+    await db.homeSection.update({ where: { id: sec.id }, data: { i18n: withLang(sec.i18n, lang, diffText(base, v)) } });
+  } else if (entity === 'setting') {
+    if (!(id in DEFAULT_SETTINGS)) return fail('Réglage inconnu.');
+    const key = id as SettingKey;
+    const [fr, all] = await Promise.all([getSettings(), getSettingsOverrides(lang)]);
+    const d = diffText(fr[key], v);
+    if (d) all[key] = d; else delete all[key];
+    await saveRaw(settingI18nKey(lang), all);
+  } else return fail('Contenu inconnu.');
+
+  refreshShop();
+  return ok('Traduction enregistrée.');
+}
+
+/** Textes de l'interface (boutons, libellés…) : seules les valeurs différentes du texte d'origine sont gardées. */
+export async function saveStrings(_: Result, f: FormData): Promise<Result> {
+  await requireAdmin();
+  const lang = str(f, 'lang');
+  if (!isLocale(lang)) return fail('Langue invalide.');
+  const v = json<Record<string, string>>(f, 'data', {});
+  const kept: Record<string, string> = {};
+  for (const [k, x] of Object.entries(v)) {
+    if (!(k in DICTS[lang]) || typeof x !== 'string') continue;
+    if (x.trim() && x !== DICTS[lang][k as DictKey]) kept[k] = x;
+  }
+  const all = await getStringOverrides();
+  all[lang] = kept;
+  await saveRaw('strings', all);
+  refreshShop();
+  return ok('Textes enregistrés.');
 }

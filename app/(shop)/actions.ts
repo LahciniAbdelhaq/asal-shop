@@ -5,52 +5,61 @@ import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import { db } from '@/lib/db';
 import { priceCart } from '@/lib/pricing';
-import { getSettings } from '@/lib/settings';
+import { getSettings, getT } from '@/lib/settings';
 import { clearSession, getCustomer, setSession } from '@/lib/auth';
+import { asLocale, localePath, type Locale } from '@/lib/i18n';
 import type { CartLine } from '@/lib/cart-types';
 
 type Msg = { ok: boolean; message: string } | null;
 const str = (f: FormData, k: string, max = 2000) => String(f.get(k) ?? '').trim().slice(0, max);
 const isEmail = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+// chaque formulaire de la boutique envoie la langue du visiteur (champ caché « lang »)
+const langOf = (f: FormData) => asLocale(f.get('lang'));
 
 export async function subscribe(_: Msg, f: FormData): Promise<Msg> {
+  const t = await getT(langOf(f));
   const email = str(f, 'email', 200).toLowerCase();
-  if (!isEmail(email)) return { ok: false, message: 'Adresse e-mail invalide.' };
+  if (!isEmail(email)) return { ok: false, message: t('msgInvalidEmail') };
   await db.subscriber.upsert({ where: { email }, update: {}, create: { email } });
-  return { ok: true, message: 'Merci ! Vous êtes inscrit(e) à notre newsletter.' };
+  return { ok: true, message: t('msgSubscribed') };
 }
 
 export async function sendContact(_: Msg, f: FormData): Promise<Msg> {
+  const t = await getT(langOf(f));
   const email = str(f, 'email', 200);
   const body = str(f, 'body', 5000);
-  if (!isEmail(email)) return { ok: false, message: 'Merci d’indiquer une adresse e-mail valide.' };
-  if (body.length < 3) return { ok: false, message: 'Votre message est vide.' };
-  if (str(f, 'website')) return { ok: true, message: 'Merci, votre message a bien été envoyé.' }; // pot de miel anti-spam
+  if (!isEmail(email)) return { ok: false, message: t('msgContactEmail') };
+  if (body.length < 3) return { ok: false, message: t('msgEmptyMessage') };
+  if (str(f, 'website')) return { ok: true, message: t('msgContactThanks') }; // pot de miel anti-spam
   await db.message.create({ data: { name: str(f, 'name', 200), email, phone: str(f, 'phone', 50), subject: str(f, 'subject', 200), body } });
-  return { ok: true, message: 'Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.' };
+  return { ok: true, message: t('msgContactThanks') };
 }
 
 /** Récapitulatif officiel du panier (prix base de données + code promo). */
-export async function quoteCart(lines: CartLine[], promo?: string) {
-  return priceCart(lines, promo);
+export async function quoteCart(lines: CartLine[], promo?: string, lang?: Locale) {
+  return priceCart(lines, promo, asLocale(lang));
 }
 
 export type OrderState = { error?: string; fields?: Record<string, string> } | null;
 
 export async function placeOrder(_: OrderState, f: FormData): Promise<OrderState> {
+  const lang = langOf(f);
+  const t = await getT(lang);
   let lines: CartLine[] = [];
   try { lines = JSON.parse(String(f.get('cart') || '[]')); } catch { /* panier invalide */ }
   const fields = Object.fromEntries(['email', 'phone', 'firstName', 'lastName', 'address', 'city', 'zip', 'note', 'giftMessage', 'promo'].map((k) => [k, str(f, k, k === 'note' || k === 'giftMessage' ? 1000 : 200)]));
-  if (!lines.length) return { error: 'Votre panier est vide.', fields };
-  if (!isEmail(fields.email)) return { error: 'Adresse e-mail invalide.', fields };
-  if (fields.phone.replace(/\D/g, '').length < 8) return { error: 'Numéro de téléphone invalide.', fields };
-  if (!fields.firstName || !fields.lastName || !fields.address || !fields.city) return { error: 'Merci de compléter votre adresse de livraison.', fields };
+  if (!lines.length) return { error: t('msgCartEmpty'), fields };
+  if (!isEmail(fields.email)) return { error: t('msgInvalidEmail'), fields };
+  if (fields.phone.replace(/\D/g, '').length < 8) return { error: t('msgPhone'), fields };
+  if (!fields.firstName || !fields.lastName || !fields.address || !fields.city) return { error: t('msgAddress'), fields };
 
   const s = await getSettings();
-  const cart = await priceCart(lines, fields.promo);
-  const bad = cart.lines.find((l) => !l.ok);
+  // contrôles dans la langue du visiteur ; la commande est enregistrée avec les titres français (back-office)
+  const check = await priceCart(lines, fields.promo, lang);
+  const bad = check.lines.find((l) => !l.ok);
   if (bad) return { error: `${bad.title} : ${bad.error}`, fields };
-  if (fields.promo && cart.promoError) return { error: cart.promoError, fields };
+  if (fields.promo && check.promoError) return { error: check.promoError, fields };
+  const cart = lang === 'fr' ? check : await priceCart(lines, fields.promo);
 
   const logged = await getCustomer();
   let number = 0;
@@ -78,7 +87,7 @@ export async function placeOrder(_: OrderState, f: FormData): Promise<OrderState
         city: fields.city,
         zip: fields.zip,
         country: s.shop.country,
-        note: fields.note,
+        note: [fields.note, lang !== 'fr' ? `[Langue du client : ${lang.toUpperCase()}]` : ''].filter(Boolean).join('\n'),
         giftMessage: fields.giftMessage,
         subtotal: cart.subtotal,
         discount: cart.discount,
@@ -111,56 +120,61 @@ export async function placeOrder(_: OrderState, f: FormData): Promise<OrderState
   });
 
   revalidatePath('/', 'layout'); // stock à jour sur la boutique
-  redirect(`/checkout/merci/${number}?e=${encodeURIComponent(fields.email.toLowerCase())}`);
+  redirect(localePath(lang, `/checkout/merci/${number}?e=${encodeURIComponent(fields.email.toLowerCase())}`));
 }
 
 export async function submitReview(_: Msg, f: FormData): Promise<Msg> {
+  const t = await getT(langOf(f));
   const productId = Number(f.get('productId'));
   const rating = Math.min(5, Math.max(1, Number(f.get('rating')) || 5));
   const name = str(f, 'name', 80);
   const comment = str(f, 'comment', 2000);
-  if (!productId || !name || comment.length < 3) return { ok: false, message: 'Merci de compléter votre nom et votre avis.' };
+  if (!productId || !name || comment.length < 3) return { ok: false, message: t('msgReviewFields') };
   const c = await getCustomer();
   await db.review.create({ data: { productId, rating, name, comment, customerId: c?.id } });
-  return { ok: true, message: 'Merci ! Votre avis sera publié après validation.' };
+  return { ok: true, message: t('msgReviewThanks') };
 }
 
 // ---------------- comptes clients ----------------
 export async function customerLogin(_: Msg, f: FormData): Promise<Msg> {
+  const lang = langOf(f);
   const email = str(f, 'email', 200).toLowerCase();
   const c = await db.customer.findUnique({ where: { email } });
   if (!c?.passwordHash || !(await bcrypt.compare(str(f, 'password', 200), c.passwordHash))) {
-    return { ok: false, message: 'E-mail ou mot de passe incorrect.' };
+    return { ok: false, message: (await getT(lang))('msgLoginFail') };
   }
   await setSession('customer', c.id);
-  redirect('/account');
+  redirect(localePath(lang, '/account'));
 }
 
 export async function customerRegister(_: Msg, f: FormData): Promise<Msg> {
+  const lang = langOf(f);
+  const t = await getT(lang);
   const email = str(f, 'email', 200).toLowerCase();
   const password = str(f, 'password', 200);
-  if (!isEmail(email)) return { ok: false, message: 'Adresse e-mail invalide.' };
-  if (password.length < 6) return { ok: false, message: 'Le mot de passe doit contenir au moins 6 caractères.' };
+  if (!isEmail(email)) return { ok: false, message: t('msgInvalidEmail') };
+  if (password.length < 6) return { ok: false, message: t('msgPasswordMin') };
   const existing = await db.customer.findUnique({ where: { email } });
-  if (existing?.passwordHash) return { ok: false, message: 'Un compte existe déjà avec cet e-mail.' };
+  if (existing?.passwordHash) return { ok: false, message: t('msgAccountExists') };
   const data = { firstName: str(f, 'firstName', 100), lastName: str(f, 'lastName', 100), passwordHash: await bcrypt.hash(password, 10), acceptsMarketing: f.get('marketing') === 'on' };
   const c = existing ? await db.customer.update({ where: { email }, data }) : await db.customer.create({ data: { email, ...data } });
   if (data.acceptsMarketing) await db.subscriber.upsert({ where: { email }, update: {}, create: { email } });
   await setSession('customer', c.id);
-  redirect('/account');
+  redirect(localePath(lang, '/account'));
 }
 
-export async function customerLogout() {
+export async function customerLogout(f: FormData) {
   await clearSession('customer');
-  redirect('/account');
+  redirect(localePath(langOf(f), '/account'));
 }
 
 export async function updateProfile(_: Msg, f: FormData): Promise<Msg> {
+  const t = await getT(langOf(f));
   const c = await getCustomer();
-  if (!c) return { ok: false, message: 'Session expirée.' };
+  if (!c) return { ok: false, message: t('msgSession') };
   await db.customer.update({
     where: { id: c.id },
     data: { firstName: str(f, 'firstName', 100), lastName: str(f, 'lastName', 100), phone: str(f, 'phone', 50), address: str(f, 'address', 300), city: str(f, 'city', 100), zip: str(f, 'zip', 20) },
   });
-  return { ok: true, message: 'Vos informations ont été enregistrées.' };
+  return { ok: true, message: t('msgProfileSaved') };
 }

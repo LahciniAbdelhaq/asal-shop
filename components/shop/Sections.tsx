@@ -1,8 +1,10 @@
-import Link from 'next/link';
+import Link from './I18n';
 import Icon from '@/components/Icon';
 import { db } from '@/lib/db';
 import { cardInfo, getProductsBySlugs, type FullProduct } from '@/lib/catalog';
 import { frDate, money, type MoneyFormat } from '@/lib/format';
+import { applyText, localize, parseI18n, type Locale } from '@/lib/i18n';
+import { getT, type T } from '@/lib/settings';
 import { HomeCard } from './ProductCard';
 import HeroMedia from './HeroMedia';
 import { imgProps, small } from '@/lib/img';
@@ -10,7 +12,7 @@ import { imgProps, small } from '@/lib/img';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type D = Record<string, any>;
-type Ctx = { fmt: MoneyFormat; products: Map<string, FullProduct> };
+type Ctx = { fmt: MoneyFormat; products: Map<string, FullProduct>; lang: Locale; t: T };
 
 const Html = ({ html, as: Tag = 'span', className }: { html?: string; as?: any; className?: string }) =>
   html ? <Tag className={className} dangerouslySetInnerHTML={{ __html: html }} /> : null;
@@ -181,7 +183,7 @@ function Coffrets({ d, ctx }: { d: D; ctx: Ctx }) {
                     {(c.features || []).filter(Boolean).map((f: string, j: number) => <li key={j}>{f}</li>)}
                   </ul>
                   <Link className="asal-coffret-cta" href={href}>
-                    {c.ctaLabel || 'Choisir ce coffret'}{price != null ? ` · ${money(price, ctx.fmt)}` : ''}
+                    {c.ctaLabel || ctx.t('chooseBox')}{price != null ? ` · ${money(price, ctx.fmt)}` : ''}
                   </Link>
                 </div>
               </div>
@@ -193,12 +195,12 @@ function Coffrets({ d, ctx }: { d: D; ctx: Ctx }) {
   );
 }
 
-export function BlogCard({ p }: { p: { slug: string; title: string; excerpt: string; image: string; publishedAt: Date } }) {
+export function BlogCard({ p, lang }: { p: { slug: string; title: string; excerpt: string; image: string; publishedAt: Date }; lang: Locale }) {
   return (
     <Link className="asal-ma-blog-card" href={`/blogs/le-miel-un-art-de-vivre/${p.slug}`}>
       {p.image && <img {...imgProps(p.image, '(max-width: 760px) 100vw, 400px')} alt={p.title} />}
       <div className="asal-ma-blog-body">
-        <div className="asal-ma-blog-date">{frDate(p.publishedAt)}</div>
+        <div className="asal-ma-blog-date">{frDate(p.publishedAt, undefined, lang)}</div>
         <h3 className="asal-ma-blog-title">{p.title}</h3>
         <p className="asal-ma-blog-ex">{p.excerpt}</p>
       </div>
@@ -206,15 +208,15 @@ export function BlogCard({ p }: { p: { slug: string; title: string; excerpt: str
   );
 }
 
-async function BlogLatest({ d }: { d: D }) {
-  const posts = await db.post.findMany({ where: { isPublished: true }, orderBy: [{ publishedAt: 'desc' }, { id: 'asc' }], take: Number(d.count) || 3 });
+async function BlogLatest({ d, ctx }: { d: D; ctx: Ctx }) {
+  const posts = (await db.post.findMany({ where: { isPublished: true }, orderBy: [{ publishedAt: 'desc' }, { id: 'asc' }], take: Number(d.count) || 3 })).map((p) => localize(p, ctx.lang));
   if (!posts.length) return null;
   return (
     <div className="asal-sec asal-ma-blog">
       <div className="asal-ma-blog-inner">
         <h2>{d.heading}</h2>
         {d.text && <p className="asal-sub">{d.text}</p>}
-        <div className="asal-ma-blog-grid">{posts.map((p) => <BlogCard key={p.id} p={p} />)}</div>
+        <div className="asal-ma-blog-grid">{posts.map((p) => <BlogCard key={p.id} p={p} lang={ctx.lang} />)}</div>
       </div>
     </div>
   );
@@ -308,11 +310,12 @@ const RENDER: Record<string, (p: { d: D; ctx: Ctx }) => React.ReactNode> = {
   rich_text: RichText,
 };
 
-export default async function HomeSections({ sections, fmt }: { sections: { id: number; type: string; data: string }[]; fmt: MoneyFormat }) {
+export default async function HomeSections({ sections, fmt, lang }: { sections: { id: number; type: string; data: string; i18n: string }[]; fmt: MoneyFormat; lang: Locale }) {
   const parsed = sections.map((s) => {
     let d: D = {};
     try { d = JSON.parse(s.data); } catch { /* données invalides */ }
-    return { ...s, d };
+    // textes de la section dans la langue demandée (le reste : images, liens, produits… reste commun)
+    return { ...s, d: applyText(d, parseI18n(s.i18n)[lang]) };
   });
   // précharge en une requête tous les produits cités par les sections
   const slugs = new Set<string>();
@@ -320,8 +323,8 @@ export default async function HomeSections({ sections, fmt }: { sections: { id: 
     (s.d.products || []).forEach((x: string) => slugs.add(x));
     (s.d.cards || []).forEach((c: D) => c.product && slugs.add(c.product));
   }
-  const list = await getProductsBySlugs([...slugs]);
-  const ctx: Ctx = { fmt, products: new Map(list.map((p) => [p.slug, p])) };
+  const [list, t] = await Promise.all([getProductsBySlugs([...slugs], lang), getT(lang)]);
+  const ctx: Ctx = { fmt, products: new Map(list.map((p) => [p.slug, p])), lang, t };
   return (
     <>
       {parsed.map((s) => {

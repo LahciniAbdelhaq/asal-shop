@@ -1,9 +1,9 @@
-import Link from 'next/link';
 import Icon from '@/components/Icon';
 import type { Settings } from '@/lib/defaults';
+import Link from './I18n';
 import Newsletter from './Newsletter';
 
-export default function Footer({ s }: { s: Settings }) {
+export default function Footer({ s, legalLabel }: { s: Settings; legalLabel: string }) {
   const social = (['instagram', 'facebook', 'tiktok', 'whatsapp'] as const).filter((k) => s.social[k]);
   const href = (k: (typeof social)[number]) => (k === 'whatsapp' ? `https://wa.me/${s.social.whatsapp.replace(/\D/g, '')}` : s.social[k]);
   return (
@@ -25,13 +25,13 @@ export default function Footer({ s }: { s: Settings }) {
             <div>
               <p className="asal-footnoir__title">{s.menus.footer1Title}</p>
               <ul className="asal-footnoir__links">
-                {s.menus.footer1.map((l) => <li key={l.label}><Link href={l.href}>{l.label}</Link></li>)}
+                {s.menus.footer1.map((l) => <li key={l.href + l.label}><Link href={l.href}>{l.label}</Link></li>)}
               </ul>
             </div>
             <div>
               <p className="asal-footnoir__title">{s.menus.footer2Title}</p>
               <ul className="asal-footnoir__links">
-                {s.menus.footer2.map((l) => <li key={l.label}><Link href={l.href}>{l.label}</Link></li>)}
+                {s.menus.footer2.map((l) => <li key={l.href + l.label}><Link href={l.href}>{l.label}</Link></li>)}
               </ul>
             </div>
             {social.length > 0 && (
@@ -49,8 +49,8 @@ export default function Footer({ s }: { s: Settings }) {
           </div>
           <div className="asal-footnoir__bottom">
             <p className="asal-footnoir__copy">{s.brand.copyright}</p>
-            <nav className="asal-footnoir__legal" aria-label="Mentions légales">
-              {s.menus.legal.map((l) => <Link key={l.label} href={l.href}>{l.label}</Link>)}
+            <nav className="asal-footnoir__legal" aria-label={legalLabel}>
+              {s.menus.legal.map((l) => <Link key={l.href + l.label} href={l.href}>{l.label}</Link>)}
             </nav>
           </div>
         </div>

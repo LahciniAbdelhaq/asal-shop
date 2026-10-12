@@ -21,6 +21,7 @@ const NAV: { grp?: string; href: string; label: string; icon: string; badge?: ke
   { href: '/admin/pages', label: 'Pages', icon: 'file' },
   { href: '/admin/blog', label: 'Blog', icon: 'pen' },
   { href: '/admin/appearance', label: 'Apparence', icon: 'palette' },
+  { href: '/admin/translations', label: 'Traductions', icon: 'globe' },
   { href: '/admin/settings', label: 'Paramètres', icon: 'gear' },
 ];
 

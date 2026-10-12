@@ -14,7 +14,8 @@
     "postinstall": "prisma generate",
     "vercel-build": "prisma generate && prisma db push --skip-generate && next build",
     "db:seed:demo": "node prisma/seed.mjs --demo",
-    "dev:webpack": "next dev -p 3000"
+    "dev:webpack": "next dev -p 3000",
+    "db:translations": "node prisma/seed-translations.mjs"
   },
   "dependencies": {
     "@prisma/client": "6.19.3",

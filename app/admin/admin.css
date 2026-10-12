@@ -209,13 +209,13 @@ table.tbl { width: 100%; border-collapse: collapse; }
 .rep-item > summary .tools { margin-left: auto; display: flex; gap: 4px; }
 .rep-item > .body { padding: 4px 14px 14px; }
 .section-list { display: grid; gap: 8px; }
-.section-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: #fff; border: 1px solid var(--a-border); border-radius: 10px; }
+.section-row { min-width: 0; display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: #fff; border: 1px solid var(--a-border); border-radius: 10px; }
 .section-row.off { opacity: .6; }
 .section-row .grip { color: var(--a-muted); display: flex; flex-direction: column; }
 .section-row .grip button { border: 0; background: none; padding: 0 4px; line-height: 1; color: var(--a-muted); font-size: 14px; }
 .section-row .grip button:hover { color: var(--a-ink); }
 .section-row .meta { flex: 1; min-width: 0; }
-.section-row .meta strong { color: var(--a-ink); display: block; }
+.section-row .meta strong { color: var(--a-ink); display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .section-row .meta span { color: var(--a-muted); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
 .section-row.active { border-color: var(--a-primary); box-shadow: 0 0 0 2px rgba(200, 134, 26, .15); }
 
@@ -297,3 +297,9 @@ table.tbl { width: 100%; border-collapse: collapse; }
 @keyframes skShine { from { background-position: 100% 0; } to { background-position: -100% 0; } }
 .skeleton-page { animation: skFade .25s ease both; }
 @keyframes skFade { from { opacity: 0; } to { opacity: 1; } }
+
+/* onglets de langue des formulaires (Français / English / العربية) */
+.lang-tabs { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 14px; }
+.lang-tabs__label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--a-muted); }
+.lang-tabs .tabs { margin: 0; }
+form[dir=rtl] .field label, form[dir=rtl] .rep-item summary { text-align: right; }

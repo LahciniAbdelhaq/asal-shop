@@ -1,14 +1,30 @@
 // Schémas des sections de la page d'accueil.
 // Un même schéma sert au rendu (components/shop/sections) et à l'éditeur du back-office.
 
-export type Field =
+// noTr : champ texte à ne pas traduire (valeur technique : URL, e-mail, nom de variante…)
+export type Field = (
   | { key: string; label: string; type: 'text' | 'textarea' | 'html' | 'image' | 'video' | 'link' | 'icon' | 'product' | 'color'; help?: string }
   | { key: string; label: string; type: 'number'; min?: number; max?: number; help?: string }
   | { key: string; label: string; type: 'boolean'; help?: string }
   | { key: string; label: string; type: 'select'; options: { value: string; label: string }[]; help?: string }
   | { key: string; label: string; type: 'products'; help?: string }
   | { key: string; label: string; type: 'strings'; help?: string }
-  | { key: string; label: string; type: 'list'; fields: Field[]; itemLabel?: string; help?: string };
+  | { key: string; label: string; type: 'list'; fields: Field[]; itemLabel?: string; help?: string }
+) & { noTr?: boolean };
+
+const TEXT_TYPES = ['text', 'textarea', 'html', 'strings'];
+
+/** Champs à traduire d'un schéma : textes uniquement (les listes gardent leurs éléments, sans ajout ni suppression). */
+export function trFields(fields: Field[]): Field[] {
+  return fields.flatMap((f): Field[] => {
+    if (f.noTr) return [];
+    if (f.type === 'list') {
+      const sub = trFields(f.fields);
+      return sub.length ? [{ ...f, fields: sub }] : [];
+    }
+    return TEXT_TYPES.includes(f.type) ? [f] : [];
+  });
+}
 
 export type SectionSchema = { label: string; description: string; fields: Field[]; defaults: Record<string, unknown> };
 
@@ -57,7 +73,7 @@ export const SECTION_SCHEMAS: Record<string, SectionSchema> = {
       { key: 'titleLink', label: 'Lien du titre', type: 'link' },
       { key: 'text', label: 'Texte', type: 'textarea' },
       { key: 'products', label: 'Produits', type: 'products' },
-      { key: 'variant', label: 'Variante affichée (ex. « 250 g »)', type: 'text', help: 'Prix et libellé de cette variante sur les cartes.' },
+      { key: 'variant', label: 'Variante affichée (ex. « 250 g »)', type: 'text', help: 'Prix et libellé de cette variante sur les cartes.', noTr: true },
       { key: 'badge', label: 'Pastille sur les images', type: 'text' },
       { key: 'columns', label: 'Colonnes', type: 'number', min: 2, max: 5 },
     ],
@@ -73,7 +89,7 @@ export const SECTION_SCHEMAS: Record<string, SectionSchema> = {
       { key: 'linkLabel', label: 'Lien — texte', type: 'text' },
       { key: 'link', label: 'Lien — URL', type: 'link' },
       { key: 'products', label: 'Produits', type: 'products' },
-      { key: 'variant', label: 'Variante affichée (ex. « 250 g »)', type: 'text' },
+      { key: 'variant', label: 'Variante affichée (ex. « 250 g »)', type: 'text', noTr: true },
       { key: 'columns', label: 'Colonnes', type: 'number', min: 2, max: 5 },
     ],
     defaults: { title: 'Nos produits', products: [], columns: 4, linkLabel: 'Voir tout →', link: '/collections/all' },

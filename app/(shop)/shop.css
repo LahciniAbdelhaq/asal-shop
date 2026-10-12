@@ -687,3 +687,59 @@ a.asal-ma-blog-card:hover { transform: translateY(-4px); }
   .facet > summary { font-size: 13.5px; }
   .grid-toggle { gap: 0; }
 }
+
+/* ---------- sélecteur de langue ---------- */
+.lang-switch { position: relative; }
+.lang-switch > summary { list-style: none; cursor: pointer; width: auto; gap: 4px; padding: 0 8px; border-radius: 999px; }
+.lang-switch > summary::-webkit-details-marker { display: none; }
+.lang-switch > summary svg { width: 20px; height: 20px; }
+.lang-switch__cur { font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+.lang-switch__panel { position: absolute; top: calc(100% + 6px); inset-inline-end: 0; min-width: 160px; display: grid; gap: 2px; padding: 6px; z-index: 60;
+  background: var(--c-bg); border: 1px solid var(--c-border); border-radius: 12px; box-shadow: 0 14px 40px color-mix(in srgb, var(--c-ink) 12%, transparent); }
+.lang-switch__panel a { padding: 9px 12px; border-radius: 8px; color: var(--c-foreground); text-decoration: none; font-size: 14px; }
+.lang-switch__panel a:hover { background: var(--c-cream); }
+.lang-switch__panel a.on { color: var(--c-primary); font-weight: 700; }
+.mm-langs { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 18px; padding: 18px 4px 4px; border-top: 1px solid color-mix(in srgb, var(--c-ink) 12%, transparent); color: var(--c-muted); }
+.mm-langs a { color: var(--c-foreground); text-decoration: none; font-size: 15px; }
+.mm-langs a.on { color: var(--c-primary); font-weight: 700; }
+
+/* ---------- version arabe (de droite à gauche) ---------- */
+[dir=rtl] * { letter-spacing: 0 !important; } /* l'espacement des lettres casse la liaison des lettres arabes */
+[dir=rtl] .asal-annonce-ma-track .am-item { font-family: var(--font-body); }
+[dir=rtl] .asal-annonce-ma-track { animation-name: asalAnnonceSlideRtl; }
+@keyframes asalAnnonceSlideRtl { to { transform: translateX(50%); } }
+[dir=rtl] .skip-link { left: auto; right: -999px; }
+[dir=rtl] .skip-link:focus { right: 8px; }
+[dir=rtl] .header-nav .submenu { left: auto; right: 0; }
+[dir=rtl] .header-actions { margin-right: 0; margin-left: -10px; }
+[dir=rtl] .cart-count { right: auto; left: 3px; }
+[dir=rtl] .drawer--right { right: auto; left: 0; transform: translateX(-100%); }
+[dir=rtl] .drawer--left { left: auto; right: 0; transform: translateX(100%); }
+[dir=rtl] .drawer.open { transform: none; }
+[dir=rtl] .mm-list summary::after { right: auto; left: 4px; content: '\2039'; }
+[dir=rtl] .mm-list details[open] summary::after { transform: translateY(-54%) rotate(-90deg); }
+[dir=rtl] .mm-account .chev, [dir=rtl] .asal-hm-chev { display: inline-block; transform: scaleX(-1); }
+[dir=rtl] .newsletter button svg, [dir=rtl] .icon-arrow { transform: scaleX(-1); }
+[dir=rtl] .line-remove { margin-left: 0; margin-right: 12px; }
+[dir=rtl] .pcard__badge { left: auto; right: 12px; }
+[dir=rtl] .product-card__badge { left: auto; right: 10px; }
+[dir=rtl] .pcard__price s, [dir=rtl] .product-card__price s, [dir=rtl] .product-info .price s { margin-left: 0; margin-right: 6px; }
+[dir=rtl] .asal-offrir-seal { right: auto; left: 28px; }
+[dir=rtl] .asal-coffret-list li { padding-left: 0; padding-right: 26px; }
+[dir=rtl] .asal-coffret-list li::before { left: auto; right: 0; }
+[dir=rtl] .asal-faq-item summary { padding-right: 0; padding-left: 26px; }
+[dir=rtl] .asal-faq-item summary::after { right: auto; left: 0; }
+[dir=rtl] .facet__panel { left: auto; right: 0; }
+[dir=rtl] .facets__right .facet__panel { right: auto; left: 0; }
+[dir=rtl] .product-gallery__nav.prev { left: auto; right: 12px; }
+[dir=rtl] .product-gallery__nav.prev svg { transform: none; }
+[dir=rtl] .product-gallery__nav.next { right: auto; left: 12px; }
+[dir=rtl] .product-gallery__nav.next svg { transform: rotate(180deg); }
+[dir=rtl] .product-desc ul, [dir=rtl] .rte ul, [dir=rtl] .rte ol, [dir=rtl] .asal-article-content ul, [dir=rtl] .asal-article-content ol { padding-left: 0; padding-right: 22px; }
+[dir=rtl] .review-list, [dir=rtl] .review-form, [dir=rtl] .thanks .summary-box, [dir=rtl] .order-table th, [dir=rtl] .order-table td { text-align: right; }
+[dir=rtl] .mini-line .badge { right: auto; left: -6px; }
+[dir=rtl] .toast { transform: translateX(50%); left: auto; right: 50%; }
+@media (max-width: 749px) {
+  [dir=rtl] .facets__left .facet__panel { left: auto; right: 0; }
+  [dir=rtl] .facets__right .facet__panel { right: auto; left: 0; }
+}

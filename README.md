@@ -44,3 +44,11 @@ Sans `BLOB_READ_WRITE_TOKEN`, les fichiers envoyés depuis l'admin sont stockés
 ## Réimporter depuis le site cloné
 
 `node scripts/import-clone.mjs <dossier-du-clone>` régénère `prisma/seed-data.json` et `public/media/`.
+
+## Langues (français, anglais, arabe)
+
+- Français : adresses d’origine (`/products/…`) ; anglais : `/en/…` ; arabe : `/ar/…` (affichage de droite à gauche, police arabe réglable dans Apparence → Typographie).
+- Le sélecteur de langue de l’en-tête mémorise le choix du visiteur (cookie `lang`).
+- Textes de l’interface (boutons, messages…) : `lib/dict.ts`, modifiables dans **Back-office → Traductions**.
+- Contenus : dans chaque formulaire du back-office (produits, catégories, pages, blog, sections de l’accueil, menus, réglages), choisir la langue en haut puis enregistrer. Un texte non traduit reprend le français.
+- Traductions de départ : `npm run db:translations` (ne remplace pas ce qui a déjà été saisi ; `-- --force` pour tout réécrire).

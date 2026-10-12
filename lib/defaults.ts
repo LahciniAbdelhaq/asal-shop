@@ -44,6 +44,7 @@ export const DEFAULT_SETTINGS = {
     serif: 'Georgia',
     baseSize: 14,
     headingWeight: 700,
+    arabic: 'Cairo', // police utilisée pour la version arabe
   },
   announcement: {
     enabled: true,
@@ -113,6 +114,11 @@ export const DEFAULT_SETTINGS = {
     boxPrice: 0,
     ctaLabel: 'Ajouter mon coffret au panier',
   },
+  // langues proposées dans le sélecteur de la boutique (le français est toujours actif)
+  languages: {
+    en: true,
+    ar: true,
+  },
   seo: {
     title: "ASAL — Miels d'exception du Maroc",
     description: "Miels rares et 100 % naturels du Maroc : Thym, Daghmous, Jujubier (Sidr), Euphorbe… Coffrets cadeaux et livraison partout au Maroc.",
@@ -126,6 +132,7 @@ export const FONT_CHOICES = [
   'Inter', 'Georgia', 'Playfair Display', 'Cormorant Garamond', 'Lora', 'Poppins', 'Montserrat',
   'DM Sans', 'Manrope', 'Outfit', 'Libre Baskerville', 'EB Garamond', 'Cairo', 'Tajawal', 'Arial',
 ];
+export const ARABIC_FONTS = ['Cairo', 'Tajawal', 'Almarai', 'IBM Plex Sans Arabic', 'Noto Kufi Arabic', 'Amiri', 'Arial'];
 // polices fournies localement ou système (pas de Google Fonts à charger)
 export const LOCAL_FONTS = ['Inter', 'Georgia', 'Arial'];
 

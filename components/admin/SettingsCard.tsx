@@ -1,21 +1,28 @@
 'use client';
 
 import { useActionState, useState } from 'react';
-import type { Field } from '@/lib/sections';
+import { trFields, type Field } from '@/lib/sections';
+import type { Locale } from '@/lib/i18n';
+import { TranslateForm } from './Translate';
 import { resetSettings, saveSettings } from '@/app/admin/actions';
 import SchemaFields from './SchemaFields';
 import { ConfirmButton, SaveBar, type LinkOption, type PickProduct } from './ui';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /** Carte de réglages générique : un réglage (clé) + ses champs décrits par un schéma. */
-export default function SettingsCard({ k, title, description, initial, fields, links = [], products = [], render }: {
+export default function SettingsCard({ k, title, description, initial, fields, links = [], products = [], render, lang = 'fr' }: {
   k: string; title: string; description?: string; initial: Record<string, any>; fields?: Field[];
   links?: LinkOption[]; products?: PickProduct[];
   render?: (v: Record<string, any>, set: (v: Record<string, any>) => void) => React.ReactNode;
+  lang?: Locale;
 }) {
   const [state, action] = useActionState(saveSettings, null);
   const [rstate, reset] = useActionState(resetSettings, null);
   const [value, setValue] = useState(initial);
+  if (lang !== 'fr') {
+    // couleurs, polices… : pas de texte à traduire
+    return <TranslateForm entity="setting" id={k} lang={lang} title={title} fields={render ? [] : trFields(fields || [])} initial={initial} />;
+  }
   return (
     <div className="card" id={k}>
       <div className="card-head">

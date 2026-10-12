@@ -3,15 +3,18 @@
 import { useMemo, useState } from 'react';
 import Icon from '@/components/Icon';
 import { useCart } from './CartProvider';
+import { useI18n } from './I18n';
 import { imgProps, small } from '@/lib/img';
 
-type V = { id: number; title: string; price: number; compareAtPrice: number | null; stock: number; trackStock: boolean; image: string };
+type V = { id: number; title: string; label?: string; price: number; compareAtPrice: number | null; stock: number; trackStock: boolean; image: string };
 type P = { id: number; slug: string; title: string; optionName: string; images: { url: string; alt: string }[]; variants: V[] };
 
 const ok = (v: V) => !v.trackStock || v.stock > 0;
+const label = (v: V) => v.label || v.title;
 
 export default function ProductView({ p, labels, defaultVariant, children }: { p: P; labels: { add: string; soldOut: string }; defaultVariant?: string; children?: React.ReactNode }) {
   const { add, fmt } = useCart();
+  const { t } = useI18n();
   const first = p.variants.find((x) => ok(x) && x.title === defaultVariant) || p.variants.find(ok) || p.variants[0];
   const [vid, setVid] = useState(first?.id);
   const [qty, setQty] = useState(1);
@@ -42,15 +45,15 @@ export default function ProductView({ p, labels, defaultVariant, children }: { p
           {images[idx] && <img {...imgProps(images[idx].url, '(max-width: 899px) 100vw, 50vw', idx === 0)} alt={images[idx].alt || p.title} />}
           {images.length > 1 && (
             <>
-              <button className="product-gallery__nav prev" aria-label="Image précédente" onClick={() => setIdx((idx - 1 + images.length) % images.length)}><Icon name="chevron" /></button>
-              <button className="product-gallery__nav next" aria-label="Image suivante" onClick={() => setIdx((idx + 1) % images.length)}><Icon name="chevron" /></button>
+              <button className="product-gallery__nav prev" aria-label={t('prevImage')} onClick={() => setIdx((idx - 1 + images.length) % images.length)}><Icon name="chevron" /></button>
+              <button className="product-gallery__nav next" aria-label={t('nextImage')} onClick={() => setIdx((idx + 1) % images.length)}><Icon name="chevron" /></button>
             </>
           )}
         </div>
         {images.length > 1 && (
           <div className="product-gallery__thumbs">
             {images.map((im, i) => (
-              <button key={im.url} className={i === idx ? 'on' : ''} onClick={() => setIdx(i)} aria-label={`Image ${i + 1}`}>
+              <button key={im.url} className={i === idx ? 'on' : ''} onClick={() => setIdx(i)} aria-label={t('imageN', { n: i + 1 })}>
                 <img src={small(im.url)} alt="" loading="lazy" decoding="async" />
               </button>
             ))}
@@ -68,11 +71,11 @@ export default function ProductView({ p, labels, defaultVariant, children }: { p
         {showPicker && (
           <div className="variant-picker">
             <fieldset>
-              <legend>{p.optionName || 'Option'}</legend>
+              <legend>{p.optionName || t('option')}</legend>
               <div className="variant-pills">
                 {p.variants.map((x) => (
                   <button key={x.id} type="button" className={`variant-pill${x.id === vid ? ' on' : ''}${ok(x) ? '' : ' out'}`} onClick={() => pick(x)} aria-pressed={x.id === vid}>
-                    {x.title}
+                    <bdi>{label(x)}</bdi>
                     {!ok(x) && <em>{labels.soldOut}</em>}
                   </button>
                 ))}
@@ -83,9 +86,9 @@ export default function ProductView({ p, labels, defaultVariant, children }: { p
 
         <div className="buy-row" style={showPicker ? undefined : { marginTop: 30 }}>
           <div className="qty">
-            <button type="button" aria-label="Diminuer la quantité" disabled={qty <= 1} onClick={() => setQty(qty - 1)}><Icon name="minus" size={16} /></button>
-            <input aria-label="Quantité" value={qty} inputMode="numeric" onChange={(e) => setQty(Math.max(1, Math.min(maxQty || 1, Number(e.target.value.replace(/\D/g, '')) || 1)))} />
-            <button type="button" aria-label="Augmenter la quantité" disabled={qty >= maxQty} onClick={() => setQty(qty + 1)}><Icon name="plus" size={16} /></button>
+            <button type="button" aria-label={t('qtyDec')} disabled={qty <= 1} onClick={() => setQty(qty - 1)}><Icon name="minus" size={16} /></button>
+            <input aria-label={t('quantity')} value={qty} inputMode="numeric" onChange={(e) => setQty(Math.max(1, Math.min(maxQty || 1, Number(e.target.value.replace(/\D/g, '')) || 1)))} />
+            <button type="button" aria-label={t('qtyInc')} disabled={qty >= maxQty} onClick={() => setQty(qty + 1)}><Icon name="plus" size={16} /></button>
           </div>
           <button
             className={`add-to-cart${adding ? ' is-loading' : ''}`}
@@ -99,7 +102,7 @@ export default function ProductView({ p, labels, defaultVariant, children }: { p
                 productId: p.id,
                 slug: p.slug,
                 title: p.title,
-                variantTitle: v.title === 'Défaut' ? '' : v.title,
+                variantTitle: v.title === 'Défaut' ? '' : label(v),
                 image: small(v.image || p.images[0]?.url || ''),
                 price: v.price,
                 qty,
@@ -110,7 +113,7 @@ export default function ProductView({ p, labels, defaultVariant, children }: { p
             {v && ok(v) ? labels.add : labels.soldOut}
           </button>
         </div>
-        {v && v.trackStock && v.stock > 0 && v.stock <= 5 && <p className="added-msg">Plus que {v.stock} en stock</p>}
+        {v && v.trackStock && v.stock > 0 && v.stock <= 5 && <p className="added-msg">{t('onlyLeft', { n: v.stock })}</p>}
         {children}
       </div>
     </div>

@@ -1,17 +1,19 @@
 import 'server-only';
 import { db } from './db';
-import { getSettings } from './settings';
+import { getSettings, getT } from './settings';
+import { localizeProduct } from './catalog';
+import { DEFAULT_LOCALE, type Locale } from './i18n';
 import type { CartLine, PricedCart } from './cart-types';
 
 /** Recalcule le panier à partir de la base : prix, stock, code promo, livraison. */
-export async function priceCart(lines: CartLine[], promoCode?: string): Promise<PricedCart> {
-  const s = await getSettings();
+export async function priceCart(lines: CartLine[], promoCode?: string, lang: Locale = DEFAULT_LOCALE): Promise<PricedCart> {
+  const [s, t] = await Promise.all([getSettings(lang), getT(lang)]);
   const ids = new Set<number>();
   for (const l of lines) {
     if (l.bundle) l.bundle.items.forEach((i) => ids.add(i.variantId));
     else ids.add(l.variantId);
   }
-  const variants = await db.variant.findMany({ where: { id: { in: [...ids] } }, include: { product: { include: { images: true } } } });
+  const variants = await db.variant.findMany({ where: { id: { in: [...ids] } }, include: { product: { include: { images: true, variants: true, categories: true } } } });
   const byId = new Map(variants.map((v) => [v.id, v]));
   const need = new Map<number, number>(); // quantité totale demandée par variante (pour le stock)
 
@@ -23,20 +25,23 @@ export async function priceCart(lines: CartLine[], promoCode?: string): Promise<
         let error: string | undefined;
         for (const it of l.bundle.items) {
           const v = byId.get(it.variantId);
-          if (!v || v.product.status !== 'active') { error = 'Un miel du coffret n’est plus disponible'; continue; }
+          if (!v || v.product.status !== 'active') { error = t('errBoxItem'); continue; }
           unit += v.price * it.qty;
           need.set(v.id, (need.get(v.id) || 0) + it.qty * l.qty);
         }
         return { ...l, price: unit, ok: !error, error };
       }
       const v = byId.get(l.variantId);
-      if (!v || v.product.status !== 'active') return { ...l, ok: false, error: 'Produit indisponible' };
+      if (!v || v.product.status !== 'active') return { ...l, ok: false, error: t('errUnavailable') };
       need.set(v.id, (need.get(v.id) || 0) + l.qty);
+      // titres dans la langue du visiteur
+      const lp = localizeProduct(v.product as never, lang) as typeof v.product;
+      const lv = (lp.variants as { id: number; label?: string }[]).find((x) => x.id === v.id);
       return {
         ...l,
         price: v.price,
-        title: v.product.title,
-        variantTitle: v.title === 'Défaut' ? '' : v.title,
+        title: lp.title,
+        variantTitle: v.title === 'Défaut' ? '' : lv?.label || v.title,
         image: v.image || v.product.images.sort((a, b) => a.position - b.position)[0]?.url || l.image,
         ok: true,
       };
@@ -48,7 +53,7 @@ export async function priceCart(lines: CartLine[], promoCode?: string): Promise<
     if (v.trackStock && v.stock < qty) {
       for (const l of priced) {
         const uses = l.bundle ? l.bundle.items.some((i) => i.variantId === vid) : l.variantId === vid;
-        if (uses) { l.ok = false; l.error = v.stock > 0 ? `Stock insuffisant (${v.stock} disponible${v.stock > 1 ? 's' : ''})` : 'Épuisé'; }
+        if (uses) { l.ok = false; l.error = v.stock > 0 ? t('errStock', { n: v.stock }) : t('soldOut'); }
       }
     }
   }
@@ -63,18 +68,18 @@ export async function priceCart(lines: CartLine[], promoCode?: string): Promise<
     const code = promoCode.trim().toUpperCase();
     const p = await db.promoCode.findUnique({ where: { code } });
     const now = new Date();
-    if (!p || !p.isActive) promoError = 'Code promo invalide';
-    else if (p.startsAt && p.startsAt > now) promoError = 'Ce code n’est pas encore actif';
-    else if (p.endsAt && p.endsAt < now) promoError = 'Ce code a expiré';
-    else if (p.maxUses != null && p.usedCount >= p.maxUses) promoError = 'Ce code a atteint sa limite d’utilisation';
-    else if (subtotal < p.minSubtotal) promoError = `Montant minimum : ${p.minSubtotal} ${s.shop.currency}`;
+    if (!p || !p.isActive) promoError = t('promoInvalid');
+    else if (p.startsAt && p.startsAt > now) promoError = t('promoNotYet');
+    else if (p.endsAt && p.endsAt < now) promoError = t('promoExpired');
+    else if (p.maxUses != null && p.usedCount >= p.maxUses) promoError = t('promoLimit');
+    else if (subtotal < p.minSubtotal) promoError = t('promoMin', { amount: `${p.minSubtotal} ${s.shop.currency}` });
     else {
       if (p.type === 'percent') discount = Math.round(subtotal * Math.min(p.value, 100)) / 100;
       else if (p.type === 'fixed') discount = Math.min(p.value, subtotal);
       else if (p.type === 'free_shipping') shipping = 0;
       promo = {
         code: p.code,
-        label: p.type === 'percent' ? `-${p.value} %` : p.type === 'fixed' ? `-${p.value} ${s.shop.currency}` : 'Livraison offerte',
+        label: p.type === 'percent' ? `-${p.value} %` : p.type === 'fixed' ? `-${p.value} ${s.shop.currency}` : t('promoFreeShipping'),
       };
     }
   }

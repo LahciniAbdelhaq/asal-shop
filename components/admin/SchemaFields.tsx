@@ -5,7 +5,8 @@ import type { Field } from '@/lib/sections';
 import { ColorInput, LinkInput, MediaInput, ProductPicker, RichText, Switch, type LinkOption, type PickProduct } from './ui';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-type Ctx = { products: PickProduct[]; links: LinkOption[] };
+// fixed : mode traduction (listes figées : ni ajout, ni suppression, ni déplacement)
+type Ctx = { products: PickProduct[]; links: LinkOption[]; fixed?: boolean };
 type V = Record<string, any>;
 
 const REASSURANCE_ICONS = ['gift', 'truck', 'leaf', 'chat', 'hexagon', 'shield', 'drop', 'flask', 'box', 'lock', 'card', 'tag', 'star', 'heart', 'phone', 'mail', 'clock', 'check'];
@@ -34,17 +35,17 @@ function ListField({ f, value, onChange, ctx }: { f: Extract<Field, { type: 'lis
         <details className="rep-item" key={i}>
           <summary>
             <span style={{ color: 'var(--a-muted)', fontWeight: 500 }}>{i + 1}.</span> {String(it[f.itemLabel || ''] || '').replace(/<[^>]+>/g, '') || `Élément ${i + 1}`}
-            <span className="tools">
+            {!ctx.fixed && <span className="tools">
               <button type="button" className="btn btn-ghost btn-sm" onClick={stop(() => move(i, -1))} title="Monter">↑</button>
               <button type="button" className="btn btn-ghost btn-sm" onClick={stop(() => move(i, 1))} title="Descendre">↓</button>
               <button type="button" className="btn btn-ghost btn-sm" onClick={stop(() => onChange([...items.slice(0, i + 1), structuredClone(it), ...items.slice(i + 1)]))} title="Dupliquer"><Icon name="copy" /></button>
               <button type="button" className="btn btn-ghost btn-sm" onClick={stop(() => onChange(items.filter((_, k) => k !== i)))} title="Supprimer"><Icon name="trash" /></button>
-            </span>
+            </span>}
           </summary>
           <div className="body"><SchemaFields fields={f.fields} value={it} onChange={(v) => set(i, v)} ctx={ctx} /></div>
         </details>
       ))}
-      <button type="button" className="btn btn-secondary btn-sm" style={{ justifySelf: 'start' }} onClick={() => onChange([...items, {}])}><Icon name="plus" /> Ajouter</button>
+      {!ctx.fixed && <button type="button" className="btn btn-secondary btn-sm" style={{ justifySelf: 'start' }} onClick={() => onChange([...items, {}])}><Icon name="plus" /> Ajouter</button>}
     </div>
   );
 }

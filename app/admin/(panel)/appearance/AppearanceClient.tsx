@@ -2,7 +2,8 @@
 
 import SettingsCard from '@/components/admin/SettingsCard';
 import { ColorInput, type LinkOption } from '@/components/admin/ui';
-import { COLOR_LABELS, DEFAULT_SETTINGS, FONT_CHOICES, type Settings } from '@/lib/defaults';
+import { ARABIC_FONTS, COLOR_LABELS, DEFAULT_SETTINGS, FONT_CHOICES, type Settings } from '@/lib/defaults';
+import type { Locale } from '@/lib/i18n';
 import type { Field } from '@/lib/sections';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -52,10 +53,10 @@ function MiniPreview({ c, fonts }: { c: Record<string, string>; fonts?: Record<s
   );
 }
 
-export default function AppearanceClient({ tab, s, links }: { tab: string; s: Settings; links: LinkOption[] }) {
+export default function AppearanceClient({ tab, s, links, lang = 'fr' }: { tab: string; s: Settings; links: LinkOption[]; lang?: Locale }) {
   if (tab === 'brand')
     return (
-      <SettingsCard k="brand" title="Identité de la marque" initial={s.brand} links={links} fields={[
+      <SettingsCard lang={lang} k="brand" title="Identité de la marque" initial={s.brand} links={links} fields={[
         { key: 'name', label: 'Nom de la boutique', type: 'text' },
         { key: 'tagline', label: 'Slogan', type: 'text' },
         { key: 'logo', label: 'Logo (en-tête, fond clair)', type: 'image', help: 'PNG ou SVG à fond transparent recommandé.' },
@@ -71,7 +72,7 @@ export default function AppearanceClient({ tab, s, links }: { tab: string; s: Se
 
   if (tab === 'colors')
     return (
-      <SettingsCard k="colors" title="Système de couleurs" description="Chaque couleur est une variable du thème, utilisée partout sur la boutique." initial={s.colors}
+      <SettingsCard lang={lang} k="colors" title="Système de couleurs" description="Chaque couleur est une variable du thème, utilisée partout sur la boutique." initial={s.colors}
         render={(v, set) => (
           <div className="grid-2" style={{ gridTemplateColumns: 'minmax(0,1.2fr) minmax(0,1fr)' }}>
             <div>
@@ -103,7 +104,7 @@ export default function AppearanceClient({ tab, s, links }: { tab: string; s: Se
 
   if (tab === 'fonts')
     return (
-      <SettingsCard k="fonts" title="Typographie" description="Les polices autres qu’Inter, Georgia et Arial sont chargées depuis Google Fonts." initial={s.fonts}
+      <SettingsCard lang={lang} k="fonts" title="Typographie" description="Les polices autres qu’Inter, Georgia et Arial sont chargées depuis Google Fonts." initial={s.fonts}
         render={(v, set) => (
           <>
             <div className="cols-3">
@@ -118,6 +119,11 @@ export default function AppearanceClient({ tab, s, links }: { tab: string; s: Se
               <div className="field"><label>Taille du texte de base (px)</label><input type="number" min={12} max={20} value={v.baseSize} onChange={(e) => set({ ...v, baseSize: Number(e.target.value) })} /></div>
               <div className="field"><label>Graisse des titres</label><select value={v.headingWeight} onChange={(e) => set({ ...v, headingWeight: Number(e.target.value) })}>{[400, 500, 600, 700].map((w) => <option key={w} value={w}>{w}</option>)}</select></div>
             </div>
+            <div className="field">
+              <label>Police de la version arabe</label>
+              <select value={v.arabic || 'Cairo'} onChange={(e) => set({ ...v, arabic: e.target.value })}>{ARABIC_FONTS.map((f) => <option key={f} value={f}>{f}</option>)}</select>
+              <span className="help">Utilisée pour toute la boutique en arabe (/ar), chargée depuis Google Fonts.</span>
+            </div>
           </>
         )}
       />
@@ -125,7 +131,7 @@ export default function AppearanceClient({ tab, s, links }: { tab: string; s: Se
 
   if (tab === 'announcement')
     return (
-      <SettingsCard k="announcement" title="Barre d’annonce" description="Bandeau défilant tout en haut du site." initial={s.announcement} fields={[
+      <SettingsCard lang={lang} k="announcement" title="Barre d’annonce" description="Bandeau défilant tout en haut du site." initial={s.announcement} fields={[
         { key: 'enabled', label: 'Afficher la barre d’annonce', type: 'boolean' },
         { key: 'items', label: 'Messages (un par ligne, HTML autorisé : <strong>, <a href>)', type: 'strings' },
         { key: 'repeat', label: 'Répétitions dans le bandeau', type: 'number', min: 2, max: 12 },
@@ -133,18 +139,18 @@ export default function AppearanceClient({ tab, s, links }: { tab: string; s: Se
       ]} />
     );
 
-  if (tab === 'menus') return <SettingsCard k="menus" title="Menus" description="Menu de l’en-tête (avec sous-menus) et liens du pied de page." initial={s.menus} fields={menuFields} links={links} />;
+  if (tab === 'menus') return <SettingsCard lang={lang} k="menus" title="Menus" description="Menu de l’en-tête (avec sous-menus) et liens du pied de page." initial={s.menus} fields={menuFields} links={links} />;
 
   return (
     <div className="stack">
-      <SettingsCard k="social" title="Réseaux sociaux" description="Laissez vide pour masquer une icône." initial={s.social} fields={[
+      <SettingsCard lang={lang} k="social" title="Réseaux sociaux" description="Laissez vide pour masquer une icône." initial={s.social} fields={[
         { key: 'title', label: 'Titre de la colonne', type: 'text' },
-        { key: 'instagram', label: 'Instagram (URL)', type: 'text' },
-        { key: 'facebook', label: 'Facebook (URL)', type: 'text' },
-        { key: 'tiktok', label: 'TikTok (URL)', type: 'text' },
-        { key: 'whatsapp', label: 'WhatsApp (numéro, ex. 212600000000)', type: 'text' },
+        { key: 'instagram', label: 'Instagram (URL)', type: 'text', noTr: true },
+        { key: 'facebook', label: 'Facebook (URL)', type: 'text', noTr: true },
+        { key: 'tiktok', label: 'TikTok (URL)', type: 'text', noTr: true },
+        { key: 'whatsapp', label: 'WhatsApp (numéro, ex. 212600000000)', type: 'text', noTr: true },
       ]} />
-      <SettingsCard k="newsletter" title="Bloc newsletter" initial={s.newsletter} fields={[
+      <SettingsCard lang={lang} k="newsletter" title="Bloc newsletter" initial={s.newsletter} fields={[
         { key: 'enabled', label: 'Afficher le bloc « Restez informé »', type: 'boolean' },
         { key: 'title', label: 'Titre', type: 'text' },
         { key: 'text', label: 'Texte', type: 'textarea' },
